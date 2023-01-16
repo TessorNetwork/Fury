@@ -1,7 +1,7 @@
 {
-  "name": "docs",
+  "name": "comm",
   "version": "3.0.0",
-  "description": "Commercio.network documentation",
+  "description": "Tessor.network documentation",
   "main": "index.js",
   "scripts": {
     "predocs:serve": "./docs/pre.sh",
@@ -15,6 +15,18 @@
   "license": "MIT",
   "devDependencies": {
     "@renovamen/vuepress-plugin-katex": "^0.2.0",
-    "vuepress": "^1.9.7"
-  }
+    "vuepress": "^1.9.8"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tessornetwork/fury.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tessornetwork/fury/issues"
+  },
+  "homepage": "https://github.com/tessornetwork/fury#readme"
 }

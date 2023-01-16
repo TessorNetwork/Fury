@@ -14,11 +14,11 @@ import (
 
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/commercionetwork/commercionetwork/x/epochs/client/cli"
-	"github.com/commercionetwork/commercionetwork/x/epochs/client/rest"
-	"github.com/commercionetwork/commercionetwork/x/epochs/keeper"
-	"github.com/commercionetwork/commercionetwork/x/epochs/simulation"
-	"github.com/commercionetwork/commercionetwork/x/epochs/types"
+	"github.com/tessornetwork/fury/x/epochs/client/cli"
+	"github.com/tessornetwork/fury/x/epochs/client/rest"
+	"github.com/tessornetwork/fury/x/epochs/keeper"
+	"github.com/tessornetwork/fury/x/epochs/simulation"
+	"github.com/tessornetwork/fury/x/epochs/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/codec"
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"

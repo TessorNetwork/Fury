@@ -12,7 +12,7 @@ const (
 
 type DidDocument struct {
 	Context string         `json:"@context" example:"https://www.w3.org/ns/did/v1"`
-	ID      sdk.AccAddress `json:"id" swaggertype:"string" example:"did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"`
+	ID      sdk.AccAddress `json:"id" swaggertype:"string" example:"did:fury:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"`
 	PubKeys PubKeys        `json:"publicKey"`
 
 	// To a future reader, to mark a DidDocument field as optional:
@@ -36,9 +36,9 @@ type DidPowerUpRequest struct {
 }
 
 type PubKey struct {
-	ID           string         `json:"id" example:"did:com:1tkgm3rra9cs3sfugjqdps30ujggf5klm425zvx#keys-1"`
+	ID           string         `json:"id" example:"did:fury:1tkgm3rra9cs3sfugjqdps30ujggf5klm425zvx#keys-1"`
 	Type         string         `json:"type" example:"RsaVerificationKey2018"`
-	Controller   sdk.AccAddress `json:"controller" swaggertype:"string" example:"did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"`
+	Controller   sdk.AccAddress `json:"controller" swaggertype:"string" example:"did:fury:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"`
 	PublicKeyPem string         `json:"publicKeyPem" example:"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvaM5rNKqd5sl1flSqRHg\nkKdGJzVcktZs0O1IO5A7TauzAtn0vRMr4moWYTn5nUCCiDFbTPoMyPp6tsaZScAD\nG9I7g4vK+/FcImcrdDdv9rjh1aGwkGK3AXUNEG+hkP+QsIBl5ORNSKn+EcdFmnUc\nzhNulA74zQ3xnz9cUtsPC464AWW0Yrlw40rJ/NmDYfepjYjikMVvJbKGzbN3Xwv7\nZzF4bPTi7giZlJuKbNUNTccPY/nPr5EkwZ5/cOZnAJGtmTtj0e0mrFTX8sMPyQx0\nO2uYM97z0SRkf8oeNQm+tyYbwGWY2TlCEXbvhP34xMaBTzWNF5+Z+FZi+UfPfVfK\nHQIDAQAB\n-----END PUBLIC KEY-----\n"`
 }
 type PubKeys []PubKey
@@ -47,8 +47,8 @@ type Proof struct {
 	Type               string    `json:"type" example:"EcdsaSecp256k1VerificationKey2019"`
 	Created            time.Time `json:"created" example:"2020-04-22T04:23:50.73112321Z"`
 	ProofPurpose       string    `json:"proofPurpose" example:"authentication"`
-	Controller         string    `json:"controller" example:"did:com:1tkgm3rra9cs3sfugjqdps30ujggf5klm425zvx"`
-	VerificationMethod string    `json:"verificationMethod" example:"did:com:pub1addwnpepqt6lnn5v0c3rys49v5v9f4kvcchehnu7kyk8t8vce5lsxfy7e2pxwyvmf6t"`
+	Controller         string    `json:"controller" example:"did:fury:1tkgm3rra9cs3sfugjqdps30ujggf5klm425zvx"`
+	VerificationMethod string    `json:"verificationMethod" example:"did:fury:pub1addwnpepqt6lnn5v0c3rys49v5v9f4kvcchehnu7kyk8t8vce5lsxfy7e2pxwyvmf6t"`
 	SignatureValue     string    `json:"signatureValue" example:"nIgRvObXlF2OIbktZcQJw0UU7zDEku8cEBq7194YOjhEvD5wBZ+TcNu9GNRZucC6OyuplHfK6uo57+3lVQbpgA=="`
 }
 

@@ -1,0 +1,33 @@
+syntax = "proto3";
+package tessornetwork.fury.documents;
+
+// Options section
+option go_package = "github.com/tessornetwork/fury/x/documents/types";
+
+// Import section
+import "gogoproto/gogo.proto";
+import "fury/documents/documentDoSign.proto";
+import "fury/documents/documentEncryptionData.proto";
+import "fury/documents/documentMetadataSchema.proto";
+import "fury/documents/documentChecksum.proto";
+
+
+message Document {
+  string sender = 1; 
+  repeated string recipients = 2; 
+  string UUID = 3; 
+  documents.DocumentMetadata metadata = 4; 
+  string contentURI = 5; 
+  documents.DocumentChecksum checksum = 6; 
+  documents.DocumentEncryptionData encryptionData = 7 [
+    (gogoproto.moretags)   = "yaml:\"encryption_data\"",
+    (gogoproto.customtype) = "DocumentEncryptionData",
+    (gogoproto.nullable)   = true
+  ]; 
+  documents.DocumentDoSign doSign = 8 [
+    (gogoproto.moretags)   = "yaml:\"do_sign\"",
+    (gogoproto.customtype) = "DocumentDoSign",
+    (gogoproto.nullable)   = true
+  ];
+}
+

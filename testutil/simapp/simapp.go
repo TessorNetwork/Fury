@@ -12,7 +12,7 @@ import (
 	tmtypes "github.com/tendermint/tendermint/types"
 	tmdb "github.com/tendermint/tm-db"
 
-	"github.com/commercionetwork/commercionetwork/app"
+	"github.com/tessornetwork/fury/app"
 )
 
 // New creates application instance with in-memory database and disabled logging.
@@ -34,7 +34,7 @@ func New(dir string) *app.App {
 	a.InitChain(abci.RequestInitChain{
 		ConsensusParams: defaultConsensusParams,
 		AppStateBytes:   []byte("{}"),
-		ChainId:         "commercionetwork",
+		ChainId:         "fury-1",
 	})
 	return a
 }

@@ -5,8 +5,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/commercionetwork/commercionetwork/x/vbr/keeper"
-	"github.com/commercionetwork/commercionetwork/x/vbr/types"
+	"github.com/tessornetwork/fury/x/vbr/keeper"
+	"github.com/tessornetwork/fury/x/vbr/types"
 	"github.com/cosmos/cosmos-sdk/testutil/testdata"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"

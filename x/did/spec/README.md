@@ -25,7 +25,7 @@ The address it itself a DID Decentralized Identifier.
 In order to do so, you can use the CLI and execute the following command: 
 
 ```bash
-commercionetworkd keys add <key-name>
+furyd keys add <key-name>
 ``` 
 
 You will be required to set a password in order to safely store the key on your computer.  

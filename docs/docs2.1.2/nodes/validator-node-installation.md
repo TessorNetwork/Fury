@@ -79,8 +79,8 @@ This transaction is expected to be done with an hsm as Ledger. If you are using 
 cncli tx send \
 <your pub addr delegator> \
 <your pub addr creator val> \
-1110000ucommercio \
---fees=10000ucommercio  \
+1110000ufury \
+--fees=10000ufury  \
 --chain-id="$CHAINID" \
 -y
 ```
@@ -92,7 +92,7 @@ cncli query account <your pub addr creator val> --chain-id $CHAINID
 
 The output should look like this:
 ```
-- denom: ucommercio
+- denom: ufury
   amount: "1000000"
 ```
 
@@ -110,7 +110,7 @@ The overall command to create a validator is the following:
 
 ### Testnet
 ```bash
-export VALIDATOR_PUBKEY=$(cnd tendermint show-validator)
+export VALIDATOR_PUBKEY=$(fyd tendermint show-validator)
 ```
 
 ### Mainnet
@@ -127,7 +127,7 @@ Warning: a did address can create one and only one validator and a validator can
 
 ```bash
 cncli tx staking create-validator \
-  --amount=1100000ucommercio \
+  --amount=1100000ufury \
   --pubkey=$VALIDATOR_PUBKEY \
   --moniker="$NODENAME" \
   --chain-id="$CHAINID" \
@@ -139,7 +139,7 @@ cncli tx staking create-validator \
   --commission-max-change-rate="0.01" \
   --min-self-delegation="1" \
   --from=<your pub addr creator val> \
-  --fees=10000ucommercio \
+  --fees=10000ufury \
   -y
 ##Twice input password required
 ```
@@ -232,10 +232,10 @@ This transaction is expected to be done with an hsm as a **Ledger** device . If 
 ```bash
 cncli tx staking delegate \
   $OPERATOR_ADDRESS \
-  50000000000ucommercio \
+  50000000000ufury \
   --from <your pub addr delegator> \
   --chain-id="$CHAINID" \
-  --fees=10000ucommercio \
+  --fees=10000ufury \
   -y
 ```
 
@@ -266,7 +266,7 @@ Congratulations, you are now a Commercio.network validator 🎉
 ## Note 
 
 If you want to make transactions with the **Nano Ledger** from another machine a full node must be created locally or a full node must be configured to accept remote connections.   
-Edit the `.cnd/config/config.toml` file by changing from 
+Edit the `.fyd/config/config.toml` file by changing from 
 
 ```
 laddr = "tcp://127.0.0.1:26657"
@@ -278,7 +278,7 @@ laddr = "tcp://0.0.0.0:26657"
 
 and restart your node
 ```
-systemctl restart cnd
+systemctl restart fyd
 ```
 
 and use the transaction this way
@@ -286,11 +286,11 @@ and use the transaction this way
 ```bash
 cncli tx staking delegate \
   <validator-addr> \
-  50000000000ucommercio \
+  50000000000ufury \
   --from <your pub addr delegator> \
   --node tcp://<ip of your fulle node>:26657 \
   --chain-id="$CHAINID" \
-  --fees=10000ucommercio \
+  --fees=10000ufury \
   --ledger \
   -y
 ```
@@ -317,7 +317,7 @@ On https://testnet.commercio.network you can view the height of the chain at the
 
 Use the command 
 ```
-journal -u cnd -f | egrep " cnd+.*Committed state"
+journal -u fyd -f | egrep " fyd+.*Committed state"
 ```
 to check the height that reach your node
 
@@ -344,13 +344,13 @@ panic: Error initializing DB: resource temporarily unavailable
 
 #### Solution
 
-Maybe `cnd` and/or `cncli` services have been left active.
+Maybe `fyd` and/or `cncli` services have been left active.
 Use the following commands 
 
 ```bash
-systemctl stop cnd
+systemctl stop fyd
 systemctl stop cncli
-pkill -9 cnd
+pkill -9 fyd
 pkill -9 cncli
 ```
 

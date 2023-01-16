@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/commercionetwork/commercionetwork/x/epochs/types"
+	"github.com/tessornetwork/fury/x/epochs/types"
 )
 
 // RandomizedGenState generates a random GenesisState for mint

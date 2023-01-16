@@ -4,10 +4,10 @@ info:
   name: ''
   description: ''
 paths:
-  /commercionetwork/commerciokyc/funds:
+  /tessornetwork/furykyc/funds:
     get:
       summary: Queries funds of ABR
-      operationId: CommercionetworkCommercionetworkCommerciokycFunds
+      operationId: TessornetworkFurykycFurykycFunds
       responses:
         '200':
           description: A successful response.
@@ -51,10 +51,10 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /commercionetwork/commerciokyc/invites:
+  /tessornetwork/furykyc/invites:
     get:
       summary: Queries all invites
-      operationId: CommercionetworkCommercionetworkCommerciokycInvites
+      operationId: TessornetworkFurykycFurykycInvites
       responses:
         '200':
           description: A successful response.
@@ -179,10 +179,10 @@ paths:
           type: boolean
       tags:
         - Query
-  /commercionetwork/commerciokyc/memberships:
+  /tessornetwork/furykyc/memberships:
     get:
       summary: Queries all memberships
-      operationId: CommercionetworkCommercionetworkCommerciokycMemberships
+      operationId: TessornetworkFurykycFurykycMemberships
       responses:
         '200':
           description: A successful response.
@@ -307,12 +307,12 @@ paths:
           type: boolean
       tags:
         - Query
-  /commercionetwork/commerciokyc/tsps:
+  /tessornetwork/furykyc/tsps:
     get:
       summary: |-
         Queries a ivite by id.
         Queries all Tsp.
-      operationId: CommercionetworkCommercionetworkCommerciokycTsps
+      operationId: TessornetworkFurykycFurykycTsps
       responses:
         '200':
           description: A successful response.
@@ -343,10 +343,10 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  '/commercionetwork/commerciokyc/{address}/invite':
+  '/tessornetwork/furykyc/{address}/invite':
     get:
       summary: Queries a invite by address
-      operationId: CommercionetworkCommercionetworkCommerciokycInvite
+      operationId: TessornetworkFurykycFurykycInvite
       responses:
         '200':
           description: A successful response.
@@ -390,10 +390,10 @@ paths:
           type: string
       tags:
         - Query
-  '/commercionetwork/commerciokyc/{address}/membership':
+  '/tessornetwork/furykyc/{address}/membership':
     get:
       summary: Queries a membership by address
-      operationId: CommercionetworkCommercionetworkCommerciokycMembership
+      operationId: TessornetworkFurykycFurykycMembership
       responses:
         '200':
           description: A successful response.
@@ -437,9 +437,9 @@ paths:
           type: string
       tags:
         - Query
-  /commercionetwork/commerciomint/etps:
+  /tessornetwork/furymint/etps:
     get:
-      operationId: CommercionetworkCommercionetworkCommerciomintEtps
+      operationId: TessornetworkFurykycFurykycEtps
       responses:
         '200':
           description: A successful response.
@@ -582,9 +582,9 @@ paths:
           type: boolean
       tags:
         - Query
-  /commercionetwork/commerciomint/params:
+  /tessornetwork/furymint/params:
     get:
-      operationId: CommercionetworkCommercionetworkCommerciomintParams
+      operationId: TessornetworkFurykycFurykycParams
       responses:
         '200':
           description: A successful response.
@@ -618,10 +618,10 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  '/commercionetwork/commerciomint/{ID}/etp':
+  '/tessornetwork/furymint/{ID}/etp':
     get:
       summary: Queries a Etp by id.
-      operationId: CommercionetworkCommercionetworkCommerciomintEtp
+      operationId: TessornetworkFurykycFurykycEtp
       responses:
         '200':
           description: A successful response.
@@ -683,9 +683,9 @@ paths:
           type: string
       tags:
         - Query
-  '/commercionetwork/commerciomint/{Owner}/etpsOwner':
+  '/tessornetwork/furymint/{Owner}/etpsOwner':
     get:
-      operationId: CommercionetworkCommercionetworkCommerciomintEtpsByOwner
+      operationId: TessornetworkFurykycFurykycEtpsByOwner
       responses:
         '200':
           description: A successful response.
@@ -832,10 +832,10 @@ paths:
           type: boolean
       tags:
         - Query
-  '/commercionetwork/did/{ID}/identities':
+  '/fury/did/{ID}/identities':
     get:
       summary: Queries a DidDocument by id.
-      operationId: CommercionetworkCommercionetworkDidIdentity
+      operationId: TessornetworkFurykycDidIdentity
       responses:
         '200':
           description: A successful response.
@@ -1097,9 +1097,9 @@ paths:
           type: string
       tags:
         - Query
-  '/commercionetwork/did/{ID}/identities/history':
+  '/fury/did/{ID}/identities/history':
     get:
-      operationId: CommercionetworkCommercionetworkDidIdentityHistory
+      operationId: TessornetworkFurykycDidIdentityHistory
       responses:
         '200':
           description: A successful response.
@@ -1363,10 +1363,10 @@ paths:
           type: string
       tags:
         - Query
-  '/commercionetwork/documents/document/{UUID}':
+  '/fury/documents/document/{UUID}':
     get:
       summary: Queries a Document by id.
-      operationId: CommercionetworkCommercionetworkDocumentsDocument
+      operationId: TessornetworkFurykycDocumentsDocument
       responses:
         '200':
           description: A successful response.
@@ -1461,9 +1461,9 @@ paths:
           type: string
       tags:
         - Query
-  '/commercionetwork/documents/document/{UUID}/receipts':
+  '/fury/documents/document/{UUID}/receipts':
     get:
-      operationId: CommercionetworkCommercionetworkDocumentsDocumentsReceipts
+      operationId: TessornetworkFurykycDocumentsDocumentsReceipts
       responses:
         '200':
           description: A successful response.
@@ -1595,10 +1595,10 @@ paths:
           type: boolean
       tags:
         - Query
-  '/commercionetwork/documents/document/{address}/received':
+  '/fury/documents/document/{address}/received':
     get:
       summary: Queries a list of received Document items.
-      operationId: CommercionetworkCommercionetworkDocumentsReceivedDocument
+      operationId: TessornetworkFurykycDocumentsReceivedDocument
       responses:
         '200':
           description: A successful response.
@@ -1778,10 +1778,10 @@ paths:
           type: boolean
       tags:
         - Query
-  '/commercionetwork/documents/document/{address}/sent':
+  '/fury/documents/document/{address}/sent':
     get:
       summary: Queries a list of sent Document items.
-      operationId: CommercionetworkCommercionetworkDocumentsSentDocuments
+      operationId: TessornetworkFurykycDocumentsSentDocuments
       responses:
         '200':
           description: A successful response.
@@ -1961,10 +1961,10 @@ paths:
           type: boolean
       tags:
         - Query
-  '/commercionetwork/documents/receipts/{address}/received':
+  '/fury/documents/receipts/{address}/received':
     get:
       summary: Queries a list of Document items.
-      operationId: CommercionetworkCommercionetworkDocumentsReceivedDocumentsReceipts
+      operationId: TessornetworkFurykycDocumentsReceivedDocumentsReceipts
       responses:
         '200':
           description: A successful response.
@@ -2096,9 +2096,9 @@ paths:
           type: boolean
       tags:
         - Query
-  '/commercionetwork/documents/receipts/{address}/sent':
+  '/fury/documents/receipts/{address}/sent':
     get:
-      operationId: CommercionetworkCommercionetworkDocumentsSentDocumentsReceipts
+      operationId: TessornetworkFurykycDocumentsSentDocumentsReceipts
       responses:
         '200':
           description: A successful response.
@@ -2230,10 +2230,10 @@ paths:
           type: boolean
       tags:
         - Query
-  /commercionetwork/epochs/current_epoch:
+  /fury/epochs/current_epoch:
     get:
       summary: CurrentEpoch provide current epoch of specified identifier
-      operationId: CommercionetworkCommercionetworkEpochsCurrentEpoch
+      operationId: TessornetworkFurykycEpochsCurrentEpoch
       responses:
         '200':
           description: A successful response.
@@ -2268,10 +2268,10 @@ paths:
           type: string
       tags:
         - Query
-  /commercionetwork/epochs/epochs:
+  /fury/epochs/epochs:
     get:
       summary: EpochInfos provide running epochInfos
-      operationId: CommercionetworkCommercionetworkEpochsEpochInfos
+      operationId: TessornetworkFurykycEpochsEpochInfos
       responses:
         '200':
           description: A successful response.
@@ -2320,10 +2320,10 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /commercionetwork/government/governmentAddress:
+  /fury/government/governmentAddress:
     get:
       summary: Queries the government address.
-      operationId: CommercionetworkCommercionetworkGovernmentGovernmentAddr
+      operationId: TessornetworkFurykycGovernmentGovernmentAddr
       responses:
         '200':
           description: A successful response.
@@ -2352,9 +2352,9 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /commercionetwork/vbr/funds:
+  /fury/vbr/funds:
     get:
-      operationId: CommercionetworkCommercionetworkVbrGetBlockRewardsPoolFunds
+      operationId: TessornetworkFurykycVbrGetBlockRewardsPoolFunds
       responses:
         '200':
           description: A successful response.
@@ -2399,9 +2399,9 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /commercionetwork/vbr/params:
+  /fury/vbr/params:
     get:
-      operationId: CommercionetworkCommercionetworkVbrGetParams
+      operationId: TessornetworkFurykycVbrGetParams
       responses:
         '200':
           description: A successful response.
@@ -35777,7 +35777,7 @@ paths:
       tags:
         - Query
 definitions:
-  commercionetwork.commercionetwork.commerciokyc.Invite:
+  tessornetwork.fury.furykyc.Invite:
     type: object
     properties:
       sender:
@@ -35789,7 +35789,7 @@ definitions:
       status:
         type: string
         format: uint64
-  commercionetwork.commercionetwork.commerciokyc.Membership:
+  tessornetwork.fury.furykyc.Membership:
     type: object
     properties:
       owner:
@@ -35801,17 +35801,17 @@ definitions:
       expiry_at:
         type: string
         format: date-time
-  commercionetwork.commercionetwork.commerciokyc.MsgAddTspResponse:
+  tessornetwork.fury.furykyc.MsgAddTspResponse:
     type: object
     properties:
       tsp:
         type: string
-  commercionetwork.commercionetwork.commerciokyc.MsgBuyMembershipResponse:
+  tessornetwork.fury.furykyc.MsgBuyMembershipResponse:
     type: object
     properties:
       expiry_at:
         type: string
-  commercionetwork.commercionetwork.commerciokyc.MsgDepositIntoLiquidityPoolResponse:
+  tessornetwork.fury.furykyc.MsgDepositIntoLiquidityPoolResponse:
     type: object
     properties:
       amount_pool:
@@ -35828,27 +35828,27 @@ definitions:
 
             NOTE: The amount field is an Int which implements the custom method
             signatures required by gogoproto.
-  commercionetwork.commercionetwork.commerciokyc.MsgInviteUserResponse:
+  tessornetwork.fury.furykyc.MsgInviteUserResponse:
     type: object
     properties:
       status:
         type: string
-  commercionetwork.commercionetwork.commerciokyc.MsgRemoveMembershipResponse:
+  tessornetwork.fury.furykyc.MsgRemoveMembershipResponse:
     type: object
     properties:
       subscriber:
         type: string
-  commercionetwork.commercionetwork.commerciokyc.MsgRemoveTspResponse:
+  tessornetwork.fury.furykyc.MsgRemoveTspResponse:
     type: object
     properties:
       tsp:
         type: string
-  commercionetwork.commercionetwork.commerciokyc.MsgSetMembershipResponse:
+  tessornetwork.fury.furykyc.MsgSetMembershipResponse:
     type: object
     properties:
       expiry_at:
         type: string
-  commercionetwork.commercionetwork.commerciokyc.QueryFundsResponse:
+  tessornetwork.fury.furykyc.QueryFundsResponse:
     type: object
     properties:
       funds:
@@ -35865,7 +35865,7 @@ definitions:
 
             NOTE: The amount field is an Int which implements the custom method
             signatures required by gogoproto.
-  commercionetwork.commercionetwork.commerciokyc.QueryInviteResponse:
+  tessornetwork.fury.furykyc.QueryInviteResponse:
     type: object
     properties:
       invite:
@@ -35880,7 +35880,7 @@ definitions:
           status:
             type: string
             format: uint64
-  commercionetwork.commercionetwork.commerciokyc.QueryInvitesResponse:
+  tessornetwork.fury.furykyc.QueryInvitesResponse:
     type: object
     properties:
       invites:
@@ -35922,7 +35922,7 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
-  commercionetwork.commercionetwork.commerciokyc.QueryMembershipResponse:
+  tessornetwork.fury.furykyc.QueryMembershipResponse:
     type: object
     properties:
       membership:
@@ -35937,7 +35937,7 @@ definitions:
           expiry_at:
             type: string
             format: date-time
-  commercionetwork.commercionetwork.commerciokyc.QueryMembershipsResponse:
+  tessornetwork.fury.furykyc.QueryMembershipsResponse:
     type: object
     properties:
       memberships:
@@ -35979,7 +35979,7 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
-  commercionetwork.commercionetwork.commerciokyc.QueryTspsResponse:
+  tessornetwork.fury.furykyc.QueryTspsResponse:
     type: object
     properties:
       tsps:
@@ -36397,7 +36397,7 @@ definitions:
                   "@type": "type.googleapis.com/google.protobuf.Duration",
                   "value": "1.212s"
                 }
-  commercionetwork.commercionetwork.commerciomint.MsgBurnCCCResponse:
+  tessornetwork.fury.furymint.MsgBurnFUSDResponse:
     type: object
     properties:
       ID:
@@ -36414,21 +36414,21 @@ definitions:
 
           NOTE: The amount field is an Int which implements the custom method
           signatures required by gogoproto.
-  commercionetwork.commercionetwork.commerciomint.MsgMintCCCResponse:
+  tessornetwork.fury.furymint.MsgMintFUSDResponse:
     type: object
     properties:
       ID:
         type: string
-  commercionetwork.commercionetwork.commerciomint.MsgSetParamsResponse:
+  tessornetwork.fury.furymint.MsgSetParamsResponse:
     type: object
-  commercionetwork.commercionetwork.commerciomint.Params:
+  tessornetwork.fury.furymint.Params:
     type: object
     properties:
       conversion_rate:
         type: string
       freeze_period:
         type: string
-  commercionetwork.commercionetwork.commerciomint.Position:
+  tessornetwork.fury.furymint.Position:
     type: object
     properties:
       owner:
@@ -36455,7 +36455,7 @@ definitions:
         type: string
       exchange_rate:
         type: string
-  commercionetwork.commercionetwork.commerciomint.QueryEtpResponse:
+  tessornetwork.fury.furymint.QueryEtpResponse:
     type: object
     properties:
       Position:
@@ -36488,7 +36488,7 @@ definitions:
             type: string
           exchange_rate:
             type: string
-  commercionetwork.commercionetwork.commerciomint.QueryEtpsResponse:
+  tessornetwork.fury.furymint.QueryEtpsResponse:
     type: object
     properties:
       Positions:
@@ -36548,7 +36548,7 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
-  commercionetwork.commercionetwork.commerciomint.QueryParamsResponse:
+  tessornetwork.fury.furymint.QueryParamsResponse:
     type: object
     properties:
       params:
@@ -36558,7 +36558,7 @@ definitions:
             type: string
           freeze_period:
             type: string
-  commercionetwork.commercionetwork.did.DidDocument:
+  tessornetwork.fury.did.DidDocument:
     type: object
     properties:
       context:
@@ -36611,7 +36611,7 @@ definitions:
               type: string
             serviceEndpoint:
               type: string
-  commercionetwork.commercionetwork.did.Identity:
+  tessornetwork.fury.did.Identity:
     type: object
     properties:
       didDocument:
@@ -36674,16 +36674,16 @@ definitions:
             type: string
           updated:
             type: string
-  commercionetwork.commercionetwork.did.Metadata:
+  tessornetwork.fury.did.Metadata:
     type: object
     properties:
       created:
         type: string
       updated:
         type: string
-  commercionetwork.commercionetwork.did.MsgSetIdentityResponse:
+  tessornetwork.fury.did.MsgSetIdentityResponse:
     type: object
-  commercionetwork.commercionetwork.did.QueryResolveIdentityHistoryResponse:
+  tessornetwork.fury.did.QueryResolveIdentityHistoryResponse:
     type: object
     properties:
       identities:
@@ -36751,7 +36751,7 @@ definitions:
                   type: string
                 updated:
                   type: string
-  commercionetwork.commercionetwork.did.QueryResolveIdentityResponse:
+  tessornetwork.fury.did.QueryResolveIdentityResponse:
     type: object
     properties:
       identity:
@@ -36817,7 +36817,7 @@ definitions:
                 type: string
               updated:
                 type: string
-  commercionetwork.commercionetwork.did.Service:
+  tessornetwork.fury.did.Service:
     type: object
     properties:
       ID:
@@ -36826,7 +36826,7 @@ definitions:
         type: string
       serviceEndpoint:
         type: string
-  commercionetwork.commercionetwork.did.VerificationMethod:
+  tessornetwork.fury.did.VerificationMethod:
     type: object
     properties:
       ID:
@@ -36837,7 +36837,7 @@ definitions:
         type: string
       publicKeyMultibase:
         type: string
-  commercionetwork.commercionetwork.documents.Document:
+  tessornetwork.fury.documents.Document:
     type: object
     properties:
       sender:
@@ -36900,14 +36900,14 @@ definitions:
             type: string
           certificateProfile:
             type: string
-  commercionetwork.commercionetwork.documents.DocumentChecksum:
+  tessornetwork.fury.documents.DocumentChecksum:
     type: object
     properties:
       value:
         type: string
       algorithm:
         type: string
-  commercionetwork.commercionetwork.documents.DocumentDoSign:
+  tessornetwork.fury.documents.DocumentDoSign:
     type: object
     properties:
       storageURI:
@@ -36922,7 +36922,7 @@ definitions:
         type: string
       certificateProfile:
         type: string
-  commercionetwork.commercionetwork.documents.DocumentEncryptionData:
+  tessornetwork.fury.documents.DocumentEncryptionData:
     type: object
     properties:
       keys:
@@ -36938,14 +36938,14 @@ definitions:
         type: array
         items:
           type: string
-  commercionetwork.commercionetwork.documents.DocumentEncryptionKey:
+  tessornetwork.fury.documents.DocumentEncryptionKey:
     type: object
     properties:
       recipient:
         type: string
       Value:
         type: string
-  commercionetwork.commercionetwork.documents.DocumentMetadata:
+  tessornetwork.fury.documents.DocumentMetadata:
     type: object
     properties:
       contentURI:
@@ -36957,14 +36957,14 @@ definitions:
             type: string
           version:
             type: string
-  commercionetwork.commercionetwork.documents.DocumentMetadataSchema:
+  tessornetwork.fury.documents.DocumentMetadataSchema:
     type: object
     properties:
       URI:
         type: string
       version:
         type: string
-  commercionetwork.commercionetwork.documents.DocumentReceipt:
+  tessornetwork.fury.documents.DocumentReceipt:
     type: object
     properties:
       UUID:
@@ -36979,17 +36979,17 @@ definitions:
         type: string
       proof:
         type: string
-  commercionetwork.commercionetwork.documents.MsgSendDocumentReceiptResponse:
+  tessornetwork.fury.documents.MsgSendDocumentReceiptResponse:
     type: object
     properties:
       UUID:
         type: string
-  commercionetwork.commercionetwork.documents.MsgShareDocumentResponse:
+  tessornetwork.fury.documents.MsgShareDocumentResponse:
     type: object
     properties:
       UUID:
         type: string
-  commercionetwork.commercionetwork.documents.QueryGetDocumentResponse:
+  tessornetwork.fury.documents.QueryGetDocumentResponse:
     type: object
     properties:
       Document:
@@ -37055,7 +37055,7 @@ definitions:
                 type: string
               certificateProfile:
                 type: string
-  commercionetwork.commercionetwork.documents.QueryGetDocumentsReceiptsResponse:
+  tessornetwork.fury.documents.QueryGetDocumentsReceiptsResponse:
     type: object
     properties:
       Receipts:
@@ -37100,7 +37100,7 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
-  commercionetwork.commercionetwork.documents.QueryGetReceivedDocumentResponse:
+  tessornetwork.fury.documents.QueryGetReceivedDocumentResponse:
     type: object
     properties:
       ReceivedDocument:
@@ -37193,7 +37193,7 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
-  commercionetwork.commercionetwork.documents.QueryGetReceivedDocumentsReceiptsResponse:
+  tessornetwork.fury.documents.QueryGetReceivedDocumentsReceiptsResponse:
     type: object
     properties:
       ReceiptReceived:
@@ -37238,7 +37238,7 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
-  commercionetwork.commercionetwork.documents.QueryGetSentDocumentsReceiptsResponse:
+  tessornetwork.fury.documents.QueryGetSentDocumentsReceiptsResponse:
     type: object
     properties:
       receipt:
@@ -37283,7 +37283,7 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
-  commercionetwork.commercionetwork.documents.QueryGetSentDocumentsResponse:
+  tessornetwork.fury.documents.QueryGetSentDocumentsResponse:
     type: object
     properties:
       Document:
@@ -37376,7 +37376,7 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
-  commercionetwork.commercionetwork.epochs.EpochInfo:
+  tessornetwork.fury.epochs.EpochInfo:
     type: object
     properties:
       identifier:
@@ -37396,13 +37396,13 @@ definitions:
         type: boolean
       current_epoch_ended:
         type: boolean
-  commercionetwork.commercionetwork.epochs.QueryCurrentEpochResponse:
+  tessornetwork.fury.epochs.QueryCurrentEpochResponse:
     type: object
     properties:
       current_epoch:
         type: string
         format: int64
-  commercionetwork.commercionetwork.epochs.QueryEpochsInfoResponse:
+  tessornetwork.fury.epochs.QueryEpochsInfoResponse:
     type: object
     properties:
       epochs:
@@ -37427,18 +37427,18 @@ definitions:
               type: boolean
             current_epoch_ended:
               type: boolean
-  commercionetwork.commercionetwork.government.MsgSetGovAddressResponse:
+  tessornetwork.fury.government.MsgSetGovAddressResponse:
     type: object
-  commercionetwork.commercionetwork.government.QueryGovernmentAddrResponse:
+  tessornetwork.fury.government.QueryGovernmentAddrResponse:
     type: object
     properties:
       governmentAddress:
         type: string
-  commercionetwork.commercionetwork.vbr.MsgIncrementBlockRewardsPoolResponse:
+  tessornetwork.fury.vbr.MsgIncrementBlockRewardsPoolResponse:
     type: object
-  commercionetwork.commercionetwork.vbr.MsgSetParamsResponse:
+  tessornetwork.fury.vbr.MsgSetParamsResponse:
     type: object
-  commercionetwork.commercionetwork.vbr.Params:
+  tessornetwork.fury.vbr.Params:
     type: object
     properties:
       distr_epoch_identifier:
@@ -37447,7 +37447,7 @@ definitions:
       earn_rate:
         type: string
     title: Params holds parameters for the incentives module
-  commercionetwork.commercionetwork.vbr.QueryGetBlockRewardsPoolFundsResponse:
+  tessornetwork.fury.vbr.QueryGetBlockRewardsPoolFundsResponse:
     type: object
     properties:
       funds:
@@ -37464,7 +37464,7 @@ definitions:
 
             NOTE: The amount field is an Dec which implements the custom method
             signatures required by gogoproto.
-  commercionetwork.commercionetwork.vbr.QueryGetParamsResponse:
+  tessornetwork.fury.vbr.QueryGetParamsResponse:
     type: object
     properties:
       params:

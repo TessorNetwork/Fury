@@ -1,14 +1,14 @@
 # CommercioMint
 
 The `commerciomint` module is the one that allows you to create Exchange Trade Position (*ETPs*) using your 
-Commercio.network tokens (*ucommercio*) in order to get Commercio Cash Credits (*uccc*) in return.
+Commercio.network tokens (*ufury*) in order to get Commercio Cash Credits (*uccc*) in return.
 
 A *Exchange Trade Position* (*ETP*) is a core component of the Commercio Network blockchain whose purpose is to
-create Commercio Cash Credits (`uccc`) in exchange for Commercio Tokens (`ucommercio`) which it then holds in
+create Commercio Cash Credits (`uccc`) in exchange for Commercio Tokens (`ufury`) which it then holds in
 escrow until the borrowed Commercio Cash Credits are returned.
 
-In simple words, opening a ETP allows you to exchange any amount of `ucommercio` to get relative the amount of `uccc` with relative Conversion Rate value. 
-For example, if you open a ETP lending `100 ucommercio` with 1.1 Conversion Rate value will result in you receiving `90 uccc` (approximation by default).  
+In simple words, opening a ETP allows you to exchange any amount of `ufury` to get relative the amount of `uccc` with relative Conversion Rate value. 
+For example, if you open a ETP lending `100 ufury` with 1.1 Conversion Rate value will result in you receiving `90 uccc` (approximation by default).  
 Initial Conversion Rate value is 1.0.       
 
 ## Transactions

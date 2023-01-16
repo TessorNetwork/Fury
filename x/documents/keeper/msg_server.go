@@ -3,9 +3,9 @@ package keeper
 import (
 	"context"
 
-	"github.com/commercionetwork/commercionetwork/x/documents/types"
+	"github.com/tessornetwork/fury/x/documents/types"
 
-	ctypes "github.com/commercionetwork/commercionetwork/x/common/types"
+	ctypes "github.com/tessornetwork/fury/x/common/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

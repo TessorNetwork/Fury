@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	ctypes "github.com/commercionetwork/commercionetwork/x/common/types"
-	"github.com/commercionetwork/commercionetwork/x/did/types"
+	ctypes "github.com/tessornetwork/fury/x/common/types"
+	"github.com/tessornetwork/fury/x/did/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

@@ -4,7 +4,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/commercionetwork/commercionetwork/x/documents/types"
+	"github.com/tessornetwork/fury/x/documents/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/client/tx"

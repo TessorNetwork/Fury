@@ -13,7 +13,7 @@ import (
 
 	"strings"
 
-	"github.com/commercionetwork/commercionetwork/x/common/types"
+	"github.com/tessornetwork/fury/x/common/types"
 )
 
 const (
@@ -63,8 +63,8 @@ type GenesisState struct {
 // --- Document
 // -----------------
 type Document struct {
-	Sender         sdk.AccAddress          `json:"sender" swaggertype:"string" example:"did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"`
-	Recipients     types.Addresses         `json:"recipients" swaggertype:"array,string" example:"did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"`
+	Sender         sdk.AccAddress          `json:"sender" swaggertype:"string" example:"did:fury:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"`
+	Recipients     types.Addresses         `json:"recipients" swaggertype:"array,string" example:"did:fury:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"`
 	UUID           string                  `json:"uuid" swaggertype:"string" example:"d0f6c692-506f-4bd7-bdf4-f6693633d1da"`
 	Metadata       DocumentMetadata        `json:"metadata"`
 	ContentURI     string                  `json:"content_uri,omitempty"`     // Optional

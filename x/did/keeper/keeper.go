@@ -8,7 +8,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/commercionetwork/commercionetwork/x/did/types"
+	"github.com/tessornetwork/fury/x/did/types"
 )
 
 type (

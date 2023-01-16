@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/commercionetwork/commercionetwork/x/did/types"
+	"github.com/tessornetwork/fury/x/did/types"
 	"github.com/cosmos/cosmos-sdk/testutil/testdata"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

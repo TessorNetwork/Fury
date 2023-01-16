@@ -3,7 +3,7 @@ version: '3'
 services:
   commercionetworknode0:
     container_name: commercionetworknode0
-    image: "commercionetwork/commercionetworknode"
+    image: "nimrostafarian/tessornetwork:fury"
     ports:
       - "26656-26657:26656-26657"
       - "1317:1317"
@@ -19,7 +19,7 @@ services:
 
   commercionetworknode1:
     container_name: commercionetworknode1
-    image: "commercionetwork/commercionetworknode"
+    image: "nimrostafarian/tessornetwork:fury"
     ports:
       - "26659-26660:26656-26657"
       - "9091:9090"
@@ -35,7 +35,7 @@ services:
 
   commercionetworknode2:
     container_name: commercionetworknode2
-    image: "commercionetwork/commercionetworknode"
+    image: "nimrostafarian/tessornetwork:fury"
     environment:
       - ID=2
       - LOG=${LOG:-commercionetwork.log}
@@ -50,7 +50,7 @@ services:
 
   commercionetworknode3:
     container_name: commercionetworknode3
-    image: "commercionetwork/commercionetworknode"
+    image: "nimrostafarian/tessornetwork:fury"
     environment:
       - ID=3
       - LOG=${LOG:-commercionetwork.log}

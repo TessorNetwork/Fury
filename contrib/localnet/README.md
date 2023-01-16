@@ -59,10 +59,10 @@ make clean
 If there are no problems, the nodes listen on the follow ports
 
 ```
-commercionetworknode0   0.0.0.0:26656-26657->26656-26657/tcp, 0.0.0.0:9090->9090/tcp, 0.0.0.0:1317->1317/tcp              
-commercionetworknode1   0.0.0.0:26659->26656/tcp, 0.0.0.0:26660->26657/tcp, 0.0.0.0:9091->9090/tcp
-commercionetworknode2   0.0.0.0:26661->26656/tcp, 0.0.0.0:26662->26657/tcp, 0.0.0.0:9092->9090/tcp   
-commercionetworknode3   0.0.0.0:26663->26656/tcp, 0.0.0.0:26664->26657/tcp, 0.0.0.0:9093->9090/tcp
+furynode0   0.0.0.0:26656-26657->26656-26657/tcp, 0.0.0.0:9090->9090/tcp, 0.0.0.0:1317->1317/tcp              
+furynode1   0.0.0.0:26659->26656/tcp, 0.0.0.0:26660->26657/tcp, 0.0.0.0:9091->9090/tcp
+furynode2   0.0.0.0:26661->26656/tcp, 0.0.0.0:26662->26657/tcp, 0.0.0.0:9092->9090/tcp   
+furynode3   0.0.0.0:26663->26656/tcp, 0.0.0.0:26664->26657/tcp, 0.0.0.0:9093->9090/tcp
 ```
 
 Lcd and Rpc + websocket + Grpc
@@ -107,18 +107,18 @@ Every node configs are under
 
 
 ```
-/build/node<N>/commercionetwork/config
+/build/node<N>/fury/config
 ```
 
 Logs
 
 ```
-/build/node<N>/commercionetwork/commercionetwork.log
+/build/node<N>/tessornetwork/fury.log
 ```
 
 ## Add Node
 
-If you want add a new node you can start a new container of `commercionetworknode` with new configuration
+If you want add a new node you can start a new container of `furynode` with new configuration
 
 ### Compile binary
 
@@ -133,20 +133,20 @@ make build
 
 
 ```bash
-./build/commercionetworkd init node4 --home ./build/node4/commercionetwork
+./build/furyd init node4 --home ./build/node4/fury
 ```
 
 ### Copy default genesis in config file
 
 ```bash
-cp ./build/base_config/genesis.json ./build/node4/commercionetwork/config/
+cp ./build/base_config/genesis.json ./build/node4/fury/config/
 ```
 
 ### Setup persistent
 
 ```bash
 PERSISTENT=$(cat ./build/base_config/persistent.txt)
-sed -i -e "s/persistent_peers = \".*\"/persistent_peers = \"$PERSISTENT\"/g" ./build/node4/commercionetwork/config/config.toml
+sed -i -e "s/persistent_peers = \".*\"/persistent_peers = \"$PERSISTENT\"/g" ./build/node4/fury/config/config.toml
 ```
 
 ### Start docker node
@@ -155,15 +155,15 @@ sed -i -e "s/persistent_peers = \".*\"/persistent_peers = \"$PERSISTENT\"/g" ./b
 
 ```bash
 docker run \
-   -v $(pwd)/build:/commercionetwork:Z \
+   -v $(pwd)/build:/fury:Z \
    -e ID=4 \
    -p 26691-26692:26656-26657 \
    -p 9191:9090 \
    --ip 192.168.10.10 \
    --name node4 \
-   --network commercionetwork_localnet \
+   --network fury_localnet \
    -d \
-   commercionetwork/commercionetworknode
+   tessornetwork/furynode
 ```
 
 
@@ -180,9 +180,9 @@ docker logs node4 -f
 You can discover the account with a lot of tokens in the first node using
 
 ```bash
-./build/commercionetworkd keys list \
+./build/furyd keys list \
   --keyring-backend test \
-  --home ./build/node0/commercionetwork/
+  --home ./build/node0/fury/
 ```
 
 The output should be something like below
@@ -200,9 +200,9 @@ The output should be something like below
 Create a new wallet with
 
 ```
-./build/commercionetworkd keys add wc_node4 \
+./build/furyd keys add wc_node4 \
   --keyring-backend test \
-  --home ./build/node4/commercionetwork/
+  --home ./build/node4/fury/
 ```
 
 The output should be something like below
@@ -229,21 +229,21 @@ Transfer a minumun amount of token to the new wallet from the first one to creat
 # did:com:1fm4ktq7t2282kmgcsptgm3j7f4k58r4zswseqw is the wallet in the first node with a lot of tokens
 # did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl is the wallet that you created before
 
-./build/commercionetworkd tx bank send \
+./build/furyd tx bank send \
   did:com:1fm4ktq7t2282kmgcsptgm3j7f4k58r4zswseqw \
   did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl \
-  20000000ucommercio \
+  20000000ufury \
   --keyring-backend test \
-  --home ./build/node0/commercionetwork/ \
+  --home ./build/node0/fury/ \
   --chain-id $(jq -r '.chain_id' ./build/base_config/genesis.json) \
-  --fees 10000ucommercio \
+  --fees 10000ufury \
   -y
 ```
 
 Check the balances of your wallet
 
 ```bash
-./build/commercionetworkd \
+./build/furyd \
   query bank balances \
   did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl
 ```
@@ -253,13 +253,13 @@ Create validator
 ```bash
 NODENAME=node4
 CHAINID=$(jq -r '.chain_id' ./build/base_config/genesis.json)
-VALIDATOR_PUBKEY=$(./build/commercionetworkd \
+VALIDATOR_PUBKEY=$(./build/furyd \
   tendermint show-validator \
-  --home ./build/node4/commercionetwork/)
+  --home ./build/node4/fury/)
 WALLET_CREATOR="did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl"
 
-./build/commercionetworkd tx staking create-validator \
-  --amount=1000000ucommercio \
+./build/furyd tx staking create-validator \
+  --amount=1000000ufury \
   --pubkey=$VALIDATOR_PUBKEY \
   --moniker="$NODENAME" \
   --chain-id="$CHAINID" \
@@ -272,13 +272,13 @@ WALLET_CREATOR="did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl"
   --min-self-delegation="1" \
   --from=$WALLET_CREATOR \
   --keyring-backend test \
-  --home ./build/node4/commercionetwork/ \
-  --fees=10000ucommercio \
+  --home ./build/node4/fury/ \
+  --fees=10000ufury \
   -y
 ```
 
 Check if your validator is present
 
 ```bash
-./build/commercionetworkd query staking validators
+./build/furyd query staking validators
 ```

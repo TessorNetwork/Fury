@@ -1,0 +1,13 @@
+syntax = "proto3";
+package tessornetwork.fury.did;
+
+// Options section
+option go_package = "github.com/tessornetwork/fury/x/did/types";
+
+// Import section
+import "fury/did/identity.proto";
+
+// GenesisState defines the did module's genesis state.
+message GenesisState {
+  repeated Identity identities = 1;
+}

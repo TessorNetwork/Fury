@@ -3,7 +3,7 @@ package keeper
 import (
 	"fmt"
 
-	"github.com/commercionetwork/commercionetwork/x/documents/types"
+	"github.com/tessornetwork/fury/x/documents/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkErr "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/gofrs/uuid"

@@ -59,7 +59,7 @@ to use for transactions that include that message.
                 }, 
                 {
                   "key": "amount", 
-                  "value": "51000000000ucommercio"
+                  "value": "51000000000ufury"
                 }
               ], 
               "type": "transfer"
@@ -69,7 +69,7 @@ to use for transactions that include that message.
           "msg_index": 0
         }
       ], 
-      "raw_log": "[{\"msg_index\":0,\"log\":\"\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"send\"},{\"key\":\"sender\",\"value\":\"did:com:1t5fz439f49zv39pmh73c2lvuhwfzqj0ze3kzj2\"},{\"key\":\"module\",\"value\":\"bank\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"did:com:1j0ge8wgxcwx4l50lxkam5zkhqv28r7xyxt4zyp\"},{\"key\":\"amount\",\"value\":\"51000000000ucommercio\"}]}]}]", 
+      "raw_log": "[{\"msg_index\":0,\"log\":\"\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"send\"},{\"key\":\"sender\",\"value\":\"did:com:1t5fz439f49zv39pmh73c2lvuhwfzqj0ze3kzj2\"},{\"key\":\"module\",\"value\":\"bank\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"did:com:1j0ge8wgxcwx4l50lxkam5zkhqv28r7xyxt4zyp\"},{\"key\":\"amount\",\"value\":\"51000000000ufury\"}]}]}]", 
       "timestamp": "2020-04-16T14:32:21Z", 
       "tx": {
         "type": "cosmos-sdk/StdTx", 
@@ -78,7 +78,7 @@ to use for transactions that include that message.
             "amount": [
               {
                 "amount": "10000", 
-                "denom": "ucommercio"
+                "denom": "ufury"
               }
             ], 
             "gas": "200000"
@@ -91,7 +91,7 @@ to use for transactions that include that message.
                 "amount": [
                   {
                     "amount": "51000000000", 
-                    "denom": "ucommercio"
+                    "denom": "ufury"
                   }
                 ], 
                 "from_address": "did:com:1t5fz439f49zv39pmh73c2lvuhwfzqj0ze3kzj2", 
@@ -144,7 +144,7 @@ to use for transactions that include that message.
                 }, 
                 {
                   "key": "amount", 
-                  "value": "100000000ucommercio"
+                  "value": "100000000ufury"
                 }
               ], 
               "type": "transfer"
@@ -154,7 +154,7 @@ to use for transactions that include that message.
           "msg_index": 0
         }
       ], 
-      "raw_log": "[{\"msg_index\":0,\"log\":\"\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"send\"},{\"key\":\"sender\",\"value\":\"did:com:1ejuvfc2ydcq7ym4ks052lu45kg5xk6us0srwdu\"},{\"key\":\"module\",\"value\":\"bank\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"did:com:1u9lml9fnsxz03rlgavy8zkrv9arf8ynjc9r26a\"},{\"key\":\"amount\",\"value\":\"100000000ucommercio\"}]}]}]", 
+      "raw_log": "[{\"msg_index\":0,\"log\":\"\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"send\"},{\"key\":\"sender\",\"value\":\"did:com:1ejuvfc2ydcq7ym4ks052lu45kg5xk6us0srwdu\"},{\"key\":\"module\",\"value\":\"bank\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"did:com:1u9lml9fnsxz03rlgavy8zkrv9arf8ynjc9r26a\"},{\"key\":\"amount\",\"value\":\"100000000ufury\"}]}]}]", 
       "timestamp": "2020-04-16T15:00:14Z", 
       "tx": {
         "type": "cosmos-sdk/StdTx", 
@@ -163,7 +163,7 @@ to use for transactions that include that message.
             "amount": [
               {
                 "amount": "10000", 
-                "denom": "ucommercio"
+                "denom": "ufury"
               }
             ], 
             "gas": "200000"
@@ -176,7 +176,7 @@ to use for transactions that include that message.
                 "amount": [
                   {
                     "amount": "100000000", 
-                    "denom": "ucommercio"
+                    "denom": "ufury"
                   }
                 ], 
                 "from_address": "did:com:1ejuvfc2ydcq7ym4ks052lu45kg5xk6us0srwdu", 
@@ -229,7 +229,7 @@ to use for transactions that include that message.
                 }, 
                 {
                   "key": "amount", 
-                  "value": "1000000ucommercio"
+                  "value": "1000000ufury"
                 }
               ], 
               "type": "transfer"
@@ -239,7 +239,7 @@ to use for transactions that include that message.
           "msg_index": 0
         }
       ], 
-      "raw_log": "[{\"msg_index\":0,\"log\":\"\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"send\"},{\"key\":\"sender\",\"value\":\"did:com:1ejuvfc2ydcq7ym4ks052lu45kg5xk6us0srwdu\"},{\"key\":\"module\",\"value\":\"bank\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"did:com:1mezjl60v8alvkfw9ax00sq2sjglhdznl67c25j\"},{\"key\":\"amount\",\"value\":\"1000000ucommercio\"}]}]}]", 
+      "raw_log": "[{\"msg_index\":0,\"log\":\"\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"send\"},{\"key\":\"sender\",\"value\":\"did:com:1ejuvfc2ydcq7ym4ks052lu45kg5xk6us0srwdu\"},{\"key\":\"module\",\"value\":\"bank\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"did:com:1mezjl60v8alvkfw9ax00sq2sjglhdznl67c25j\"},{\"key\":\"amount\",\"value\":\"1000000ufury\"}]}]}]", 
       "timestamp": "2020-04-16T15:00:24Z", 
       "tx": {
         "type": "cosmos-sdk/StdTx", 
@@ -248,7 +248,7 @@ to use for transactions that include that message.
             "amount": [
               {
                 "amount": "10000", 
-                "denom": "ucommercio"
+                "denom": "ufury"
               }
             ], 
             "gas": "200000"
@@ -261,7 +261,7 @@ to use for transactions that include that message.
                 "amount": [
                   {
                     "amount": "1000000", 
-                    "denom": "ucommercio"
+                    "denom": "ufury"
                   }
                 ], 
                 "from_address": "did:com:1ejuvfc2ydcq7ym4ks052lu45kg5xk6us0srwdu", 

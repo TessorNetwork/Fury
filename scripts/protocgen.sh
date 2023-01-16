@@ -33,6 +33,6 @@ Mgoogle/protobuf/any.proto=github.com/cosmos/cosmos-sdk/codec/types:. \
   $(find "${dir}" -maxdepth 1 -name '*.proto')
 done
 
-cp -r ./github.com/commercionetwork/commercionetwork/* ./
+cp -r ./github.com/tessornetwork/fury/* ./
 rm -rf ./github.com
 go mod tidy

@@ -7,7 +7,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/client"
 
-	"github.com/commercionetwork/commercionetwork/x/did/types"
+	"github.com/tessornetwork/fury/x/did/types"
 )
 
 // GetQueryCmd returns the cli query commands for this module

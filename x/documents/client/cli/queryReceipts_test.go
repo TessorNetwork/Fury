@@ -3,8 +3,8 @@ package cli_test
 import (
 	"testing"
 
-	"github.com/commercionetwork/commercionetwork/x/documents/client/cli"
-	"github.com/commercionetwork/commercionetwork/x/documents/types"
+	"github.com/tessornetwork/fury/x/documents/client/cli"
+	"github.com/tessornetwork/fury/x/documents/types"
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	"github.com/stretchr/testify/require"
 )

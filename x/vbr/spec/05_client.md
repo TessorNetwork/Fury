@@ -12,7 +12,7 @@ Increments the block rewards pool's liquidity by the given amount denom
 
 
 ```bash
-commercionetworkd tx vbr deposit \
+furyd tx vbr deposit \
   [amount denom]
 ```
 
@@ -28,7 +28,7 @@ commercionetworkd tx vbr deposit \
 #### CLI
 
 ```bash
-commercionetworkd tx vbr set-params \
+furyd tx vbr set-params \
   [epoch_identifier] \
   [earn_rate]
 ```
@@ -49,7 +49,7 @@ commercionetworkd tx vbr set-params \
 #### CLI
 
 ```bash
-commercionetworkd query vbr pool-funds
+furyd query vbr pool-funds
 ```
 
 #### gRPC
@@ -72,7 +72,7 @@ grpcurl -plaintext \
 {
   "funds": [
     {
-      "denom": "ucommercio",
+      "denom": "ufury",
       "amount": "10161937347246000000000000000000"
     }
   ]
@@ -100,7 +100,7 @@ http://localhost:1317/commercionetwork/vbr/funds
 {
   "funds": [
     {
-      "denom": "ucommercio",
+      "denom": "ufury",
       "amount": "10000000.000000000000000000"
     }
   ]
@@ -112,7 +112,7 @@ http://localhost:1317/commercionetwork/vbr/funds
 #### CLI
 
 ```bash
-commercionetworkd query vbr get-params
+furyd query vbr get-params
 ```
 
 #### gRPC

@@ -3,11 +3,11 @@ Inside the following page you will learn how to start a new Commercio.network ch
 in order to perform some tests without connecting to the testnet or mainnet. 
 
 ## Installation
-In order to start a local test chain you will need to install the latest `cnd` and `cncli` binaries. 
+In order to start a local test chain you will need to install the latest `fyd` and `cncli` binaries. 
 To do so, please execute the following commands:
 
 ```bash
-git clone https://github.com/commercionetwork/commercionetwork
+git clone https://github.com/tessornetwork/fury
 cd commercionetwork
 make install
 ``` 
@@ -15,14 +15,14 @@ make install
 The output should look like the following: 
 
 ```
-GO111MODULE=on go install -tags " ledger" ./cmd/cnd
+GO111MODULE=on go install -tags " ledger" ./cmd/fyd
 GO111MODULE=on go install -tags " ledger" ./cmd/cncli
 ``` 
 
 Now, you should be able to execute the following command: 
 
 ```
-cnd version
+fyd version
 ```
 
 If the version number is printed properly, you are ready to go.
@@ -41,20 +41,20 @@ In order to start a chain without any problem, you will need to reset everything
 To do so, execute the following commands: 
 
 ```bash
-rm -r ~/.cnd
-cnd unsafe-reset-all
+rm -r ~/.fyd
+fyd unsafe-reset-all
 ```
 
 :::warning  
 This will remove all the previous chain data so please make sure to backup 
-the `~/.cnd` folder just in case you need the data back later.   
+the `~/.fyd` folder just in case you need the data back later.   
 :::
 
 ### 2. Init a new chain
 To initialize a new chain, please execute the following command: 
 
 ```
-cnd init testchain --overwrite
+fyd init testchain --overwrite
 ``` 
 
 ### 3. Setup the genesis data
@@ -95,29 +95,29 @@ Once you have create a local key, you can execute the following commands:
 
 ```shell
 # Add some funds to the account
-cnd add-genesis-account $(cncli keys show jack --address) 10000000000000ucommercio
+fyd add-genesis-account $(cncli keys show jack --address) 10000000000000ufury
 
 # Set the account to be the government
-cnd set-genesis-government-address $(cncli keys show jack --address)
+fyd set-genesis-government-address $(cncli keys show jack --address)
 
 # Set the initial TBR pool amount
-cnd set-genesis-tbr-pool-amount 10000000000ucommercio
+fyd set-genesis-tbr-pool-amount 10000000000ufury
 
 # Optional - Set the account to be a membership minter
-cnd add-genesis-membership-minter $(cncli keys show jack --address)
+fyd add-genesis-membership-minter $(cncli keys show jack --address)
 ```
 
 After executing those commands, make sure your genesis file is valid by executing
 
 ```shell
-cnd validate-genesis
+fyd validate-genesis
 ```
 
 This should output something similar to the following text:
 
 ```
-validating genesis file at /home/user/.cnd/config/genesis.json
-File at /home/user/.cnd/config/genesis.json is a valid genesis file
+validating genesis file at /home/user/.fyd/config/genesis.json
+File at /home/user/.fyd/config/genesis.json is a valid genesis file
 ```
 
 ### 4. Collect the genesis transactions
@@ -125,15 +125,15 @@ Once you've setup the genesis file, you can create the genesis transaction and c
 To do so, please run
 
 ```shell
-cnd gentx --name jack --amount 100000000ucommercio
-cnd collect-gentxs
+fyd gentx --name jack --amount 100000000ufury
+fyd collect-gentxs
 ``` 
 
 ### 5. Start the chain
 Once all the genesis transactions have been created, you can start the chain by running
 
 ```shell
-cnd start
+fyd start
 ``` 
 
 You should now be able to see an output that looks something like the following:

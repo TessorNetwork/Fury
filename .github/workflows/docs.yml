@@ -30,7 +30,7 @@ jobs:
         node-version: '16'
     - run: npm ci
     - run: npm run docs:build
-    - run: echo "docs.commercio.network" > docs/.vuepress/dist/CNAME
+    - run: echo "docs.tessor.network" > docs/.vuepress/dist/CNAME
     - name: Init new repo in dist folder and commit generated files
       run: |
         cd docs/.vuepress/dist

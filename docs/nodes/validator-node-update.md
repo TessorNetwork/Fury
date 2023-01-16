@@ -14,16 +14,16 @@ Every upgrade event will be associated to the peculiar instructions and the vali
 
 When a minor release is publish the steps that the node should be performed are
 
-1. Enter in your node and clone the repository in your server with `git clone https://github.com/commercionetwork/commercionetwork.git` and move in the new folder `cd commercionetwork`. **If you already have the repository folder use** `cd commercionetwork; git pull`
+1. Enter in your node and clone the repository in your server with `git clone https://github.com/tessornetwork/fury.git` and move in the new folder `cd commercionetwork`. **If you already have the repository folder use** `cd commercionetwork; git pull`
 1. Checkout the code to new versione with `git checkout <version target>; git pull` where `<version target>` is the new version or tag to install
-2. Compile the new versione with the command `make build`. Control if your version is equal `<version target>` using `./build/commercionetworkd version`
-3. Stop the validator/node service with `systemctl stop commercionetworkd`
+2. Compile the new versione with the command `make build`. Control if your version is equal `<version target>` using `./build/furyd version`
+3. Stop the validator/node service with `systemctl stop furyd`
 4. Put new version of chain in the right folder:
-   1. **Cosmovisor**: copy the binary in cosmovisor current folder `cp build/commercionetworkd ~/.commercionetwork/cosmovisor/current/bin/commercionetworkd`
-   2. **Old style installation**: copy the binary in `GOBIN` path. In the most cases `cp build/commercionetworkd ~/go/bin/commercionetworkd`
+   1. **Cosmovisor**: copy the binary in cosmovisor current folder `cp build/furyd ~/.commercionetwork/cosmovisor/current/bin/furyd`
+   2. **Old style installation**: copy the binary in `GOBIN` path. In the most cases `cp build/furyd ~/go/bin/furyd`
    3. **Other enviroment**: if you have a custom env copy the new binary replacing the one on which the chain service is based
-5. Start the validator/node service with `systemctl start commercionetworkd`
-6. Check the validator/node blocks issuance with `journalctl -u commercionetworkd -f`
+5. Start the validator/node service with `systemctl start furyd`
+6. Check the validator/node blocks issuance with `journalctl -u furyd -f`
 7. Also check the validator signature blocks by looking at [Commercio Network explorer](https://mainnent.commercio.network)
 
 
@@ -36,10 +36,10 @@ Each proposal will be displayed in the explorer in this [page](https://mainnet.c
 
 Clicking one proposal you can access to the proposal details and you can vote it with keplr extension.
 
-Another way to vote is using `cli` interface of `commercionetworkd` program
+Another way to vote is using `cli` interface of `furyd` program
 
 ```bash
-commercionetworkd tx gov vote [id proposl] [option vote]
+furyd tx gov vote [id proposl] [option vote]
 ```
 
 You can vote `yes`, `no`, `abstain`, `nowithveto`.     

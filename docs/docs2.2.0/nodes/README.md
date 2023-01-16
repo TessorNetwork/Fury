@@ -5,8 +5,8 @@ and how you can create either one of them.
 
 :::tip Contribute
 
-If you have questions or comments, please create an [issue](https://github.com/commercionetwork/commercionetwork/issues).
-This is a community guide  any contribute is important! Please help us to improve by opening an [issue](https://github.com/commercionetwork/commercionetwork/issues).
+If you have questions or comments, please create an [issue](https://github.com/tessornetwork/fury/issues).
+This is a community guide  any contribute is important! Please help us to improve by opening an [issue](https://github.com/tessornetwork/fury/issues).
 
 :::
 

@@ -10,7 +10,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/commercionetwork/commercionetwork/x/vbr/types"
+	"github.com/tessornetwork/fury/x/vbr/types"
 )
 
 func NewQuerier(k Keeper, legacyQuerierCdc *codec.LegacyAmino) sdk.Querier {

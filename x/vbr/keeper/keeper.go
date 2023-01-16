@@ -6,18 +6,18 @@ import (
 	sdkErr "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/tendermint/tendermint/libs/log"
 
-	"github.com/commercionetwork/commercionetwork/x/vbr/types"
+	"github.com/tessornetwork/fury/x/vbr/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	govKeeper "github.com/commercionetwork/commercionetwork/x/government/keeper"
+	govKeeper "github.com/tessornetwork/fury/x/government/keeper"
 	accountKeeper "github.com/cosmos/cosmos-sdk/x/auth/keeper"
 	accountTypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	bankKeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 	distKeeper "github.com/cosmos/cosmos-sdk/x/distribution/keeper"
 
-	ctypes "github.com/commercionetwork/commercionetwork/x/common/types"
-	epochsKeeper "github.com/commercionetwork/commercionetwork/x/epochs/keeper"
+	ctypes "github.com/tessornetwork/fury/x/common/types"
+	epochsKeeper "github.com/tessornetwork/fury/x/epochs/keeper"
 	distributionTypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
 	stakingKeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"

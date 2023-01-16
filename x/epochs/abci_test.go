@@ -4,10 +4,10 @@ import (
 	"testing"
 	"time"
 
-	simapp "github.com/commercionetwork/commercionetwork/testutil/simapp"
-	"github.com/commercionetwork/commercionetwork/x/epochs"
-	"github.com/commercionetwork/commercionetwork/x/epochs/types"
-	vbrtypes "github.com/commercionetwork/commercionetwork/x/vbr/types"
+	simapp "github.com/tessornetwork/fury/testutil/simapp"
+	"github.com/tessornetwork/fury/x/epochs"
+	"github.com/tessornetwork/fury/x/epochs/types"
+	vbrtypes "github.com/tessornetwork/fury/x/vbr/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/stretchr/testify/require"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
@@ -17,7 +17,7 @@ func TestEpochInfoChangesBeginEndBlockersAndInitGenesis(t *testing.T) {
 	app := simapp.New("")
 	var epochInfo types.EpochInfo
 
-	header := tmproto.Header{ChainID: "commercionetwork"}
+	header := tmproto.Header{ChainID: "fury-1"}
 	header.Height = 1
 	ctx := app.BaseApp.NewContext(false, header)
 	app.AccountKeeper.SetParams(ctx, authtypes.DefaultParams())

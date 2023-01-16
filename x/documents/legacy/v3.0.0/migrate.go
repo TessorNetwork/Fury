@@ -3,8 +3,8 @@ package v3_0_0
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	v220docs "github.com/commercionetwork/commercionetwork/x/documents/legacy/v2.2.0"
-	"github.com/commercionetwork/commercionetwork/x/documents/types"
+	v220docs "github.com/tessornetwork/fury/x/documents/legacy/v2.2.0"
+	"github.com/tessornetwork/fury/x/documents/types"
 )
 
 // Migrate accepts exported genesis state from v2.2.0 and migrates it to v3.0.0

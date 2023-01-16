@@ -5,7 +5,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/commercionetwork/commercionetwork/x/vbr/types"
+	"github.com/tessornetwork/fury/x/vbr/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/client/tx"
@@ -51,7 +51,7 @@ func CmdSetParams() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "set-params [epoch_identifier] [earn_rate]",
 		Short: "Set the vbr params with epoch identifier(i.e. \"day\" and the vbr earn rate percentage(Dec))",
-		Long:  "Example usage:\n commercionetworkd tx vbr set-params day 0.500000000000000000 --from ",
+		Long:  "Example usage:\n furyd tx vbr set-params day 0.500000000000000000 --from ",
 		Args:  cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientTxContext(cmd)

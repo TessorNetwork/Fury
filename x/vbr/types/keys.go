@@ -20,7 +20,7 @@ const (
 	EpochMinute = "minute"
 	EpochMonth  = "month"
 
-	BondDenom = "ucommercio"
+	BondDenom = "ufury"
 )
 
 // TODO: use KeyPrefix function if needed

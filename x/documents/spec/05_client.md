@@ -11,7 +11,7 @@ order: 5
 #### CLI
 
 ```bash
-commercionetworkd tx docs share \
+furyd tx docs share \
   [recipient] \
   [document-uuid] \
   [document-metadata-uri] \
@@ -51,7 +51,7 @@ commercionetworkd tx docs share \
 #### CLI
 
 ```bash
-commercionetworkd tx docs send-receipt [recipient] [tx-hash] [document-uuid] [proof]
+furyd tx docs send-receipt [recipient] [tx-hash] [document-uuid] [proof]
 ```
 
 **Parameters:**
@@ -72,7 +72,7 @@ This command generates a random UUID for the receipt.
 #### CLI
 
 ```bash
-commercionetworkd query docs sent-documents [address]
+furyd query docs sent-documents [address]
 ```
 
 #### gRPC
@@ -167,7 +167,7 @@ http://localhost:1317/commercionetwork/documents/document/did:com:12p24st9asf394
 #### CLI
 
 ```bash
-commercionetworkd query docs received-documents [address]
+furyd query docs received-documents [address]
 ```
 
 #### gRPC
@@ -243,7 +243,7 @@ http://localhost:1317/commercionetwork/documents/document/did:com:12p24st9asf394
 #### CLI
 
 ```bash
-commercionetworkd query docs sent-receipts [address]
+furyd query docs sent-receipts [address]
 ```
 
 #### gRPC
@@ -324,7 +324,7 @@ http://localhost:1317/commercionetwork/documents/receipts/did:com:12p24st9asf394
 #### CLI
 
 ```bash
-commercionetworkd query docs received-receipts [address]
+furyd query docs received-receipts [address]
 ```
 
 #### gRPC
@@ -407,7 +407,7 @@ http://localhost:1317/commercionetwork/documents/receipts/did:com:12p24st9asf394
 #### CLI
 
 ```bash
-commercionetworkd query docs documents-receipts [documentUUID]
+furyd query docs documents-receipts [documentUUID]
 ```
 
 #### gRPC
@@ -468,7 +468,7 @@ http://localhost:1317/commercionetwork/documents/document/d83422c6-6e79-4a99-976
 #### CLI
 
 ```bash
-commercionetworkd query docs show-document [documentUUID]
+furyd query docs show-document [documentUUID]
 ```
 
 

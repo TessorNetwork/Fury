@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	v220government "github.com/commercionetwork/commercionetwork/x/government/legacy/v2.2.0"
-	"github.com/commercionetwork/commercionetwork/x/government/types"
+	v220government "github.com/tessornetwork/fury/x/government/legacy/v2.2.0"
+	"github.com/tessornetwork/fury/x/government/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

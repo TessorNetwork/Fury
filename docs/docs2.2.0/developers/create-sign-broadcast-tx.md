@@ -27,7 +27,7 @@ An example of message object is the following:
     "to_address": "<Recipient address>",
     "amount": [
       {
-        "denom" : "ucommercio",
+        "denom" : "ufury",
         "amount" : "10"
       }
     ]
@@ -84,7 +84,7 @@ This should print a JSON object similar to this:
           "amount": "10000000000000"
         },
         {
-          "denom": "ucommercio",
+          "denom": "ufury",
           "amount": "9999899990000"
         }
       ],
@@ -137,9 +137,9 @@ This should return a JSON object similar to the following one.
     }
   },
   "application_version": {
-    "name": "commercionetwork",
-    "server_name": "cnd",
-    "client_name": "cndcli",
+    "name": "fury",
+    "server_name": "fyd",
+    "client_name": "fydcli",
     "version": "2.1.0-8-gc37c4748",
     "commit": "c37c474812cb80b13622462a09bf3998c634e875",
     "build_tags": "netgo,ledger",
@@ -183,7 +183,7 @@ Using the same example data of the previous sections, a valid signature data wil
   "fee": {
     "amount": [
       {
-        "denom" : "ucommercio",
+        "denom" : "ufury",
         "amount" : "10000"
       }
     ],
@@ -198,7 +198,7 @@ Using the same example data of the previous sections, a valid signature data wil
         "to_address": "<Recipient address>",
         "amount": [
           {
-            "denom" : "ucommercio",
+            "denom" : "ufury",
             "amount" : "10"
           }
         ]
@@ -247,7 +247,7 @@ In order to do so, the following steps must be followed:
    The above JSON should then look like this:  
    
    ```json
-   {"account_number":"0","chain_id":"testnet","fee":{"amount":[{"denom":10000,"amount":"ucommercio"}],"gas":"20000"},"memo":"","msgs":[{"type":"cosmos-sdk/MsgSend","value":{"amount":[{"denom":10,"amount":"ucommercio"}],"from_address":"<Youraddress>","to_address":"<Recipientaddress>"}}],"sequence":"1"}
+   {"account_number":"0","chain_id":"testnet","fee":{"amount":[{"denom":10000,"amount":"ufury"}],"gas":"20000"},"memo":"","msgs":[{"type":"cosmos-sdk/MsgSend","value":{"amount":[{"denom":10,"amount":"ufury"}],"from_address":"<Youraddress>","to_address":"<Recipientaddress>"}}],"sequence":"1"}
    ```
 
 2. Compute the SHA-256 hash of the JSON content's byte array representation.  
@@ -358,7 +358,7 @@ The first thing that needs to be done in order to create a transaction, is to cr
         "to_address": "<Recipient address>",
         "amount": [
           {
-            "denom" : "ucommercio",
+            "denom" : "ufury",
             "amount" : "10"
           }
         ]
@@ -368,7 +368,7 @@ The first thing that needs to be done in order to create a transaction, is to cr
   "fee": {
     "amount": [
       {
-        "denom" : "ucommercio",
+        "denom" : "ufury",
         "amount" : "10000"
       }
     ],
@@ -448,7 +448,7 @@ curl -X POST http://localhost:1317/txs -d @request_body.json
           "to_address": "<Recipient address>",
           "amount": [
             {
-              "denom" : "ucommercio",
+              "denom" : "ufury",
               "amount" : "10"
             }
           ]

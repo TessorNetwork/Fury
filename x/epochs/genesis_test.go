@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	simapp "github.com/commercionetwork/commercionetwork/testutil/simapp"
-	"github.com/commercionetwork/commercionetwork/x/epochs"
-	"github.com/commercionetwork/commercionetwork/x/epochs/types"
+	simapp "github.com/tessornetwork/fury/testutil/simapp"
+	"github.com/tessornetwork/fury/x/epochs"
+	"github.com/tessornetwork/fury/x/epochs/types"
 	"github.com/stretchr/testify/require"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )

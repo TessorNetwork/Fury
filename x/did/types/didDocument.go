@@ -1,7 +1,7 @@
 package types
 
 import (
-	commons "github.com/commercionetwork/commercionetwork/x/common/types"
+	commons "github.com/tessornetwork/fury/x/common/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
 

@@ -1,0 +1,21 @@
+syntax = "proto3";
+package tessornetwork.fury.government;
+
+// Options section
+option go_package = "github.com/tessornetwork/fury/x/government/types";
+
+// Import section
+import "google/api/annotations.proto";
+
+// Query defines the gRPC querier service.
+service Query {
+	// Queries the government address.
+	rpc GovernmentAddr(QueryGovernmentAddrRequest) returns (QueryGovernmentAddrResponse) {
+		option (google.api.http).get = "/fury/government/governmentAddress";
+	}
+}
+message QueryGovernmentAddrRequest {}
+
+message QueryGovernmentAddrResponse {
+	string governmentAddress = 1;
+}

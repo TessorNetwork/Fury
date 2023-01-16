@@ -51,7 +51,7 @@ In order to use the tool is needed
 
 * `Endpoint` :  https://faucet-testnet.commercio.network/give
 * `addr` : destination address
-* `amount` : expressed in `ucommercio` 
+* `amount` : expressed in `ufury` 
 
 
 
@@ -66,7 +66,7 @@ https://faucet-testnet.commercio.network/give?addr=did:com:1tq5mvp7j4vtew08htasw
 
 **Limits**
 
-`amount` : There is a limit in the amount value of `100000000 ucommercio`
+`amount` : There is a limit in the amount value of `100000000 ufury`
 
 
 ATTENTION : Is not available a `faucet` for CCC . The Buy function (`coming soon`) in the dev.commercio.app must be used  
@@ -89,7 +89,7 @@ To use the APIs you need to :
 ## CommercioAPIs overview
 Brief overview of the available functions. Refer tho the specific APIs guide for more details.
 
-For any support or questions regarding the API or the documentation please open an <a href="https://github.com/commercionetwork/commercionetwork/issues" target="_blank">Issue </a>
+For any support or questions regarding the API or the documentation please open an <a href="https://github.com/tessornetwork/fury/issues" target="_blank">Issue </a>
 
 
 ### Swagger environement

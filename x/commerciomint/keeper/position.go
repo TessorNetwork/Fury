@@ -93,12 +93,12 @@ func (k Keeper) NewPosition(ctx sdk.Context, depositor string, deposit sdk.Coins
 	conversionRate := k.GetConversionRate(ctx)
 
 	uccDec := sdk.NewDecFromInt(ucccRequested)
-	ucommercioAmount := uccDec.Mul(conversionRate).Ceil().TruncateInt()
+	ufuryAmount := uccDec.Mul(conversionRate).Ceil().TruncateInt()
 
 	// Create ucccEmitted token
 	ucccEmitted := sdk.NewCoin(types.CreditsDenom, ucccRequested)
 
-	ucomAmount := sdk.NewCoin(types.BondDenom, ucommercioAmount)
+	ucomAmount := sdk.NewCoin(types.BondDenom, ufuryAmount)
 
 	// Create the ETP and validate it
 	position := types.NewPosition(

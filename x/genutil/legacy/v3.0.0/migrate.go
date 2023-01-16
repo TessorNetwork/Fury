@@ -103,7 +103,7 @@ func Migrate(appState types.AppMap, clientCtx client.Context) types.AppMap {
 	if appState[govtypes.ModuleName] != nil {
 		var govGenState govtypes.GenesisState
 		v040Codec.MustUnmarshalJSON(appState[govtypes.ModuleName], &govGenState)
-		coins := sdk.NewCoins(sdk.NewCoin("ucommercio", sdk.NewInt(50000000000)))
+		coins := sdk.NewCoins(sdk.NewCoin("ufury", sdk.NewInt(50000000000)))
 		govGenState.DepositParams.MinDeposit = coins
 		appState[govtypes.ModuleName] = v040Codec.MustMarshalJSON(&govGenState)
 	}

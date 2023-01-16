@@ -43,7 +43,7 @@ Always remember to pick the latest chain version listed inside [chains repo](htt
 Compile binaries 
 
 ```bash
-pkill commercionetworkd
+pkill furyd
 git init . 
 git remote add origin https://github.com/commercionetwork/commercionetwork.git
 git pull
@@ -55,7 +55,7 @@ make install
 Test if you have the correct binaries version:
 
 ```bash
-commercionetworkd version
+furyd version
 # Should output the same version written inside the .data file.
 # cat .data | grep -oP 'Release\s+\K\S+'
 ```
@@ -76,10 +76,10 @@ At this point there may be some differences if you are using `KMS` with `HSM`. S
 :::
 
 ```bash
-commercionetworkd unsafe-reset-all
+furyd unsafe-reset-all
 # If you get a error because .commercionetwork folder is not present don't worry 
 
-commercionetworkd init $NODENAME
+furyd init $NODENAME
 # If you get a error because .commercionetwork folder is present don't worry 
 ```
 
@@ -112,14 +112,14 @@ mv ~/.commercionetwork/config/config.toml.tmp  ~/.commercionetwork/config/config
 ## 4. Configure the service
 
 ```bash
-tee /etc/systemd/system/commercionetworkd.service > /dev/null <<EOF  
+tee /etc/systemd/system/furyd.service > /dev/null <<EOF  
 [Unit]
 Description=Commercio Node
 After=network-online.target
 
 [Service]
 User=root
-ExecStart=/root/go/bin/commercionetworkd start
+ExecStart=/root/go/bin/furyd start
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
@@ -197,21 +197,21 @@ Now you can start you full node. Enable the newly created server and try startin
 
 ```bash
 # Start the node  
-systemctl enable commercionetworkd  
-systemctl start commercionetworkd
+systemctl enable furyd  
+systemctl start furyd
 ```
 
 Control if the sync was started. Use `Ctrl + C` to interrupt the `journalctl` command
 
 ```bash
-journalctl -u commercionetworkd -f
+journalctl -u furyd -f
 # OUTPUT SHOULD BE LIKE BELOW
 #
-# Aug 13 16:30:20 commerciotestnet-node4 commercionetworkd[351]: I[2019-08-13|16:30:20.722] Executed block                               module=state height=1 validTxs=0 invalidTxs=0
-# Aug 13 16:30:20 commerciotestnet-node4 commercionetworkd[351]: I[2019-08-13|16:30:20.728] Committed state                              module=state height=1 txs=0 appHash=9815044185EB222CE9084AA467A156DFE6B4A0B1BAAC6751DE86BB31C83C4B08
-# Aug 13 16:30:20 commerciotestnet-node4 commercionetworkd[351]: I[2019-08-13|16:30:20.745] Executed block                               module=state height=2 validTxs=0 invalidTxs=0
-# Aug 13 16:30:20 commerciotestnet-node4 commercionetworkd[351]: I[2019-08-13|16:30:20.751] Committed state                              module=state height=2 txs=0 appHash=96BFD9C8714A79193A7913E5F091470691B195E1E6F028BC46D6B1423F7508A5
-# Aug 13 16:30:20 commerciotestnet-node4 commercionetworkd[351]: I[2019-08-13|16:30:20.771] Executed block                               module=state height=3 validTxs=0 invalidTxs=0
+# Aug 13 16:30:20 commerciotestnet-node4 furyd[351]: I[2019-08-13|16:30:20.722] Executed block                               module=state height=1 validTxs=0 invalidTxs=0
+# Aug 13 16:30:20 commerciotestnet-node4 furyd[351]: I[2019-08-13|16:30:20.728] Committed state                              module=state height=1 txs=0 appHash=9815044185EB222CE9084AA467A156DFE6B4A0B1BAAC6751DE86BB31C83C4B08
+# Aug 13 16:30:20 commerciotestnet-node4 furyd[351]: I[2019-08-13|16:30:20.745] Executed block                               module=state height=2 validTxs=0 invalidTxs=0
+# Aug 13 16:30:20 commerciotestnet-node4 furyd[351]: I[2019-08-13|16:30:20.751] Committed state                              module=state height=2 txs=0 appHash=96BFD9C8714A79193A7913E5F091470691B195E1E6F028BC46D6B1423F7508A5
+# Aug 13 16:30:20 commerciotestnet-node4 furyd[351]: I[2019-08-13|16:30:20.771] Executed block                               module=state height=3 validTxs=0 invalidTxs=0
 ```
 
 ## 6. Start the REST API
@@ -238,7 +238,7 @@ address = "tcp://0.0.0.0:1317"
 
 Apply the configuration using
 ```bash
-systemctl restart commercionetworkd
+systemctl restart furyd
 ```
 
 
@@ -274,7 +274,7 @@ mkdir -p $HOME/.commercionetwork/cosmovisor/upgrades
 
 Copy `commercionetwork` to cosmovisor folder
 ```bash
-cp $HOME/go/bin/commercionetworkd $HOME/.commercionetwork/cosmovisor/genesis/bin
+cp $HOME/go/bin/furyd $HOME/.commercionetwork/cosmovisor/genesis/bin
 ```
 
 After installation your `.commercionetwork` folder should be structured like below
@@ -293,18 +293,18 @@ After installation your `.commercionetwork` folder should be structured like bel
     └── current
     └── genesis
     └── bin
-    │   └── commercionetworkd
+    │   └── furyd
     └── upgrades
     └── <name>
         └── bin
-            └── commercionetworkd
+            └── furyd
 ```
 
 
 Configure the service:
 ```bash
 
-tee /etc/systemd/system/commercionetworkd.service > /dev/null <<EOF  
+tee /etc/systemd/system/furyd.service > /dev/null <<EOF  
 [Unit]
 Description=Commercio Network Node
 After=network.target
@@ -316,8 +316,8 @@ LimitNOFILE=4096
 Restart=always
 RestartSec=3
 
-Environment="LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/root/bin/go" # <-- set this only if you compiled "commercionetworkd" locally
-Environment="DAEMON_NAME=commercionetworkd"
+Environment="LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/root/bin/go" # <-- set this only if you compiled "furyd" locally
+Environment="DAEMON_NAME=furyd"
 Environment="DAEMON_HOME=/root/.commercionetwork"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
@@ -333,19 +333,19 @@ EOF
 
 Now you can start your full node. Enable the newly created server and try to start it using:
 ```bash
-systemctl enable commercionetworkd  
-systemctl start commercionetworkd
+systemctl enable furyd  
+systemctl start furyd
 ```
 
 Control if the sync was started. Use `Ctrl + C` to interrupt the `journalctl` command:
 ```bash
-journalctl -u commercionetworkd -f
+journalctl -u furyd -f
 ```
 
 Set env of cosmovisor for you convenience
 
 ```bash
-echo 'export DAEMON_NAME=commercionetworkd' >> ~/.profile
+echo 'export DAEMON_NAME=furyd' >> ~/.profile
 echo 'export DAEMON_HOME=/root/.commercionetwork' >> ~/.profile
 echo 'export DAEMON_RESTART_AFTER_UPGRADE=true' >> ~/.profile
 echo 'export DAEMON_ALLOW_DOWNLOAD_BINARIES=false' >> ~/.profile

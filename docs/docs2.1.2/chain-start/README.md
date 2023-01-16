@@ -95,13 +95,13 @@ Once you have create a local key, you can execute the following commands:
 
 ```shell
 # Add some funds to the account
-cnd add-genesis-account $(cncli keys show jack --address) 10000000000000ucommercio
+cnd add-genesis-account $(cncli keys show jack --address) 10000000000000ufury
 
 # Set the account to be the government
 cnd set-genesis-government-address $(cncli keys show jack --address)
 
 # Set the initial TBR pool amount
-cnd set-genesis-tbr-pool-amount 10000000000ucommercio
+cnd set-genesis-tbr-pool-amount 10000000000ufury
 
 # Optional - Set the account to be a membership minter
 cnd add-genesis-membership-minter $(cncli keys show jack --address)
@@ -125,7 +125,7 @@ Once you've setup the genesis file, you can create the genesis transaction and c
 To do so, please run
 
 ```shell
-cnd gentx --name jack --amount 100000000ucommercio
+cnd gentx --name jack --amount 100000000ufury
 cnd collect-gentxs
 ``` 
 

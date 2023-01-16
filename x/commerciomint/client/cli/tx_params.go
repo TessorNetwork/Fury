@@ -18,7 +18,7 @@ func CmdSetParams() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "set-params [conversion-rate] [freeze-period]",
 		Short: "Set the commerciomint params with conversion rate and freeze-period in seconds",
-		Long:  "Example usage:\n commercionetworkd tx commerciomint set-params 0.5 1814400 --from ",
+		Long:  "Example usage:\n furyd tx commerciomint set-params 0.5 1814400 --from ",
 		Args:  cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientTxContext(cmd)

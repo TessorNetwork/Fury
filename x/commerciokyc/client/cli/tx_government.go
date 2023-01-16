@@ -180,8 +180,8 @@ func depositIntoPoolFunc(cmd *cobra.Command, args []string) error {
 	}
 
 	for _, coin := range amount {
-		if coin.Denom != "ucommercio" {
-			return errors.New("only ucommercio amounts are accepted")
+		if coin.Denom != "ufury" {
+			return errors.New("only ufury amounts are accepted")
 		}
 	}
 

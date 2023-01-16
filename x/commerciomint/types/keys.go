@@ -9,7 +9,7 @@ const (
 
 	EtpStorePrefix = StoreKey + ":etp:"
 	CreditsDenom   = "uccc"
-	BondDenom      = "ucommercio"
+	BondDenom      = "ufury"
 
 	QueryGetEtpRest         = "etp"
 	QueryGetallEtpsRest     = "etps"

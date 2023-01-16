@@ -34,7 +34,7 @@ import (
 
 const (
 	chainID            = "commercionetwork"
-	stakeDenom         = "ucommercio"
+	stakeDenom         = "ufury"
 	stableCreditsDenom = "uccc"
 )
 

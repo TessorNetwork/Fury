@@ -133,7 +133,7 @@ make build
 
 
 ```bash
-./build/commercionetworkd init node4 --home ./build/node4/commercionetwork
+./build/furyd init node4 --home ./build/node4/commercionetwork
 ```
 
 ### Copy default genesis in config file
@@ -180,7 +180,7 @@ docker logs node4 -f
 You can discover the account with a lot of tokens in the first node using
 
 ```bash
-./build/commercionetworkd keys list \
+./build/furyd keys list \
   --keyring-backend test \
   --home ./build/node0/commercionetwork/
 ```
@@ -200,7 +200,7 @@ The output should be something like below
 Create a new wallet with
 
 ```
-./build/commercionetworkd keys add wc_node4 \
+./build/furyd keys add wc_node4 \
   --keyring-backend test \
   --home ./build/node4/commercionetwork/
 ```
@@ -229,21 +229,21 @@ Transfer a minumun amount of token to the new wallet from the first one to creat
 # did:com:1fm4ktq7t2282kmgcsptgm3j7f4k58r4zswseqw is the wallet in the first node with a lot of tokens
 # did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl is the wallet that you created before
 
-./build/commercionetworkd tx bank send \
+./build/furyd tx bank send \
   did:com:1fm4ktq7t2282kmgcsptgm3j7f4k58r4zswseqw \
   did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl \
-  20000000ucommercio \
+  20000000ufury \
   --keyring-backend test \
   --home ./build/node0/commercionetwork/ \
   --chain-id $(jq -r '.chain_id' ./build/base_config/genesis.json) \
-  --fees 10000ucommercio \
+  --fees 10000ufury \
   -y
 ```
 
 Check the balances of your wallet
 
 ```bash
-./build/commercionetworkd \
+./build/furyd \
   query bank balances \
   did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl
 ```
@@ -253,13 +253,13 @@ Create validator
 ```bash
 NODENAME=node4
 CHAINID=$(jq -r '.chain_id' ./build/base_config/genesis.json)
-VALIDATOR_PUBKEY=$(./build/commercionetworkd \
+VALIDATOR_PUBKEY=$(./build/furyd \
   tendermint show-validator \
   --home ./build/node4/commercionetwork/)
 WALLET_CREATOR="did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl"
 
-./build/commercionetworkd tx staking create-validator \
-  --amount=1000000ucommercio \
+./build/furyd tx staking create-validator \
+  --amount=1000000ufury \
   --pubkey=$VALIDATOR_PUBKEY \
   --moniker="$NODENAME" \
   --chain-id="$CHAINID" \
@@ -273,12 +273,12 @@ WALLET_CREATOR="did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl"
   --from=$WALLET_CREATOR \
   --keyring-backend test \
   --home ./build/node4/commercionetwork/ \
-  --fees=10000ucommercio \
+  --fees=10000ufury \
   -y
 ```
 
 Check if your validator is present
 
 ```bash
-./build/commercionetworkd query staking validators
+./build/furyd query staking validators
 ```

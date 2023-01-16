@@ -191,11 +191,11 @@ func TestKeeper_MintVBRTokens(t *testing.T) {
 		wantAmount sdk.Coins
 	}{
 		{
-			"add 10ucommercio",
+			"add 10ufury",
 			sdk.NewCoins(sdk.Coin{Amount: sdk.NewInt(10), Denom: types.BondDenom}),
 		},
 		{
-			"add no ucommercio",
+			"add no ufury",
 			sdk.NewCoins(),
 		},
 	}

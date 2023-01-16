@@ -3,8 +3,8 @@
 #set -o errexit -o nounset
 set -o errexit
 
-CHAINID=$1
-GENACCT=$2
+CHAINID=commercio-testnet5000
+GENACCT=
 HOMECOMMERCIO=$3
 BINCOMMERCIO=$4
 
@@ -25,7 +25,7 @@ if [ -z "$3" ]; then
 fi
 
 if [ -z "$4" ]; then
-  BINCOMMERCIO="commercionetworkd"
+  BINCOMMERCIO="furyd"
 fi
 
 

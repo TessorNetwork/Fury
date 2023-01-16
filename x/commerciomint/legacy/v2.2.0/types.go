@@ -8,7 +8,7 @@ import (
 
 const (
 	ModuleName   = "commerciomint"
-	BondDenom    = "ucommercio"
+	BondDenom    = "ufury"
 	CreditsDenom = "uccc"
 )
 

@@ -14,7 +14,7 @@ Mints a given amount of CCC
 
 
 ```bash
-commercionetworkd tx commerciomint mint \
+furyd tx commerciomint mint \
   [amount]
 ```
 
@@ -30,7 +30,7 @@ Burns a given amount of tokens, associated with ETP id.
 #### CLI
 
 ```bash
-commercionetworkd tx commerciomint burn \
+furyd tx commerciomint burn \
   [id] \
   [amount]
 ```
@@ -48,7 +48,7 @@ Set the commerciomint params with conversion rate and freeze-period in seconds.
 #### CLI
 
 ```bash
-commercionetworkd tx commerciomint set-params \
+furyd tx commerciomint set-params \
   [conversion-rate] \
   [freeze-period]
 ```
@@ -68,7 +68,7 @@ commercionetworkd tx commerciomint set-params \
 #### CLI
 
 ```bash
-commercionetworkd query commerciomint get-all-etps
+furyd query commerciomint get-all-etps
 ```
 
 #### gRPC
@@ -166,7 +166,7 @@ http://localhost:1317/commercionetwork/commerciomint/etps
 #### CLI
 
 ```bash
-commercionetworkd query commerciomint get-etps [user-addr]
+furyd query commerciomint get-etps [user-addr]
 ```
 #### gRPC
 Endpoint:
@@ -257,7 +257,7 @@ http://localhost:1317/commercionetwork/commerciomint/did:com:18h03de6awcjk4u9gaz
 #### CLI
 
 ```bash
-commercionetworkd query commerciomint get-etp [id]
+furyd query commerciomint get-etp [id]
 ```
 
 #### gRPC
@@ -337,7 +337,7 @@ http://localhost:1317/commercionetwork/commerciomint/805a82db-a9e7-441a-a26b-d9d
 #### CLI
 
 ```bash
-commercionetworkd query commerciomint get-params
+furyd query commerciomint get-params
 ```
 #### gRPC
 Endpoint:

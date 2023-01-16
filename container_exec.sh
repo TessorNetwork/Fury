@@ -27,13 +27,13 @@ CND_FLAGS="--home=$CHAIN_DIR $CND_EXTRA_FLAGS"
 CND_START_FLAGS="$CND_START_FLAGS"
 if [ -z "$(ls -A $CHAIN_DIR)" ]; then
 	# chain directory empty, let's build a new chain
-	./commercionetworkd unsafe-reset-all $CND_FLAGS
-	./commercionetworkd init $NODENAME $CND_FLAGS
+	./furyd unsafe-reset-all $CND_FLAGS
+	./furyd init $NODENAME $CND_FLAGS
 	cp $GENESIS_DIR/genesis.json $CHAIN_DIR/config/genesis.json
 	sed -e "s|persistent_peers = \".*\"|persistent_peers = \"$(cat $GENESIS_DIR/.data | grep -oP 'Persistent peers\s+\K\S+')\"|g" $CHAIN_DIR/config/config.toml > $CHAIN_DIR/config/config.toml.tmp
 	mv $CHAIN_DIR/config/config.toml.tmp  $CHAIN_DIR/config/config.toml
 fi
 
-./commercionetworkd start $CND_FLAGS $CND_START_FLAGS &
+./furyd start $CND_FLAGS $CND_START_FLAGS &
 sleep 3 # let cnd start first before running cncli rest server
-./commercionetworkd rest-server --chain-id=$CHAINID --laddr $CNCLI_LISTEN_ADDR 
+./furyd rest-server --chain-id=$CHAINID --laddr $CNCLI_LISTEN_ADDR 

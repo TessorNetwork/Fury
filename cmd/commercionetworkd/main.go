@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/commercionetwork/commercionetwork/app"
-	"github.com/commercionetwork/commercionetwork/cmd/commercionetworkd/cmd"
+	"github.com/commercionetwork/commercionetwork/cmd/furyd/cmd"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 )
 

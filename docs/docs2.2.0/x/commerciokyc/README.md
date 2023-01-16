@@ -407,7 +407,7 @@ http://localhost:1317/commerciokyc/accreditations-funds
   "height": "0",
   "result": [
     {
-      "denom": "ucommercio",
+      "denom": "ufury",
       "amount": "9999899990000"
     }
   ]

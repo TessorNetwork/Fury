@@ -73,7 +73,7 @@ necessary files (private validator, genesis, config, etc.).
 Note, strict routability for addresses is turned off in the config file.
 
 Example:
-	commercionetworkd testnet --v 4 --output-dir ./output --starting-ip-address 192.168.10.2
+	furyd testnet --v 4 --output-dir ./output --starting-ip-address 192.168.10.2
 	`,
 		RunE: func(cmd *cobra.Command, _ []string) error {
 			clientCtx, err := client.GetClientQueryContext(cmd)
@@ -352,13 +352,13 @@ func initGenFiles(
 	govState.DepositParams.MinDeposit[0].Denom = app.DefaultBondDenom
 	appGenState[govtypes.ModuleName] = cdc.MustMarshalJSON(&govState)
 
-	// commercionetworkd set-genesis-government-address
+	// furyd set-genesis-government-address
 	var governmentState governmentTypes.GenesisState
 	cdc.MustUnmarshalJSON(appGenState[governmentTypes.ModuleName], &governmentState)
 	governmentState.GovernmentAddress = genAccounts[0].GetAddress().String()
 	appGenState[governmentTypes.ModuleName] = cdc.MustMarshalJSON(&governmentState)
 
-	// set-genesis-vbr-pool-amount 1000000000ucommercio
+	// set-genesis-vbr-pool-amount 1000000000ufury
 	var vbrState vbrTypes.GenesisState
 	cdc.MustUnmarshalJSON(appGenState[vbrTypes.ModuleName], &vbrState)
 	tokens := sdk.TokensFromConsensusPower(1000, sdk.DefaultPowerReduction)
@@ -367,13 +367,13 @@ func initGenFiles(
 	vbrState.Params.EarnRate = sdk.NewDecWithPrec(5, 2)
 	appGenState[vbrTypes.ModuleName] = cdc.MustMarshalJSON(&vbrState)
 
-	// commercionetworkd set-genesis-price ucommercio 1 100000000
+	// furyd set-genesis-price ufury 1 100000000
 
-	// commercionetworkd add-genesis-tsp
+	// furyd add-genesis-tsp
 	var kycState commerciokycTypes.GenesisState
 	cdc.MustUnmarshalJSON(appGenState[commerciokycTypes.ModuleName], &kycState)
 	kycState.TrustedServiceProviders = append(kycState.TrustedServiceProviders, genAccounts[0].GetAddress().String())
-	// commercionetworkd add-genesis-membership black
+	// furyd add-genesis-membership black
 	membership := commerciokycTypes.NewMembership("black", genAccounts[0].GetAddress(), genAccounts[0].GetAddress(), time.Now().Add(time.Hour*24*365))
 	kycState.Memberships = append(kycState.Memberships, &membership)
 	appGenState[commerciokycTypes.ModuleName] = cdc.MustMarshalJSON(&kycState)

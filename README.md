@@ -47,6 +47,6 @@ make install
 You can verify your installation with
 
 ```bash
-commercionetworkd version
+furyd version
 ```
 

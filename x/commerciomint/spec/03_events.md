@@ -17,9 +17,9 @@ The commerciomint module emits the following events:
 | new_position   | minted_coins     | {creditsCoins}       |
 | new_position   | position_id      | {position_id}        |
 | new_position   | timestamp        | {position_createdAt} |
-| transfer (ucommercio) | recipient     | {moduleAddress}   |
-| transfer (ucommercio) | sender        | {depositorAddress} |
-| transfer (ucommercio) | amount        | {ucomAmount}      |
+| transfer (ufury) | recipient     | {moduleAddress}   |
+| transfer (ufury) | sender        | {depositorAddress} |
+| transfer (ufury) | amount        | {ucomAmount}      |
 | transfer (uccc) | recipient     | {depositorAddress}   |
 | transfer (uccc) | sender        | {moduleAddress} |
 | transfer (uccc) | amount        | {creditsCoins}      |

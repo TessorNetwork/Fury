@@ -213,7 +213,7 @@ func TestKeeper_DistributeReward(t *testing.T) {
 			pool:      sdk.NewCoins(sdk.NewCoin(stakeDenom, sdk.NewInt(10000000))),
 			mustError: true,
 			//expectedError: sdkErr.Wrap(sdkErr.ErrUnauthorized, "ABR pool has zero tokens"),
-			// could not move collateral amount to module account, 43478261ucommercio is smaller than 100000001ucommercio: insufficient funds
+			// could not move collateral amount to module account, 43478261ufury is smaller than 100000001ufury: insufficient funds
 		},*/
 		{
 			name:                 "Account correctly rewarded",

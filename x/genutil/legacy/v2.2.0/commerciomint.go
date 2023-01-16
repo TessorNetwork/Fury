@@ -25,7 +25,7 @@ func commercioMintMigrate(appState genutil.AppMap, govAddress sdk.AccAddress) ge
 	_ = supply.NewEmptyModuleAccount("fu")
 	accountsCdc := authTypes.ModuleCdc
 
-	// 1. remove uccc from every account, and move commerciomint ucommercio's to government address
+	// 1. remove uccc from every account, and move commerciomint ufury's to government address
 	if appState[auth.ModuleName] != nil {
 		var old auth.GenesisState
 		accountsCdc.MustUnmarshalJSON(appState[auth.ModuleName], &old)
@@ -35,11 +35,11 @@ func commercioMintMigrate(appState genutil.AppMap, govAddress sdk.AccAddress) ge
 		var mintUcomm sdk.Coins
 		for _, account := range old.Accounts {
 			coins := account.GetCoins()
-			comAmount := coins.AmountOf("ucommercio")
+			comAmount := coins.AmountOf("ufury")
 
 			account.SetCoins(
 				sdk.NewCoins(
-					sdk.NewCoin("ucommercio", comAmount),
+					sdk.NewCoin("ufury", comAmount),
 				),
 			)
 
@@ -100,14 +100,14 @@ func commercioMintMigrate(appState genutil.AppMap, govAddress sdk.AccAddress) ge
 		)
 	}
 
-	// 3. staking module must only contain ucommercio
+	// 3. staking module must only contain ufury
 	if appState[supply.ModuleName] != nil {
 		var old supply.GenesisState
 		supply.ModuleCdc.MustUnmarshalJSON(appState[supply.ModuleName], &old)
 
-		commAmount := old.Supply.AmountOf("ucommercio")
+		commAmount := old.Supply.AmountOf("ufury")
 
-		old.Supply = sdk.NewCoins(sdk.NewCoin("ucommercio", commAmount))
+		old.Supply = sdk.NewCoins(sdk.NewCoin("ufury", commAmount))
 
 		delete(appState, supply.ModuleName)
 		appState[supply.ModuleName] = supply.ModuleCdc.MustMarshalJSON(

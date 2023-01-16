@@ -52,8 +52,8 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 
 
 ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=commercionetwork \
-	-X github.com/cosmos/cosmos-sdk/version.ServerName=commercionetworkd \
-	-X github.com/cosmos/cosmos-sdk/version.AppName=commercionetworkd \
+	-X github.com/cosmos/cosmos-sdk/version.ServerName=furyd \
+	-X github.com/cosmos/cosmos-sdk/version.AppName=furyd \
 	-X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 	-X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
 	-X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)" \
@@ -80,19 +80,19 @@ build-docs:
 all: install
 
 build-darwin: go.sum
-	env GOOS=darwin GOARCH=amd64 go build -mod=readonly -o ./build/Darwin-AMD64/commercionetworkd $(BUILD_FLAGS) ./cmd/commercionetworkd
+	env GOOS=darwin GOARCH=amd64 go build -mod=readonly -o ./build/Darwin-AMD64/furyd $(BUILD_FLAGS) ./cmd/furyd
 
 build-linux: go.sum
-	env GOOS=linux GOARCH=amd64 go build -mod=readonly -o ./build/Linux-AMD64/commercionetworkd $(BUILD_FLAGS) ./cmd/commercionetworkd
+	env GOOS=linux GOARCH=amd64 go build -mod=readonly -o ./build/Linux-AMD64/furyd $(BUILD_FLAGS) ./cmd/furyd
 
 build-local-linux: go.sum
-	env GOOS=linux GOARCH=amd64 go build -mod=readonly -o ./build/commercionetworkd $(BUILD_FLAGS) ./cmd/commercionetworkd
+	env GOOS=linux GOARCH=amd64 go build -mod=readonly -o ./build/furyd $(BUILD_FLAGS) ./cmd/furyd
 
 build-windows: go.sum
-	env GOOS=windows GOARCH=amd64 go build -mod=readonly -o ./build/Windows-AMD64/commercionetworkd.exe $(BUILD_FLAGS) ./cmd/commercionetworkd
+	env GOOS=windows GOARCH=amd64 go build -mod=readonly -o ./build/Windows-AMD64/furyd.exe $(BUILD_FLAGS) ./cmd/furyd
 
 build-linux-docker:
-	env GOOS=linux GOARCH=amd64 go build -mod=readonly -o ./build/Linux-AMD64/commercionetworkd $(BUILD_FLAGS) ./cmd/commercionetworkd
+	env GOOS=linux GOARCH=amd64 go build -mod=readonly -o ./build/Linux-AMD64/furyd $(BUILD_FLAGS) ./cmd/furyd
 
 build-all: go.sum
 	make build-darwin
@@ -103,9 +103,9 @@ prepare-release: go.sum build-all
 	rm -f ./build/Darwin-386.zip ./build/Darwin-AMD64.zip
 	rm -f ./build/Linux-386.zip ./build/Linux-AMD64.zip
 	rm -f ./build/Windows-386.zip ./build/Windows-AMD64.zip
-	zip -jr ./build/Darwin-AMD64.zip ./build/Darwin-AMD64/commercionetworkd
-	zip -jr ./build/Linux-AMD64.zip ./build/Linux-AMD64/commercionetworkd
-	zip -jr ./build/Windows-AMD64.zip ./build/Windows-AMD64/commercionetworkd.exe
+	zip -jr ./build/Darwin-AMD64.zip ./build/Darwin-AMD64/furyd
+	zip -jr ./build/Linux-AMD64.zip ./build/Linux-AMD64/furyd
+	zip -jr ./build/Windows-AMD64.zip ./build/Windows-AMD64/furyd.exe
 
 ########################################
 ### Tools & dependencies
@@ -134,12 +134,12 @@ lint:
 
 install: go.sum
 	@echo "--> Installing commercionetwork"
-	@go install -mod=readonly $(BUILD_FLAGS) ./cmd/commercionetworkd
+	@go install -mod=readonly $(BUILD_FLAGS) ./cmd/furyd
 
 build: go.sum
 	@echo "--> Building commercionetwork"
 	@echo "--> $(SDK_PACK)"
-	@go build -mod=readonly -o ./build/commercionetworkd $(BUILD_FLAGS) ./cmd/commercionetworkd
+	@go build -mod=readonly -o ./build/furyd $(BUILD_FLAGS) ./cmd/furyd
 
 
 #go.sum: go.mod
@@ -179,7 +179,7 @@ localnet-start-daemon: localnet-setup
 
 
 localnet-reset: localnet-stop $(TARGET_BUILD)
-	@for node in 0 1 2 3; do build/$(TARGET_BIN)/commercionetworkd unsafe-reset-all --home ./build/node$$node/commercionetwork; done
+	@for node in 0 1 2 3; do build/$(TARGET_BIN)/furyd unsafe-reset-all --home ./build/node$$node/commercionetwork; done
 
 localnet-stop:
 	docker-compose down

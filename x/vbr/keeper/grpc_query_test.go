@@ -44,7 +44,7 @@ func TestGetBlockRewardsPoolFunds(t *testing.T) {
 		err      error
 	}{
 		{
-			desc:     "funds 100000ucommercio",
+			desc:     "funds 100000ufury",
 			request:  &types.QueryGetBlockRewardsPoolFundsRequest{},
 			response: &types.QueryGetBlockRewardsPoolFundsResponse{Funds: testFunds1},
 		},

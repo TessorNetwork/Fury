@@ -11,7 +11,7 @@ order: 4
 Invite user to buy a membership
 
 ```bash
-commercionetworkd tx commerciokyc invite \
+furyd tx commerciokyc invite \
   [subscriber]
 ```
 
@@ -27,7 +27,7 @@ commercionetworkd tx commerciokyc invite \
 Tsp buy a membership for subscriber
 
 ```bash
-commercionetworkd tx commerciokyc buy \
+furyd tx commerciokyc buy \
   [subscriber] \
   [membership-type] 
 ```
@@ -44,7 +44,7 @@ commercionetworkd tx commerciokyc buy \
 As government, assign membership to a user
 
 ```bash
-commercionetworkd tx commerciokyc assign-membership \
+furyd tx commerciokyc assign-membership \
   [subscriber] \
   [membership-type] 
 ```
@@ -62,7 +62,7 @@ commercionetworkd tx commerciokyc assign-membership \
 As government, remove membership of a user.
 
 ```bash
-commercionetworkd tx commerciokyc remove-membership \
+furyd tx commerciokyc remove-membership \
   [subscriber] \
 ```
 
@@ -79,7 +79,7 @@ commercionetworkd tx commerciokyc remove-membership \
 Government add a tsp.
 
 ```bash
-commercionetworkd tx commerciokyc add-tsp \
+furyd tx commerciokyc add-tsp \
   [tsp-address]
 ```
 
@@ -95,7 +95,7 @@ commercionetworkd tx commerciokyc add-tsp \
 Government remove a tsp.
 
 ```bash
-commercionetworkd tx commerciokyc remove-tsp \
+furyd tx commerciokyc remove-tsp \
   [tsp-address]
 ```
 
@@ -111,7 +111,7 @@ commercionetworkd tx commerciokyc remove-tsp \
 Increments the membership rewards pool's liquidity by the given amount
 
 ```bash
-commercionetworkd tx commerciokyc deposit \
+furyd tx commerciokyc deposit \
   [amount]
 ```
 
@@ -119,7 +119,7 @@ commercionetworkd tx commerciokyc deposit \
 
 | Parameter | Description |
 | :------- | :---------- | 
-| `amount`      | Amount of ucommercio tokens to deposit |
+| `amount`      | Amount of ufury tokens to deposit |
 
 
 
@@ -130,7 +130,7 @@ A user can query and interact with the `commerciokyc` module using the CLI.
 The `query` commands allow users to query `commerciokyc` state.
 
 ```bash
-commercionetworkd query commerciokyc --help
+furyd query commerciokyc --help
 ```
 
 ### Invites
@@ -142,13 +142,13 @@ commercionetworkd query commerciokyc --help
 The `invites` command gets all invites:
 
 ```bash
-commercionetworkd query commerciokyc invites 
+furyd query commerciokyc invites 
 ```
 
 Example:
 
 ```bash
-commercionetworkd query commerciokyc invites
+furyd query commerciokyc invites
 ```
 
 Example Output:
@@ -220,14 +220,14 @@ grpcurl -plaintext \
 The `invite` command gets user invite:
 
 ```bash
-commercionetworkd query commerciokyc invites \
+furyd query commerciokyc invites \
   [user]
 ```
 
 Example:
 
 ```bash
-commercionetworkd query commerciokyc invite \
+furyd query commerciokyc invite \
   did:com:1xx88le4t8ateql77mzzyrg0damf43tt0qw2xms
 ```
 
@@ -290,13 +290,13 @@ https://localhost:1317/commercionetwork/commerciokyc/did:com:1gdcxa02g5l3cm0mgqf
 The `memberships` command gets all memberships:
 
 ```bash
-commercionetworkd query commerciokyc memberships 
+furyd query commerciokyc memberships 
 ```
 
 Example:
 
 ```bash
-commercionetworkd query commerciokyc memberships
+furyd query commerciokyc memberships
 ```
 
 Example Output:
@@ -372,7 +372,7 @@ https://localhost:1317/commercionetwork/commerciokyc/memberships
 The `membership` command gets user membership:
 
 ```bash
-commercionetworkd query commerciokyc memberships \
+furyd query commerciokyc memberships \
   [user] \
   
 ```
@@ -380,7 +380,7 @@ commercionetworkd query commerciokyc memberships \
 Example:
 
 ```bash
-commercionetworkd query commerciokyc membership \
+furyd query commerciokyc membership \
   did:com:1q8mkesv6kcyr8ft69mvtmy6lxzfvn5y6ywhgh9
 ```
 
@@ -451,14 +451,14 @@ https://localhost:1317/commercionetwork/commerciokyc/memberships/did:com:1q8mkes
 The `trusted-service-providers` command allows users to query all trusted service providers.
 
 ```bash
-commercionetworkd query commerciokyc trusted-service-providers 
+furyd query commerciokyc trusted-service-providers 
 ```
 
 
 Example:
 
 ```bash
-commercionetworkd query commerciokyc trusted-service-providers
+furyd query commerciokyc trusted-service-providers
 ```
 
 Example Output:
@@ -520,13 +520,13 @@ https://localhost:1317/commercionetwork/commerciokyc/tsps
 The `pool-funds` command allows users to query a given ABR pool funds for the `commerciokyc` module.
 
 ```bash
-commercionetworkd query commerciokyc pool-funds 
+furyd query commerciokyc pool-funds 
 ```
 
 Example:
 
 ```bash
-commercionetworkd query commerciokyc pool-funds
+furyd query commerciokyc pool-funds
 ```
 
 Example Output:
@@ -534,7 +534,7 @@ Example Output:
 ```bash
 funds:
 - amount: "974677500000"
-  denom: ucommercio
+  denom: ufury
 ```
 
 #### gRPC
@@ -557,7 +557,7 @@ grpcurl -plaintext \
 {
   "funds": [
     {
-      "denom": "ucommercio",
+      "denom": "ufury",
       "amount": "10674787750000"
     }
   ]

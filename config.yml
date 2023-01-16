@@ -1,19 +1,19 @@
 accounts:
   - name: alice
-    coins: ["20000000000uccc", "200000000000ucommercio"]
+    coins: ["20000000000uccc", "200000000000ufury"]
     #address: "did:com:18h03de6awcjk4u9gaz8s5l0xxl8ulxjctzsytd"
     mnemonic: "gaze apart pen defense tomorrow index again pool earth force napkin noble elevator payment hawk trip cute gown fade wear swallow alert lemon people"
   - name: bob
-    coins: ["10000000000uccc", "100000000000ucommercio"]
+    coins: ["10000000000uccc", "100000000000ufury"]
     #address: "did:com:1829s409tjju2luhudq5dfeus6je3vfdnjv9tpn"
     mnemonic: "special chest leaf section reunion inflict busy blouse inflict kid alcohol hazard embody mosquito green turkey street very lab forest gain disease hollow bomb"
   - name: gov
-    coins: ["10000000000uccc", "100000000000ucommercio"]
+    coins: ["10000000000uccc", "100000000000ufury"]
     #address: "did:com:1zg4jreq2g57s4efrl7wnh2swtrz3jt9nfaumcm"
     mnemonic: "bonus raccoon material jump tired under cup senior wash peace cook mansion nice rely outside atom surface maid dune poet hold forum electric accuse"
 validator:
   name: alice
-  staked: "100000000ucommercio"
+  staked: "100000000ufury"
 client:
   vuex:
     path: "vue/src/store"
@@ -21,33 +21,33 @@ client:
     path: "docs_3_0/static/openapi.yml"
 faucet:
   name: bob
-  coins: ["5uccc", "100000ucommercio"]
+  coins: ["5uccc", "100000ufury"]
 genesis:
   app_state:
     gov:
       deposit_params:
         min_deposit:
         -
-          denom: "ucommercio"
+          denom: "ufury"
           amount: "10000000"
       voting_params:
         voting_period: "120s"
     crisis:
       constant_fee:
-        denom: "ucommercio"
+        denom: "ufury"
     government:
       governmentAddress: "did:com:1zg4jreq2g57s4efrl7wnh2swtrz3jt9nfaumcm"
     vbr:
       poolAmount:
         -
-          denom: "ucommercio"
+          denom: "ufury"
           amount: "10000000.000000000000000000"
       params: 
         distr_epoch_identifier: "minute"
         earn_rate: "0.500000000000000000"
     staking:
       params:
-        bond_denom: "ucommercio"
+        bond_denom: "ufury"
     commerciokyc:
       trusted_service_providers: ["did:com:1zg4jreq2g57s4efrl7wnh2swtrz3jt9nfaumcm"]
       memberships:
@@ -59,7 +59,7 @@ genesis:
       liquidity_pool_amount:
         -
           amount: "1000000000000"
-          denom: "ucommercio"
+          denom: "ufury"
     commerciomint:
       Positions:
         -

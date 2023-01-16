@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	stakeDenom            = "ucommercio"
+	stakeDenom            = "ufury"
 	stableCreditDenom     = "uccc"
 	eventBuyMembership    = "buy_membership"
 	eventAssignMembership = "assign_membership"

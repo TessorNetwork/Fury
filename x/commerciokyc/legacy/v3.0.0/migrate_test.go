@@ -19,7 +19,7 @@ var (
 	timeNow       = time.Now()
 	mExp01        = timeNow.Add(time.Hour * 24 * 60)
 	mExp02        = timeNow.Add(time.Hour * 24 * 120)
-	testDenom     = "ucommercio"
+	testDenom     = "ufury"
 )
 
 func TestMigrate(t *testing.T) {

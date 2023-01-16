@@ -57,7 +57,7 @@ func NewAnteHandler(
 // contains also a minimum fee amount corresponding to 0.01 euro per
 // MsgShareDocument included into the transaction itself.
 // The amount can be specified using stableCreditsDenom or stakeDenom.
-// If stakeDenom used the cost of transaction is always 10000ucommercio
+// If stakeDenom used the cost of transaction is always 10000ufury
 type MinFeeDecorator struct {
 	govk               government.Keeper
 	mintk              commerciomintKeeper.Keeper

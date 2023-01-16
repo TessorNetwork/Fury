@@ -216,7 +216,7 @@ If you wish to know more about the overall pairwise Did creation sequence, pleas
     "claimant": "address that sent funds to the centralized entity before",
     "amount": [
       {
-        "denom": "ucommercio",
+        "denom": "ufury",
         "amount": "amount to transfer to the pairwise did, integer"
       }
     ],
@@ -475,7 +475,7 @@ http://localhost:1317/powerUpRequest/28b6f9d1-347a-432b-a3a4-e018617a63d8
     "claimant": "did:com:150jp3tx96frukqg6v870etf02q0cp7em78wu48",
     "amount": [
         {
-        "denom": "ucommercio",
+        "denom": "ufury",
         "amount": "100"
         }
     ],
@@ -516,7 +516,7 @@ http://localhost:1317/pendingPowerUpRequests
         "claimant": "did:com:150jp3tx96frukqg6v870etf02q0cp7em78wu48",
         "amount": [
         {
-            "denom": "ucommercio",
+            "denom": "ufury",
             "amount": "100"
         }
         ],
@@ -553,7 +553,7 @@ http://localhost:1317/approvedPowerUpRequests
         "claimant": "did:com:150jp3tx96frukqg6v870etf02q0cp7em78wu48",
         "amount": [
         {
-            "denom": "ucommercio",
+            "denom": "ufury",
             "amount": "100"
         }
         ],
@@ -594,7 +594,7 @@ http://localhost:1317/rejectedPowerUpRequests
         "claimant": "did:com:150jp3tx96frukqg6v870etf02q0cp7em78wu48",
         "amount": [
         {
-            "denom": "ucommercio",
+            "denom": "ufury",
             "amount": "100000000000000"
         }
         ],

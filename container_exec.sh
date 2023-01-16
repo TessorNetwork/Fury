@@ -35,5 +35,5 @@ if [ -z "$(ls -A $CHAIN_DIR)" ]; then
 fi
 
 ./furyd start $FYD_FLAGS $FYD_START_FLAGS &
-sleep 3 # let fyd start first before running cncli rest server
-./furyd rest-server --chain-id=$CHAINID --laddr $CNCLI_LISTEN_ADDR 
+sleep 3 # let fyd start first before running fycli rest server
+./furyd rest-server --chain-id=$CHAINID --laddr $FYCLI_LISTEN_ADDR 

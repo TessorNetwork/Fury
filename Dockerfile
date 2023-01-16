@@ -33,7 +33,7 @@ RUN mkdir -p ${CHAIN_DIR}
 RUN mkdir -p ${GENESIS_DIR}
 
 # Copy the Pre-built binary file from the previous stage
-#COPY --from=builder /app/build/Linux-AMD64/furyd .
+#COPY --from=builder /app/build/furyd .
 COPY container_exec.sh .
 RUN chmod +x container_exec.sh
 

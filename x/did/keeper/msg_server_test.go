@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/commercionetwork/commercionetwork/x/did/types"
+	"github.com/tessornetwork/fury/x/did/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -15,7 +15,7 @@ func init() {
 }
 
 func configTestPrefixes() {
-	AccountAddressPrefix := "did:com:"
+	AccountAddressPrefix := "did:fury:"
 	AccountPubKeyPrefix := AccountAddressPrefix + "pub"
 	config := sdk.GetConfig()
 	config.SetBech32PrefixForAccount(AccountAddressPrefix, AccountPubKeyPrefix)

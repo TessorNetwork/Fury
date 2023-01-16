@@ -1,8 +1,8 @@
 package documents
 
 import (
-	"github.com/commercionetwork/commercionetwork/x/documents/keeper"
-	"github.com/commercionetwork/commercionetwork/x/documents/types"
+	"github.com/tessornetwork/fury/x/documents/keeper"
+	"github.com/tessornetwork/fury/x/documents/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

@@ -3,8 +3,8 @@ package government
 import (
 	"fmt"
 
-	"github.com/commercionetwork/commercionetwork/x/government/keeper"
-	"github.com/commercionetwork/commercionetwork/x/government/types"
+	"github.com/tessornetwork/fury/x/government/keeper"
+	"github.com/tessornetwork/fury/x/government/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )

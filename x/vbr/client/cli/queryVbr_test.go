@@ -5,10 +5,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/commercionetwork/commercionetwork/testutil/network"
-	govTypes "github.com/commercionetwork/commercionetwork/x/government/types"
-	"github.com/commercionetwork/commercionetwork/x/vbr/client/cli"
-	"github.com/commercionetwork/commercionetwork/x/vbr/types"
+	"github.com/tessornetwork/fury/testutil/network"
+	govTypes "github.com/tessornetwork/fury/x/government/types"
+	"github.com/tessornetwork/fury/x/vbr/client/cli"
+	"github.com/tessornetwork/fury/x/vbr/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 )

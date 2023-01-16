@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/commercionetwork/commercionetwork/x/vbr/types"
+	"github.com/tessornetwork/fury/x/vbr/types"
 )
 
 type msgServer struct {

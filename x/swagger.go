@@ -6,9 +6,9 @@ import (
 	_ "github.com/cosmos/cosmos-sdk/types"
 )
 
-// @title CommercioNetwork API
-// @description Swagger API for CommercioNetwork
-// @contact.email developers@commercio.network
+// @title TessorNetwork API
+// @description Swagger API for TessorNetwork
+// @contact.email developers@tessor.network
 
 // @BasePath /
 

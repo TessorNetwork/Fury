@@ -6,7 +6,7 @@ import (
 	fmt "fmt"
 	"strings"
 
-	commons "github.com/commercionetwork/commercionetwork/x/common/types"
+	commons "github.com/tessornetwork/fury/x/common/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/pkg/errors"
@@ -14,8 +14,8 @@ import (
 
 func Validate(did string) error {
 
-	if !strings.HasPrefix(did, "did:com:") {
-		return errors.Errorf("invalid ID address (%s), must have 'did:com:' prefix", did)
+	if !strings.HasPrefix(did, "did:fury:") {
+		return errors.Errorf("invalid ID address (%s), must have 'did:fury:' prefix", did)
 	}
 
 	if _, err := sdk.AccAddressFromBech32(did); err != nil {
@@ -99,7 +99,7 @@ func (v *VerificationMethod) Validate(subject string) error {
 	// validate controller
 	// Required
 	// A string that conforms to the rules of DID Syntax.
-	// commercionetwork: same as the subject i.e. the ID field of DID document
+	// tessornetwork: same as the subject i.e. the ID field of DID document
 	if IsEmpty(v.Controller) {
 		return sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "verificationMethod field \"controller\" is required")
 	}
@@ -117,13 +117,13 @@ func (v *VerificationMethod) Validate(subject string) error {
 		return sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "verificationMethod field \"publicKeyMultibase\" is required")
 	}
 
-	// commercionetwork: keys of type RsaVerificationKey2018 must be with suffix #keys-1, and must be a valid RSA PKIX public key
+	// tessornetwork: keys of type RsaVerificationKey2018 must be with suffix #keys-1, and must be a valid RSA PKIX public key
 	if v.Type == RsaVerificationKey2018 {
 		if !strings.HasSuffix(v.ID, RsaVerificationKey2018NameSuffix) {
 			return sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "invalid fields \"type\" and \"id\": keys of type "+RsaVerificationKey2018+" must be with suffix "+RsaVerificationKey2018NameSuffix)
 		}
 	}
-	// commercionetwork: keys of type RsaSignatureKey2018 must be with suffix #keys-2, and must be a valid RSA PKIX public key
+	// tessornetwork: keys of type RsaSignatureKey2018 must be with suffix #keys-2, and must be a valid RSA PKIX public key
 	if v.Type == RsaSignature2018 {
 		if !strings.HasSuffix(v.ID, RsaSignature2018NameSuffix) {
 			return sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "invalid fields \"type\" and \"id\": keys of type "+RsaSignature2018+" must be with suffix "+RsaSignature2018NameSuffix)

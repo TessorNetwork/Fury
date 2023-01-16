@@ -1,0 +1,14 @@
+syntax = "proto3";
+package tessornetwork.fury.documents;
+
+// Options section
+option go_package = "github.com/tessornetwork/fury/x/documents/types";
+
+// Import section
+import "gogoproto/gogo.proto";
+import "fury/documents/documentEncryptionKey.proto";
+
+message DocumentEncryptionData {
+  repeated documents.DocumentEncryptionKey keys = 1;
+  repeated string encryptedData = 2;
+}

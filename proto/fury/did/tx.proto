@@ -1,0 +1,18 @@
+syntax = "proto3";
+package tessornetwork.fury.did;
+
+// Options section
+option go_package = "github.com/tessornetwork/fury/x/did/types";
+
+// Import section
+import "fury/did/identity.proto";
+import "gogoproto/gogo.proto";
+
+// Msg defines the Msg service.
+service Msg {
+  rpc UpdateIdentity(MsgSetIdentity) returns (MsgSetIdentityResponse);
+}
+
+message MsgSetIdentity { DidDocument didDocument = 1; }
+
+message MsgSetIdentityResponse {}

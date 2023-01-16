@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/commercionetwork/commercionetwork/x/vbr/types"
+	"github.com/tessornetwork/fury/x/vbr/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	restTypes "github.com/cosmos/cosmos-sdk/types/rest"
 	"github.com/gorilla/mux"

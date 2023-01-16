@@ -19,7 +19,7 @@ var doc = `{
         "description": "{{.Description}}",
         "title": "{{.Title}}",
         "contact": {
-            "email": "developers@commercio.network"
+            "email": "developers@tessor.network"
         },
         "version": "{{.Version}}"
     },
@@ -63,14 +63,14 @@ var doc = `{
                 }
             }
         },
-        "/commerciokyc/funds": {
+        "/furykyc/funds": {
             "get": {
                 "description": "This endpoint returns current pool funds for accreditation block reward",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "x/commerciokyc"
+                    "x/furykyc"
                 ],
                 "summary": "Get All Current pool funds",
                 "operationId": "getGetPoolFunds",
@@ -100,14 +100,14 @@ var doc = `{
                 }
             }
         },
-        "/commerciokyc/invites": {
+        "/furykyc/invites": {
             "get": {
                 "description": "This endpoint returns all the Invites",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "x/commerciokyc"
+                    "x/furykyc"
                 ],
                 "summary": "Get All Invites",
                 "operationId": "getInvitesHandler",
@@ -140,14 +140,14 @@ var doc = `{
                 }
             }
         },
-        "/commerciokyc/membership/{address}": {
+        "/furykyc/membership/{address}": {
             "get": {
                 "description": "This endpoint returns the Membership",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "x/commerciokyc"
+                    "x/furykyc"
                 ],
                 "summary": "Get Membership for given address",
                 "operationId": "getMembershipForAddr",
@@ -183,14 +183,14 @@ var doc = `{
                 }
             }
         },
-        "/commerciokyc/memberships": {
+        "/furykyc/memberships": {
             "get": {
                 "description": "This endpoint returns all the Memberships",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "x/commerciokyc"
+                    "x/furykyc"
                 ],
                 "summary": "Get All Memberships",
                 "operationId": "getMemberships",
@@ -220,14 +220,14 @@ var doc = `{
                 }
             }
         },
-        "/commerciokyc/sold/{address}": {
+        "/furykyc/sold/{address}": {
             "get": {
                 "description": "This endpoint returns all Memberships sold by a specific Trusted Service Provider",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "x/commerciokyc"
+                    "x/furykyc"
                 ],
                 "summary": "Get All Memberships sold by Trusted Service Provider",
                 "operationId": "getSoldForTsp",
@@ -266,14 +266,14 @@ var doc = `{
                 }
             }
         },
-        "/commerciokyc/tsps": {
+        "/furykyc/tsps": {
             "get": {
                 "description": "This endpoint returns all the Trusted Service Providers",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "x/commerciokyc"
+                    "x/furykyc"
                 ],
                 "summary": "Get All Trusted Service Providers",
                 "operationId": "getTrustedServiceProvidersHandler",
@@ -307,14 +307,14 @@ var doc = `{
                 }
             }
         },
-        "/commerciomint/etps": {
+        "/furymint/etps": {
             "get": {
                 "description": "This endpoint returns the Conversion rate, along with the height at which the resource was queried at",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "x/commerciomint"
+                    "x/furymint"
                 ],
                 "summary": "Get Conversion rate",
                 "operationId": "getConversionRateHandler",
@@ -341,14 +341,14 @@ var doc = `{
                 }
             }
         },
-        "/commerciomint/etps/{address}": {
+        "/furymint/etps/{address}": {
             "get": {
                 "description": "This endpoint returns the Exchange Trade Position, along with the blocktime at which the resource was queried at",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "x/commerciomint"
+                    "x/furymint"
                 ],
                 "summary": "Get all the Exchange Trade Positions for user",
                 "operationId": "getEtpsHandler",
@@ -920,7 +920,7 @@ var doc = `{
                 },
                 "owner": {
                     "type": "string",
-                    "example": "did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"
+                    "example": "did:fury:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"
                 }
             }
         },
@@ -959,7 +959,7 @@ var doc = `{
                 },
                 "id": {
                     "type": "string",
-                    "example": "did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"
+                    "example": "did:fury:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"
                 },
                 "proof": {
                     "description": "Proof is **NOT** optional, we need it to have omitempty/pointer to make the signature procedure more straightforward,\ni.e. DidDocument.Validate() will check if proof is empty, and throw an error if true.",
@@ -1040,12 +1040,12 @@ var doc = `{
                         "type": "string"
                     },
                     "example": [
-                        "did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"
+                        "did:fury:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"
                     ]
                 },
                 "sender": {
                     "type": "string",
-                    "example": "did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"
+                    "example": "did:fury:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"
                 },
                 "uuid": {
                     "type": "string",
@@ -1278,7 +1278,7 @@ var doc = `{
             "properties": {
                 "controller": {
                     "type": "string",
-                    "example": "did:com:1tkgm3rra9cs3sfugjqdps30ujggf5klm425zvx"
+                    "example": "did:fury:1tkgm3rra9cs3sfugjqdps30ujggf5klm425zvx"
                 },
                 "created": {
                     "type": "string",
@@ -1298,7 +1298,7 @@ var doc = `{
                 },
                 "verificationMethod": {
                     "type": "string",
-                    "example": "did:com:pub1addwnpepqt6lnn5v0c3rys49v5v9f4kvcchehnu7kyk8t8vce5lsxfy7e2pxwyvmf6t"
+                    "example": "did:fury:pub1addwnpepqt6lnn5v0c3rys49v5v9f4kvcchehnu7kyk8t8vce5lsxfy7e2pxwyvmf6t"
                 }
             }
         },
@@ -1307,11 +1307,11 @@ var doc = `{
             "properties": {
                 "controller": {
                     "type": "string",
-                    "example": "did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"
+                    "example": "did:fury:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf"
                 },
                 "id": {
                     "type": "string",
-                    "example": "did:com:1tkgm3rra9cs3sfugjqdps30ujggf5klm425zvx#keys-1"
+                    "example": "did:fury:1tkgm3rra9cs3sfugjqdps30ujggf5klm425zvx#keys-1"
                 },
                 "publicKeyPem": {
                     "type": "string",
@@ -1378,8 +1378,8 @@ var SwaggerInfo = swaggerInfo{
 	Host:        "",
 	BasePath:    "/",
 	Schemes:     []string{},
-	Title:       "CommercioNetwork API",
-	Description: "Swagger API for CommercioNetwork",
+	Title:       "TessorNetwork API",
+	Description: "Swagger API for TessorNetwork",
 }
 
 type s struct{}

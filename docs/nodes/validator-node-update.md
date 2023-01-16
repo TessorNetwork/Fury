@@ -14,7 +14,7 @@ Every upgrade event will be associated to the peculiar instructions and the vali
 
 When a minor release is publish the steps that the node should be performed are
 
-1. Enter in your node and clone the repository in your server with `git clone https://github.com/commercionetwork/commercionetwork.git` and move in the new folder `cd commercionetwork`. **If you already have the repository folder use** `cd commercionetwork; git pull`
+1. Enter in your node and clone the repository in your server with `git clone https://github.com/tessornetwork/fury.git` and move in the new folder `cd commercionetwork`. **If you already have the repository folder use** `cd commercionetwork; git pull`
 1. Checkout the code to new versione with `git checkout <version target>; git pull` where `<version target>` is the new version or tag to install
 2. Compile the new versione with the command `make build`. Control if your version is equal `<version target>` using `./build/furyd version`
 3. Stop the validator/node service with `systemctl stop furyd`

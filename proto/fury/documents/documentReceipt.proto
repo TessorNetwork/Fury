@@ -1,0 +1,17 @@
+syntax = "proto3";
+package tessornetwork.fury.documents;
+
+// Options section
+option go_package = "github.com/tessornetwork/fury/x/documents/types";
+
+// Import section
+import "gogoproto/gogo.proto";
+
+message DocumentReceipt {
+    string UUID = 1; 
+    string sender = 2; 
+    string recipient = 3; 
+    string txHash = 4; 
+    string documentUUID = 5;
+    string proof = 6;
+}

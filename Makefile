@@ -6,7 +6,7 @@ LEDGER_ENABLED ?= true
 BINDIR ?= $(GOPATH)/bin
 
 MOCKS_DIR = $(CURDIR)/tests/mocks
-REPOSITORY_BASE := github.com/commercionetwork/commercionetwork
+REPOSITORY_BASE := github.com/tessornetwork/fury
 HTTPS_GIT := https://$(REPOSITORY_BASE).git
 
 SDK_PACK := $(shell go list -m github.com/cosmos/cosmos-sdk | sed  's/ /\@/g')
@@ -38,7 +38,7 @@ ifeq ($(LEDGER_ENABLED),true)
   endif
 endif
 
-ifeq (cleveldb,$(findstring cleveldb,$(COMMERCIO_BUILD_OPTIONS)))
+ifeq (cleveldb,$(findstring cleveldb,$(FURY_BUILD_OPTIONS)))
   build_tags += gcc
 endif
 build_tags += $(BUILD_TAGS)
@@ -51,7 +51,7 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 
 
 
-ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=commercionetwork \
+ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=fury \
 	-X github.com/cosmos/cosmos-sdk/version.ServerName=furyd \
 	-X github.com/cosmos/cosmos-sdk/version.AppName=furyd \
 	-X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
@@ -72,7 +72,7 @@ endif
 build-docs:
 	@npm ci
 	@npm run docs:build
-	@echo "docs.commercio.network" > docs/.vuepress/dist/CNAME
+	@echo "docs.tessor.network" > docs/.vuepress/dist/CNAME
 
 .PHONY: build-docs
 
@@ -133,11 +133,11 @@ lint:
 
 
 install: go.sum
-	@echo "--> Installing commercionetwork"
+	@echo "--> Installing fury"
 	@go install -mod=readonly $(BUILD_FLAGS) ./cmd/furyd
 
 build: go.sum
-	@echo "--> Building commercionetwork"
+	@echo "--> Building fury"
 	@echo "--> $(SDK_PACK)"
 	@go build -mod=readonly -o ./build/furyd $(BUILD_FLAGS) ./cmd/furyd
 
@@ -161,14 +161,14 @@ test:
 ### Docker
 
 build-image-libraries-cached:
-	docker build -t commercionetwork/commercionetworknode -f contrib/localnet/commercionetworknode/Dockerfile .
+	docker build -t tessornetwork/furynode -f contrib/localnet/furynode/Dockerfile .
 
 build-image-to-download-libraries:
-	docker build -t commercionetwork/libraries -f DockerfileLibraries .
-	docker build -t commercionetwork/commercionetworknode -f contrib/localnet/commercionetworknode/Dockerfile .
+	docker build -t fury/libraries -f DockerfileLibraries .
+	docker build -t tessornetwork/furynode -f contrib/localnet/furynode/Dockerfile .
 
 localnet-setup: localnet-stop
-	@if ! [ -f build/node0/commercionetwork/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/commercionetwork:Z commercionetwork/commercionetworknode testnet --v 4 -o . --starting-ip-address 192.168.10.2 --keyring-backend=test --minimum-gas-prices ""; fi
+	@if ! [ -f build/node0/fury/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/fury:Z tessornetwork/furynode testnet --v 4 -o . --starting-ip-address 192.168.10.2 --keyring-backend=test --minimum-gas-prices ""; fi
 	@if ! [ -f build/nginx/nginx.conf ]; then cp -r contrib/localnet/nginx build/nginx; fi
 
 localnet-start: localnet-setup
@@ -179,7 +179,7 @@ localnet-start-daemon: localnet-setup
 
 
 localnet-reset: localnet-stop $(TARGET_BUILD)
-	@for node in 0 1 2 3; do build/$(TARGET_BIN)/furyd unsafe-reset-all --home ./build/node$$node/commercionetwork; done
+	@for node in 0 1 2 3; do build/$(TARGET_BIN)/furyd unsafe-reset-all --home ./build/node$$node/fury; done
 
 localnet-stop:
 	docker-compose down

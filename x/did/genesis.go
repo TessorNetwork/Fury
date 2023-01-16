@@ -1,8 +1,8 @@
 package did
 
 import (
-	"github.com/commercionetwork/commercionetwork/x/did/keeper"
-	"github.com/commercionetwork/commercionetwork/x/did/types"
+	"github.com/tessornetwork/fury/x/did/keeper"
+	"github.com/tessornetwork/fury/x/did/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

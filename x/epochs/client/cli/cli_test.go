@@ -7,9 +7,9 @@ import (
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	"github.com/cosmos/cosmos-sdk/testutil/network"
 
-	//"github.com/commercionetwork/commercionetwork/app"
-	"github.com/commercionetwork/commercionetwork/x/epochs/client/cli"
-	"github.com/commercionetwork/commercionetwork/x/epochs/types"
+	//"github.com/tessornetwork/fury/app"
+	"github.com/tessornetwork/fury/x/epochs/client/cli"
+	"github.com/tessornetwork/fury/x/epochs/types"
 )
 
 type IntegrationTestSuite struct {

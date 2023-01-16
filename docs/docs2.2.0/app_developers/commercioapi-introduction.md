@@ -89,7 +89,7 @@ To use the APIs you need to :
 ## CommercioAPIs overview
 Brief overview of the available functions. Refer tho the specific APIs guide for more details.
 
-For any support or questions regarding the API or the documentation please open an <a href="https://github.com/commercionetwork/commercionetwork/issues" target="_blank">Issue </a>
+For any support or questions regarding the API or the documentation please open an <a href="https://github.com/tessornetwork/fury/issues" target="_blank">Issue </a>
 
 
 ### Swagger environement

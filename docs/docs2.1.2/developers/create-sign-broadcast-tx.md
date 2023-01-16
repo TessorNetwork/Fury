@@ -135,8 +135,8 @@ This should return a JSON object similar to the following one.
   },
   "application_version": {
     "name": "commercionetwork",
-    "server_name": "cnd",
-    "client_name": "cndcli",
+    "server_name": "fyd",
+    "client_name": "fydcli",
     "version": "2.1.0-8-gc37c4748",
     "commit": "c37c474812cb80b13622462a09bf3998c634e875",
     "build_tags": "netgo,ledger",

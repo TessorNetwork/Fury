@@ -45,7 +45,7 @@ Compile binaries
 ```bash
 pkill furyd
 git init . 
-git remote add origin https://github.com/commercionetwork/commercionetwork.git
+git remote add origin https://github.com/tessornetwork/fury.git
 git pull
 git checkout tags/$(cat .data | grep -oP 'Release\s+\K\S+')
 go mod verify

@@ -6,7 +6,7 @@ import (
 	"sort"
 	"time"
 
-	v300 "github.com/commercionetwork/commercionetwork/x/genutil/legacy/v3.0.0"
+	v300 "github.com/tessornetwork/fury/x/genutil/legacy/v3.0.0"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/spf13/cobra"
@@ -74,7 +74,7 @@ If you want to migrate from version v2.0.0 to v3.0.0, you need to execute two mi
 To see get a full list of available migrations, use the migrations-list command.
 
 Example:
-$ %s migrate v3.0.0 /path/to/genesis.json --chain-id=commercio-testnetXXXX --genesis-time=2019-04-22T17:00:00Z --initial-height 1234
+$ %s migrate v3.0.0 /path/to/genesis.json --chain-id=fury-testnetXXXX --genesis-time=2019-04-22T17:00:00Z --initial-height 1234
 `, version.AppName, version.AppName),
 		Args: cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {

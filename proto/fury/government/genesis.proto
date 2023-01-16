@@ -1,0 +1,10 @@
+syntax = "proto3";
+package tessornetwork.fury.government;
+
+// Options section
+option go_package = "github.com/tessornetwork/fury/x/government/types";
+
+// GenesisState defines the id module's genesis state.
+message GenesisState {
+    string governmentAddress = 1;
+}

@@ -8,7 +8,7 @@ if [[ $STAGED_GO_FILES != "" ]]; then
     for file in $STAGED_GO_FILES; do
         gofmt -w -s $file
         misspell -w $file
-        goimports -w -local github.com/commercionetwork/commercionetwork $file
+        goimports -w -local github.com/tessornetwork/fury $file
 
         git add $file
     done

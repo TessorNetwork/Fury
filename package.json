@@ -1,7 +1,7 @@
 {
   "name": "comm",
   "version": "3.0.0",
-  "description": "Commercio.network documentation",
+  "description": "Tessor.network documentation",
   "main": "index.js",
   "scripts": {
     "predocs:serve": "./docs/pre.sh",
@@ -23,10 +23,10 @@
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/commercionetwork/commercionetwork.git"
+    "url": "git+https://github.com/tessornetwork/fury.git"
   },
   "bugs": {
-    "url": "https://github.com/commercionetwork/commercionetwork/issues"
+    "url": "https://github.com/tessornetwork/fury/issues"
   },
-  "homepage": "https://github.com/commercionetwork/commercionetwork#readme"
+  "homepage": "https://github.com/tessornetwork/fury#readme"
 }

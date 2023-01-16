@@ -3,10 +3,10 @@ package keeper_test
 import (
 	"testing"
 
-	"github.com/commercionetwork/commercionetwork/app"
-	"github.com/commercionetwork/commercionetwork/testutil/simapp"
-	"github.com/commercionetwork/commercionetwork/x/epochs"
-	"github.com/commercionetwork/commercionetwork/x/epochs/types"
+	"github.com/tessornetwork/fury/app"
+	"github.com/tessornetwork/fury/testutil/simapp"
+	"github.com/tessornetwork/fury/x/epochs"
+	"github.com/tessornetwork/fury/x/epochs/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/suite"

@@ -4,21 +4,21 @@ package v2_2_0
 import (
 	"time"
 
-	commKyc "github.com/commercionetwork/commercionetwork/x/commerciokyc"
-	v212memberships "github.com/commercionetwork/commercionetwork/x/commerciokyc/legacy/v2.1.2"
-	commKycTypes "github.com/commercionetwork/commercionetwork/x/commerciokyc/types"
+	commKyc "github.com/tessornetwork/fury/x/furykyc"
+	v212memberships "github.com/tessornetwork/fury/x/furykyc/legacy/v2.1.2"
+	commKycTypes "github.com/tessornetwork/fury/x/furykyc/types"
 
-	"github.com/commercionetwork/commercionetwork/x/upgrade"
-	upgradeTypes "github.com/commercionetwork/commercionetwork/x/upgrade/types"
-	v212vbr "github.com/commercionetwork/commercionetwork/x/vbr/legacy/v2.1.2"
-	v220vbr "github.com/commercionetwork/commercionetwork/x/vbr/legacy/v2.2.0"
-	vbrTypes "github.com/commercionetwork/commercionetwork/x/vbr/types"
+	"github.com/tessornetwork/fury/x/upgrade"
+	upgradeTypes "github.com/tessornetwork/fury/x/upgrade/types"
+	v212vbr "github.com/tessornetwork/fury/x/vbr/legacy/v2.1.2"
+	v220vbr "github.com/tessornetwork/fury/x/vbr/legacy/v2.2.0"
+	vbrTypes "github.com/tessornetwork/fury/x/vbr/types"
 
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	govern "github.com/commercionetwork/commercionetwork/x/government"
-	governTypes "github.com/commercionetwork/commercionetwork/x/government/types"
+	govern "github.com/tessornetwork/fury/x/government"
+	governTypes "github.com/tessornetwork/fury/x/government/types"
 
 	"github.com/cosmos/cosmos-sdk/x/genutil"
 )
@@ -83,7 +83,7 @@ func Migrate(appState genutil.AppMap) genutil.AppMap {
 		delete(appState, creditriskModuleName)
 	}
 
-	appState = commercioMintMigrate(appState, govAddr)
+	appState = furyMintMigrate(appState, govAddr)
 
 	return appState
 }

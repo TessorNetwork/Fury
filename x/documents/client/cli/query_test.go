@@ -3,9 +3,9 @@ package cli_test
 import (
 	"testing"
 
-	"github.com/commercionetwork/commercionetwork/testutil/network"
-	"github.com/commercionetwork/commercionetwork/x/documents/types"
-	govTypes "github.com/commercionetwork/commercionetwork/x/government/types"
+	"github.com/tessornetwork/fury/testutil/network"
+	"github.com/tessornetwork/fury/x/documents/types"
+	govTypes "github.com/tessornetwork/fury/x/government/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/stretchr/testify/require"
 )

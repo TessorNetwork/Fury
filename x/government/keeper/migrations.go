@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	v400 "github.com/commercionetwork/commercionetwork/x/government/legacy/v4.0.0"
+	v400 "github.com/tessornetwork/fury/x/government/legacy/v4.0.0"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

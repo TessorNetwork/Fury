@@ -110,7 +110,7 @@ The overall command to create a validator is the following:
 
 ### Testnet
 ```bash
-export VALIDATOR_PUBKEY=$(cnd tendermint show-validator)
+export VALIDATOR_PUBKEY=$(fyd tendermint show-validator)
 ```
 
 ### Mainnet
@@ -266,7 +266,7 @@ Congratulations, you are now a Commercio.network validator 🎉
 ## Note 
 
 If you want to make transactions with the **Nano Ledger** from another machine a full node must be created locally or a full node must be configured to accept remote connections.   
-Edit the `.cnd/config/config.toml` file by changing from 
+Edit the `.fyd/config/config.toml` file by changing from 
 
 ```
 laddr = "tcp://127.0.0.1:26657"
@@ -278,7 +278,7 @@ laddr = "tcp://0.0.0.0:26657"
 
 and restart your node
 ```
-systemctl restart cnd
+systemctl restart fyd
 ```
 
 and use the transaction this way
@@ -317,7 +317,7 @@ On https://testnet.commercio.network you can view the height of the chain at the
 
 Use the command 
 ```
-journal -u cnd -f | egrep " cnd+.*Committed state"
+journal -u fyd -f | egrep " fyd+.*Committed state"
 ```
 to check the height that reach your node
 
@@ -344,13 +344,13 @@ panic: Error initializing DB: resource temporarily unavailable
 
 #### Solution
 
-Maybe `cnd` and/or `cncli` services have been left active.
+Maybe `fyd` and/or `cncli` services have been left active.
 Use the following commands 
 
 ```bash
-systemctl stop cnd
+systemctl stop fyd
 systemctl stop cncli
-pkill -9 cnd
+pkill -9 fyd
 pkill -9 cncli
 ```
 

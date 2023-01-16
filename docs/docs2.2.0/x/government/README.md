@@ -12,7 +12,7 @@ The address identified as the `government` can be set **only during the genesis*
 This operation can be performed using the following command: 
 
 ```bash
-cnd set-genesis-government-address <ADDRESS-TO-USE>
+fyd set-genesis-government-address <ADDRESS-TO-USE>
 ```
 
 :::danger
@@ -34,7 +34,7 @@ The address identified as the `tumbler` can be set during the genesis or at acti
 This operation can be performed using the following command during the genesis: 
 
 ```bash
-cnd set-genesis-tumbler-address <ADDRESS-TO-USE>
+fyd set-genesis-tumbler-address <ADDRESS-TO-USE>
 ```
 
 When the chain is active you can use the following command

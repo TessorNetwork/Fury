@@ -1,0 +1,20 @@
+syntax = "proto3";
+package tessornetwork.fury.vbr;
+
+// Options section
+option go_package = "github.com/tessornetwork/fury/x/vbr/types";
+
+// Import section
+import "gogoproto/gogo.proto";
+import "fury/vbr/params.proto";
+import "cosmos/base/v1beta1/coin.proto";
+
+
+// GenesisState defines the vbr module's genesis state.
+message GenesisState {
+    repeated cosmos.base.v1beta1.DecCoin poolAmount = 1 [(gogoproto.moretags) = "yaml:\"pool_amount\"",
+    (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.DecCoins",
+    (gogoproto.nullable) = false] ;
+   
+    Params params = 4 [ (gogoproto.nullable) = false ];
+}

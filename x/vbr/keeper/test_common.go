@@ -3,11 +3,11 @@ package keeper
 import (
 	"testing"
 
-	epochsKeeper "github.com/commercionetwork/commercionetwork/x/epochs/keeper"
-	epochsTypes "github.com/commercionetwork/commercionetwork/x/epochs/types"
-	govKeeper "github.com/commercionetwork/commercionetwork/x/government/keeper"
-	govTypes "github.com/commercionetwork/commercionetwork/x/government/types"
-	"github.com/commercionetwork/commercionetwork/x/vbr/types"
+	epochsKeeper "github.com/tessornetwork/fury/x/epochs/keeper"
+	epochsTypes "github.com/tessornetwork/fury/x/epochs/types"
+	govKeeper "github.com/tessornetwork/fury/x/government/keeper"
+	govTypes "github.com/tessornetwork/fury/x/government/types"
+	"github.com/tessornetwork/fury/x/vbr/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/simapp"
 	"github.com/cosmos/cosmos-sdk/store"

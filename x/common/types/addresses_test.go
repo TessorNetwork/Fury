@@ -6,7 +6,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 
-	"github.com/commercionetwork/commercionetwork/x/common/types"
+	"github.com/tessornetwork/fury/x/common/types"
 )
 
 func TestAddresses_AppendIfMissing(t *testing.T) {

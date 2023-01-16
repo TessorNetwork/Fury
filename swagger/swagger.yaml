@@ -5,7 +5,7 @@ definitions:
       did_document:
         $ref: '#/definitions/types.DidDocument'
       owner:
-        example: did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf
+        example: did:fury:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf
         type: string
     type: object
   types.Coin:
@@ -34,7 +34,7 @@ definitions:
         example: https://www.w3.org/ns/did/v1
         type: string
       id:
-        example: did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf
+        example: did:fury:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf
         type: string
       proof:
         $ref: '#/definitions/types.Proof'
@@ -91,12 +91,12 @@ definitions:
         $ref: '#/definitions/types.DocumentMetadata'
       recipients:
         example:
-        - did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf
+        - did:fury:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf
         items:
           type: string
         type: array
       sender:
-        example: did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf
+        example: did:fury:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf
         type: string
       uuid:
         example: d0f6c692-506f-4bd7-bdf4-f6693633d1da
@@ -252,7 +252,7 @@ definitions:
   types.Proof:
     properties:
       controller:
-        example: did:com:1tkgm3rra9cs3sfugjqdps30ujggf5klm425zvx
+        example: did:fury:1tkgm3rra9cs3sfugjqdps30ujggf5klm425zvx
         type: string
       created:
         example: "2020-04-22T04:23:50.73112321Z"
@@ -267,16 +267,16 @@ definitions:
         example: EcdsaSecp256k1VerificationKey2019
         type: string
       verificationMethod:
-        example: did:com:pub1addwnpepqt6lnn5v0c3rys49v5v9f4kvcchehnu7kyk8t8vce5lsxfy7e2pxwyvmf6t
+        example: did:fury:pub1addwnpepqt6lnn5v0c3rys49v5v9f4kvcchehnu7kyk8t8vce5lsxfy7e2pxwyvmf6t
         type: string
     type: object
   types.PubKey:
     properties:
       controller:
-        example: did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf
+        example: did:fury:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf
         type: string
       id:
-        example: did:com:1tkgm3rra9cs3sfugjqdps30ujggf5klm425zvx#keys-1
+        example: did:fury:1tkgm3rra9cs3sfugjqdps30ujggf5klm425zvx#keys-1
         type: string
       publicKeyPem:
         example: |
@@ -320,9 +320,9 @@ definitions:
     type: object
 info:
   contact:
-    email: developers@commercio.network
-  description: Swagger API for CommercioNetwork
-  title: CommercioNetwork API
+    email: developers@tessor.network
+  description: Swagger API for TessorNetwork
+  title: TessorNetwork API
 paths:
   /approvedPowerUpRequests:
     get:
@@ -346,7 +346,7 @@ paths:
       summary: Get the user Did power up approved requests
       tags:
       - x/id
-  /commerciokyc/funds:
+  /furykyc/funds:
     get:
       description: This endpoint returns current pool funds for accreditation block reward
       operationId: getGetPoolFunds
@@ -367,8 +367,8 @@ paths:
         "404": {}
       summary: Get All Current pool funds
       tags:
-      - x/commerciokyc
-  /commerciokyc/invites:
+      - x/furykyc
+  /furykyc/invites:
     get:
       description: This endpoint returns all the Invites
       operationId: getInvitesHandler
@@ -391,8 +391,8 @@ paths:
         "404": {}
       summary: Get All Invites
       tags:
-      - x/commerciokyc
-  /commerciokyc/membership/{address}:
+      - x/furykyc
+  /furykyc/membership/{address}:
     get:
       description: This endpoint returns the Membership
       operationId: getMembershipForAddr
@@ -417,8 +417,8 @@ paths:
         "404": {}
       summary: Get Membership for given address
       tags:
-      - x/commerciokyc
-  /commerciokyc/memberships:
+      - x/furykyc
+  /furykyc/memberships:
     get:
       description: This endpoint returns all the Memberships
       operationId: getMemberships
@@ -439,8 +439,8 @@ paths:
         "404": {}
       summary: Get All Memberships
       tags:
-      - x/commerciokyc
-  /commerciokyc/sold/{address}:
+      - x/furykyc
+  /furykyc/sold/{address}:
     get:
       description: This endpoint returns all Memberships sold by a specific Trusted Service Provider
       operationId: getSoldForTsp
@@ -467,8 +467,8 @@ paths:
         "404": {}
       summary: Get All Memberships sold by Trusted Service Provider
       tags:
-      - x/commerciokyc
-  /commerciokyc/tsps:
+      - x/furykyc
+  /furykyc/tsps:
     get:
       description: This endpoint returns all the Trusted Service Providers
       operationId: getTrustedServiceProvidersHandler
@@ -492,8 +492,8 @@ paths:
         "404": {}
       summary: Get All Trusted Service Providers
       tags:
-      - x/commerciokyc
-  /commerciomint/etps:
+      - x/furykyc
+  /furymint/etps:
     get:
       description: This endpoint returns the Conversion rate, along with the height at which the resource was queried at
       operationId: getConversionRateHandler
@@ -512,8 +512,8 @@ paths:
         "404": {}
       summary: Get Conversion rate
       tags:
-      - x/commerciomint
-  /commerciomint/etps/{address}:
+      - x/furymint
+  /furymint/etps/{address}:
     get:
       description: This endpoint returns the Exchange Trade Position, along with the blocktime at which the resource was queried at
       operationId: getEtpsHandler
@@ -540,7 +540,7 @@ paths:
         "404": {}
       summary: Get all the Exchange Trade Positions for user
       tags:
-      - x/commerciomint
+      - x/furymint
   /docs/{address}/received:
     get:
       description: This endpoint returns the received documents, along with the height at which the resource was queried at

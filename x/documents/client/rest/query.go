@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/commercionetwork/commercionetwork/x/documents/types"
+	"github.com/tessornetwork/fury/x/documents/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	restTypes "github.com/cosmos/cosmos-sdk/types/rest"
 	"github.com/gorilla/mux"
@@ -17,27 +17,27 @@ const (
 
 func RegisterRoutes(cliCtx client.Context, r *mux.Router) {
 	r.HandleFunc(
-		fmt.Sprintf("/commercionetwork/docs/{%s}/sent", userRestParameterName),
+		fmt.Sprintf("/fury/docs/{%s}/sent", userRestParameterName),
 		getSentDocumentsHandler(cliCtx)).
 		Methods("GET")
 
 	r.HandleFunc(
-		fmt.Sprintf("/commercionetwork/docs/{%s}/received", userRestParameterName),
+		fmt.Sprintf("/fury/docs/{%s}/received", userRestParameterName),
 		getReceivedDocumentsHandler(cliCtx)).
 		Methods("GET")
 
 	r.HandleFunc(
-		fmt.Sprintf("/commercionetwork/receipts/{%s}/sent", userRestParameterName),
+		fmt.Sprintf("/fury/receipts/{%s}/sent", userRestParameterName),
 		getSentDocumentsReceiptsHandler(cliCtx)).
 		Methods("GET")
 
 	r.HandleFunc(
-		fmt.Sprintf("/commercionetwork/receipts/{%s}/received", userRestParameterName),
+		fmt.Sprintf("/fury/receipts/{%s}/received", userRestParameterName),
 		getReceivedDocumentsReceiptsHandler(cliCtx)).
 		Methods("GET")
 
 	r.HandleFunc(
-		fmt.Sprintf("/commercionetwork/docs/{%s}/receipts", UUIDRestParameterName),
+		fmt.Sprintf("/fury/docs/{%s}/receipts", UUIDRestParameterName),
 		getDocumentsReceiptsHandler(cliCtx)).
 		Methods("GET")
 }

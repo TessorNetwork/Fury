@@ -1,0 +1,9 @@
+syntax = "proto3";
+package tessornetwork.fury.documents;
+
+// Options section
+option go_package = "github.com/tessornetwork/fury/x/documents/types";
+
+message StringProto {
+    string stProto = 1;
+}

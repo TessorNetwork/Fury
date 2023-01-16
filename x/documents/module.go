@@ -11,10 +11,10 @@ import (
 
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/commercionetwork/commercionetwork/x/documents/client/cli"
-	"github.com/commercionetwork/commercionetwork/x/documents/client/rest"
-	"github.com/commercionetwork/commercionetwork/x/documents/keeper"
-	"github.com/commercionetwork/commercionetwork/x/documents/types"
+	"github.com/tessornetwork/fury/x/documents/client/cli"
+	"github.com/tessornetwork/fury/x/documents/client/rest"
+	"github.com/tessornetwork/fury/x/documents/keeper"
+	"github.com/tessornetwork/fury/x/documents/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/codec"
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"

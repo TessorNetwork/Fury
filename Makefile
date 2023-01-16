@@ -161,14 +161,14 @@ test:
 ### Docker
 
 build-image-libraries-cached:
-	docker build -t tessornetwork/furynode -f contrib/localnet/furynode/Dockerfile .
+	docker build -t nimrostafarian/tessornetwork:fury -f contrib/localnet/furynode/Dockerfile .
 
 build-image-to-download-libraries:
 	docker build -t fury/libraries -f DockerfileLibraries .
-	docker build -t tessornetwork/furynode -f contrib/localnet/furynode/Dockerfile .
+	docker build -t nimrostafarian/tessornetwork:fury -f contrib/localnet/furynode/Dockerfile .
 
 localnet-setup: localnet-stop
-	@if ! [ -f build/node0/fury/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/fury:Z tessornetwork/furynode testnet --v 4 -o . --starting-ip-address 192.168.10.2 --keyring-backend=test --minimum-gas-prices ""; fi
+	@if ! [ -f build/node0/fury/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/fury:Z nimrostafarian/tessornetwork:fury testnet --v 4 -o . --starting-ip-address 192.168.10.2 --keyring-backend=test --minimum-gas-prices ""; fi
 	@if ! [ -f build/nginx/nginx.conf ]; then cp -r contrib/localnet/nginx build/nginx; fi
 
 localnet-start: localnet-setup

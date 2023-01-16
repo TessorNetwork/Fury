@@ -86,7 +86,7 @@ build-linux: go.sum
 	env GOOS=linux GOARCH=amd64 go build -mod=readonly -o ./build/Linux-AMD64/furyd $(BUILD_FLAGS) ./cmd/furyd
 
 build-local-linux: go.sum
-	env GOOS=linux GOARCH=amd64 go build -mod=readonly -o ./build/furyd $(BUILD_FLAGS) ./cmd/furyd
+	env GOOS=linux GOARCH=amd64 go build -mod=readonly -o ./app/build/furyd $(BUILD_FLAGS) ./cmd/furyd
 
 build-windows: go.sum
 	env GOOS=windows GOARCH=amd64 go build -mod=readonly -o ./build/Windows-AMD64/furyd.exe $(BUILD_FLAGS) ./cmd/furyd
@@ -139,7 +139,7 @@ install: go.sum
 build: go.sum
 	@echo "--> Building fury"
 	@echo "--> $(SDK_PACK)"
-	@go build -mod=readonly -o ./build/furyd $(BUILD_FLAGS) ./cmd/furyd
+	@go build -mod=readonly -o ./app/build/furyd $(BUILD_FLAGS) ./cmd/furyd
 
 
 #go.sum: go.mod

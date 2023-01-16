@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  furynode0:
-    container_name: furynode0
+  commercionetworknode0:
+    container_name: commercionetworknode0
     image: "nimrostafarian/tessornetwork:fury"
     ports:
       - "26656-26657:26656-26657"
@@ -10,55 +10,55 @@ services:
       - "9090:9090"
     environment:
       - ID=0
-      - LOG=${LOG:-fury.log}
+      - LOG=${LOG:-commercionetwork.log}
     volumes:
-      - ./build:/fury:Z
+      - ./build:/commercionetwork:Z
     networks:
       localnet:
         ipv4_address: 192.168.10.2
 
-  furynode1:
-    container_name: furynode1
+  commercionetworknode1:
+    container_name: commercionetworknode1
     image: "nimrostafarian/tessornetwork:fury"
     ports:
       - "26659-26660:26656-26657"
       - "9091:9090"
     environment:
       - ID=1
-      - LOG=${LOG:-fury.log}
+      - LOG=${LOG:-commercionetwork.log}
       - TZ=Asia/Colombo
     volumes:
-      - ./build:/fury:Z
+      - ./build:/commercionetwork:Z
     networks:
       localnet:
         ipv4_address: 192.168.10.3
 
-  furynode2:
-    container_name: furynode2
+  commercionetworknode2:
+    container_name: commercionetworknode2
     image: "nimrostafarian/tessornetwork:fury"
     environment:
       - ID=2
-      - LOG=${LOG:-fury.log}
+      - LOG=${LOG:-commercionetwork.log}
     ports:
       - "26661-26662:26656-26657"
       - "9092:9090"
     volumes:
-      - ./build:/fury:Z
+      - ./build:/commercionetwork:Z
     networks:
       localnet:
         ipv4_address: 192.168.10.4
 
-  furynode3:
-    container_name: furynode3
+  commercionetworknode3:
+    container_name: commercionetworknode3
     image: "nimrostafarian/tessornetwork:fury"
     environment:
       - ID=3
-      - LOG=${LOG:-fury.log}
+      - LOG=${LOG:-commercionetwork.log}
     ports:
       - "26663-26664:26656-26657"
       - "9093:9090"
     volumes:
-      - ./build:/fury:Z
+      - ./build:/commercionetwork:Z
     networks:
       localnet:
         ipv4_address: 192.168.10.5

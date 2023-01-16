@@ -9,8 +9,8 @@ LOG=${LOG:-fury.log}
 ##
 ## Assert linux binary
 ##
-if ! [ -f "/app/build/furyd" ]; then
-	echo "The binary /app/build/furyd cannot be found. Please add the binary to the shared folder."
+if ! [ -f "/build/furyd" ]; then
+	echo "The binary /build/furyd cannot be found. Please add the binary to the shared folder."
 	exit 1
 fi
 
@@ -26,7 +26,7 @@ fi
 export FYDHOME="/fury/node${ID}/fury"
 
 if [ -d "$(dirname "${FYDHOME}"/"${LOG}")" ]; then
-  "/app/build/furyd" --home "${FYDHOME}" "$@" | tee "${FYDHOME}/${LOG}"
+  "/build/furyd" --home "${FYDHOME}" "$@" | tee "${FYDHOME}/${LOG}"
 else
-  "/app/build/furyd" --home "${FYDHOME}" "$@"
+  "/build/furyd" --home "${FYDHOME}" "$@"
 fi

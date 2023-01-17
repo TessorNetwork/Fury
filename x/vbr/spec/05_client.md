@@ -72,7 +72,7 @@ grpcurl -plaintext \
 {
   "funds": [
     {
-      "denom": "ucommercio",
+      "denom": "ufury",
       "amount": "10161937347246000000000000000000"
     }
   ]
@@ -100,7 +100,7 @@ http://localhost:1317/commercionetwork/vbr/funds
 {
   "funds": [
     {
-      "denom": "ucommercio",
+      "denom": "ufury",
       "amount": "10000000.000000000000000000"
     }
   ]

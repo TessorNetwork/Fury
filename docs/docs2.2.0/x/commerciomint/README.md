@@ -1,26 +1,26 @@
 # CommercioMint
 
 The `commerciomint` module is the one that allows you to create Exchange Trade Position (*ETPs*) using your 
-Commercio.network tokens (*ucommercio*) in order to get Commercio Cash Credits (*uccc*) in return.
+Commercio.network tokens (*ufury*) in order to get Commercio Cash Credits (*ufusd*) in return.
 
 A *Exchange Trade Position* (*ETP*) is a core component of the Commercio Network blockchain whose purpose is to
-create Commercio Cash Credits (`uccc`) in exchange for Commercio Tokens (`ucommercio`) which it then holds in
+create Commercio Cash Credits (`ufusd`) in exchange for Commercio Tokens (`ufury`) which it then holds in
 escrow until the borrowed Commercio Cash Credits are returned.
 
-In simple words, opening a ETP allows you to exchange any amount of `ucommercio` to get relative the amount of `uccc` with relative Conversion Rate value. 
-For example, if you open a ETP lending `100 ucommercio` with 1.1 Conversion Rate value will result in you receiving `90 uccc` (approximation by default).  
+In simple words, opening a ETP allows you to exchange any amount of `ufury` to get relative the amount of `ufusd` with relative Conversion Rate value. 
+For example, if you open a ETP lending `100 ufury` with 1.1 Conversion Rate value will result in you receiving `90 ufusd` (approximation by default).  
 Initial Conversion Rate value is 1.0.       
 
 ## Transactions
 
-### Mint Commercio Cash Credit (CCC)
+### Mint Commercio Cash Credit (FUSD)
 
 #### Transaction message
-To mint CCC you need to create and sign the following message:
+To mint FUSD you need to create and sign the following message:
   
 ```json
 {
-  "type": "commercio/MsgMintCCC",
+  "type": "commercio/MsgMintFUSD",
   "value": {
     "deposited_amount": [
       {
@@ -47,7 +47,7 @@ If you want to [list past transactions](../../../developers/listing-transactions
 you need to use the following `message.action` value: 
 
 ```
-mintCCC
+mintFUSD
 ```  
 
 
@@ -55,15 +55,15 @@ mintCCC
 
 
 
-### Burn Commercio Cash Credit (CCC)
+### Burn Commercio Cash Credit (FUSD)
 
 #### Transaction message
 
-To burn previously minteted CCC you need to create and sign the following message:
+To burn previously minteted FUSD you need to create and sign the following message:
 
 ```json
 {
-  "type": "commercio/MsgBurnCCC",
+  "type": "commercio/MsgBurnFUSD",
   "value": {
     "signer": "<user address>",
     "amount": {
@@ -88,12 +88,12 @@ If you want to [list past transactions](../../../developers/listing-transactions
 you need to use the following `message.action` value: 
 
 ```
-burnCCC
+burnFUSD
 ```
 
 
 
-### Set CCC conversion rate
+### Set FUSD conversion rate
 
 :::warning  
 This transaction type is accessible only to the [government](../../government/README.md).  
@@ -102,11 +102,11 @@ Trying to perform this transaction without being the government will result in a
 
 #### Transaction message
 
-To set the CCC conversion rate you need to create and sign the following message:
+To set the FUSD conversion rate you need to create and sign the following message:
 
 ```json
 {
-  "type": "commercio/MsgSetCCCConversionRate",
+  "type": "commercio/MsgSetFUSDConversionRate",
   "value": {
     "signer": "<government address>",
     "rate": "<floating-point collateral rate>"
@@ -122,7 +122,7 @@ you need to use the following `message.action` value:
 setEtpsConversionRate
 ```
 
-### Set CCC freeze period
+### Set FUSD freeze period
 
 :::warning  
 This transaction type is accessible only to the [government](../../government/README.md).  
@@ -131,11 +131,11 @@ Trying to perform this transaction without being the government will result in a
 
 #### Transaction message
 
-To set the CCC freeze period you need to create and sign the following message:
+To set the FUSD freeze period you need to create and sign the following message:
 
 ```json
 {
-  "type": "commercio/MsgSetCCCFreezePeriod",
+  "type": "commercio/MsgSetFUSDFreezePeriod",
   "value": {
     "signer": "<government address>",
     "freeze_period": "<nono seconds freeze period>"
@@ -196,7 +196,7 @@ http://localhost:1317/commerciomint/etps/did:com:15erw8aqttln5semks0vnqjy9yzrygz
     {
       "credits": {
         "amount": "500000",
-        "denom": "uccc"
+        "denom": "ufusd"
       },
       "collateral": "450000",
       "exchange_rate": "0.900000000000000000",
@@ -208,7 +208,7 @@ http://localhost:1317/commerciomint/etps/did:com:15erw8aqttln5semks0vnqjy9yzrygz
 }
 ```
 
-### Reading the current CCC conversion rate
+### Reading the current FUSD conversion rate
 
 #### CLI
 
@@ -226,7 +226,7 @@ Endpoint:
 
 ##### Example
 
-Getting the current CCC conversion rate:
+Getting the current FUSD conversion rate:
 
 ```
 http://localhost:1317/commerciomint/conversion_rate
@@ -242,7 +242,7 @@ http://localhost:1317/commerciomint/conversion_rate
 
 
 
-### Reading the current CCC freeze period
+### Reading the current FUSD freeze period
 #### CLI
 
 ```bash
@@ -259,7 +259,7 @@ Endpoint:
 
 ##### Example
 
-Getting the current CCC freeze period:
+Getting the current FUSD freeze period:
 
 ```
 http://localhost:1317/commerciomint/freeze_period

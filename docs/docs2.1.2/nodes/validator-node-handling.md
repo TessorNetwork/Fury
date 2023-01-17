@@ -26,7 +26,7 @@ The follow command must be performed
 fycli tx slashing \
   unjail \
   --from <your pub addr creator val> \
-  --fees=10000ucommercio  \
+  --fees=10000ufury  \
   --chain-id="$CHAINID" \
   -y
 ```
@@ -44,9 +44,9 @@ To perform `unbond transaction` use the follow command
 fycli tx staking \
   unbond \
   <validator-operator-addr> \
-  50000000000ucommercio \
+  50000000000ufury \
   --from <your pub addr delegator> \
-  --fees=10000ucommercio  \
+  --fees=10000ufury  \
   --chain-id="$CHAINID" \
   -y
 ```
@@ -73,9 +73,9 @@ fycli tx staking \
   redelegate \
   <source-validator-operator-addr> \
   <destination-validator-operator-addr> \
-  50000000000ucommercio \
+  50000000000ufury \
   --from <your pub addr delegator> \
-  --fees=10000ucommercio \
+  --fees=10000ufury \
   --chain-id="$CHAINID" \
   -y
 ```

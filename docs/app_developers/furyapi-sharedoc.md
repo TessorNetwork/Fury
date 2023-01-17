@@ -229,17 +229,17 @@ Example
 The value `string` is not a `did` format 
 
 
-##### 3. Not enough CCC 
+##### 3. Not enough FUSD 
 
 Message Example 
 
 ```
 {
-  "error": "account has only 0uccc, required more 10000uccc"
+  "error": "account has only 0ufusd, required more 10000ufusd"
 }
 ```
 
-It implies that the wallet of the sender has not enough CCC to pay the chain fee for the transaction.   
+It implies that the wallet of the sender has not enough FUSD to pay the chain fee for the transaction.   
 
 
 

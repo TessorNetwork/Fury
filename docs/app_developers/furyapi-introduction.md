@@ -47,7 +47,7 @@ Memberships can be bought once registered using a sandbox credit card provided b
 In the https://testnet.commercio.network chain, a tool that allows to recharge a wallet 
 (with COM token) is available. 
 
-A destination address (`addr`) and the amount to be recharged with  (`amount` expressed in ucommercio) must be provided to the faucet endpoint (https://faucet-testnet.commercio.network/give).
+A destination address (`addr`) and the amount to be recharged with  (`amount` expressed in ufury) must be provided to the faucet endpoint (https://faucet-testnet.commercio.network/give).
 
 **Example** 
 Suppose you want to recharge with `10 COM` your wallet address `did:com:1fjqvugs6dfwtax3k4zzh46pswmwryc8ff7f0mv`
@@ -60,14 +60,14 @@ https://faucet-testnet.commercio.network/give?addr=did:com:1tq5mvp7j4vtew08htasw
 
 **Limits**
 
-`amount` : There is a limit in the amount value of `100000000 ucommercio`
+`amount` : There is a limit in the amount value of `100000000 ufury`
 
 
-ATTENTION : A `faucet` for CCC is not available. The Buy function (`coming soon`) in the dev.commercio.app must be used  
+ATTENTION : A `faucet` for FUSD is not available. The Buy function (`coming soon`) in the dev.commercio.app must be used  
 
 
 ### Official
-Is the real-world environment where real credit card transactions are requested and real tokens (COM and CCC) are spent
+Is the real-world environment where real credit card transactions are requested and real tokens (COM and FUSD) are spent
 
 
 
@@ -77,7 +77,7 @@ To use the APIs you need to:
 
 * Register and Login on the web App (dev.commercio.app or commercio.app)
 * Own a valid membership (Bronze,Silver,Gold) and get your `ID account` (or your own wallet address, e.g. : `did:com:1r0sk6stfm6d5jtfcne2jxd7s7n2whp35tjm7zl` )
-* Own enough CCCs (Commerce Cash Credits) to pay for the transaction fees.
+* Own enough FUSDs (Commerce Cash Credits) to pay for the transaction fees.
 
 
 ## CommercioAPIs overview

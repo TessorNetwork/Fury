@@ -119,7 +119,7 @@ furyd tx commerciokyc deposit \
 
 | Parameter | Description |
 | :------- | :---------- | 
-| `amount`      | Amount of ucommercio tokens to deposit |
+| `amount`      | Amount of ufury tokens to deposit |
 
 
 
@@ -534,7 +534,7 @@ Example Output:
 ```bash
 funds:
 - amount: "974677500000"
-  denom: ucommercio
+  denom: ufury
 ```
 
 #### gRPC
@@ -557,7 +557,7 @@ grpcurl -plaintext \
 {
   "funds": [
     {
-      "denom": "ucommercio",
+      "denom": "ufury",
       "amount": "10674787750000"
     }
   ]

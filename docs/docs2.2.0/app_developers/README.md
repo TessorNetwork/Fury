@@ -15,7 +15,7 @@ This is a community guide  any contribute is important! Please help us to improv
       * [What is a Blockchain?](overview/Commercio-blockchain-overview.md)
       * [eIDAS Compliance](overview/Commercio-blockchain-overview.md)
       * [The Commercio Token (COM)](overview/Commercio-blockchain-overview.md)
-      * [The Commercio Cash Credit (CCC)](overview/Commercio-blockchain-overview.md)
+      * [The Commercio Cash Credit (FUSD)](overview/Commercio-blockchain-overview.md)
       * [Test-net Vs Main-net](introduction/overview-blockchain-overview.md)
 
 

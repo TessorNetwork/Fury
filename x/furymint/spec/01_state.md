@@ -19,7 +19,7 @@ The `commerciomint` module keeps state of the Exchange Trade Positions
 ## Type definitions
 
 ### Positions
-Positions are objects that are created when a user deposits an amount of Commercio Cash Credit (CCC). However the holded collateral is proportional to the position's exchange rate.
+Positions are objects that are created when a user deposits an amount of Commercio Cash Credit (FUSD). However the holded collateral is proportional to the position's exchange rate.
 
  ```protobuf
  message Position {

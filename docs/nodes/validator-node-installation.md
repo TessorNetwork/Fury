@@ -73,14 +73,14 @@ This transaction is expected to be done with an hsm as Ledger. If you are using 
 furyd tx bank send \
 <DELEGATOR ADDRESS> \
 <CREATOR ADDRESS> \
-1110000ucommercio \
---fees=10000ucommercio  \
+1110000ufury \
+--fees=10000ufury  \
 --chain-id="$CHAINID" \
 -y
 ```
 or you can use the [Commercio Wallet App](https://github.com/commercionetwork/Commercio-Wallet-App)
 
-**Note**: You can use `uccc` tokens instead `ucommercio` for the `fees` value
+**Note**: You can use `ufusd` tokens instead `ufury` for the `fees` value
 
 Once you've been confirmed the successful transaction, please check using the following command:
 ```bash
@@ -89,7 +89,7 @@ furyd query bank balances <CREATOR ADDRESS>
 
 The output should look like this **(WIP)**:
 ```
-- denom: ucommercio
+- denom: ufury
   amount: "1110000"
 ```
 
@@ -124,7 +124,7 @@ Warning: a did address can create one and only one validator and a validator can
 
 ```bash
 furyd tx staking create-validator \
-  --amount=1100000ucommercio \
+  --amount=1100000ufury \
   --pubkey=$VALIDATOR_PUBKEY \
   --moniker="$NODENAME" \
   --chain-id="$CHAINID" \
@@ -136,11 +136,11 @@ furyd tx staking create-validator \
   --commission-max-change-rate="0.01" \
   --min-self-delegation="1" \
   --from=<CREATOR ADDRESS> \
-  --fees=10000ucommercio \
+  --fees=10000ufury \
   -y
 ```
 
-**Note**: You can use `uccc` tokens instead `ucommercio` for the `fees` value
+**Note**: You can use `ufusd` tokens instead `ufury` for the `fees` value
 
 
 The output should look like this (WIP):
@@ -229,13 +229,13 @@ This transaction is expected to be done with an hsm as a **Ledger** device . If 
 ```bash
 furyd tx staking delegate \
   $OPERATOR_ADDRESS \
-  50000000000ucommercio \
+  50000000000ufury \
   --from <DELEGATOR ADDRESS> \
   --chain-id="$CHAINID" \
-  --fees=10000ucommercio \
+  --fees=10000ufury \
   -y
 ```
-**Note**: You can use `uccc` tokens instead `ucommercio` for the `fees` value
+**Note**: You can use `ufusd` tokens instead `ufury` for the `fees` value
 
 
 The output should look like this:
@@ -285,11 +285,11 @@ and use the transaction this way
 ```bash
 furyd tx staking delegate \
   <validator-addr> \
-  50000000000ucommercio \
+  50000000000ufury \
   --from <DELEGATOR ADDRESS> \
   --node tcp://<ip of your fulle node>:26657 \
   --chain-id="$CHAINID" \
-  --fees=10000ucommercio \
+  --fees=10000ufury \
   --ledger \
   -y
 ```

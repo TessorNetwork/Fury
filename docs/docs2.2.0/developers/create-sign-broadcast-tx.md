@@ -27,7 +27,7 @@ An example of message object is the following:
     "to_address": "<Recipient address>",
     "amount": [
       {
-        "denom" : "ucommercio",
+        "denom" : "ufury",
         "amount" : "10"
       }
     ]
@@ -80,11 +80,11 @@ This should print a JSON object similar to this:
       "address": "did:com:1l9rr5ck7ed30ny3ex4uj75ezrt03gfp96z7nen",
       "coins": [
         {
-          "denom": "uccc",
+          "denom": "ufusd",
           "amount": "10000000000000"
         },
         {
-          "denom": "ucommercio",
+          "denom": "ufury",
           "amount": "9999899990000"
         }
       ],
@@ -183,7 +183,7 @@ Using the same example data of the previous sections, a valid signature data wil
   "fee": {
     "amount": [
       {
-        "denom" : "ucommercio",
+        "denom" : "ufury",
         "amount" : "10000"
       }
     ],
@@ -198,7 +198,7 @@ Using the same example data of the previous sections, a valid signature data wil
         "to_address": "<Recipient address>",
         "amount": [
           {
-            "denom" : "ucommercio",
+            "denom" : "ufury",
             "amount" : "10"
           }
         ]
@@ -247,7 +247,7 @@ In order to do so, the following steps must be followed:
    The above JSON should then look like this:  
    
    ```json
-   {"account_number":"0","chain_id":"testnet","fee":{"amount":[{"denom":10000,"amount":"ucommercio"}],"gas":"20000"},"memo":"","msgs":[{"type":"cosmos-sdk/MsgSend","value":{"amount":[{"denom":10,"amount":"ucommercio"}],"from_address":"<Youraddress>","to_address":"<Recipientaddress>"}}],"sequence":"1"}
+   {"account_number":"0","chain_id":"testnet","fee":{"amount":[{"denom":10000,"amount":"ufury"}],"gas":"20000"},"memo":"","msgs":[{"type":"cosmos-sdk/MsgSend","value":{"amount":[{"denom":10,"amount":"ufury"}],"from_address":"<Youraddress>","to_address":"<Recipientaddress>"}}],"sequence":"1"}
    ```
 
 2. Compute the SHA-256 hash of the JSON content's byte array representation.  
@@ -358,7 +358,7 @@ The first thing that needs to be done in order to create a transaction, is to cr
         "to_address": "<Recipient address>",
         "amount": [
           {
-            "denom" : "ucommercio",
+            "denom" : "ufury",
             "amount" : "10"
           }
         ]
@@ -368,7 +368,7 @@ The first thing that needs to be done in order to create a transaction, is to cr
   "fee": {
     "amount": [
       {
-        "denom" : "ucommercio",
+        "denom" : "ufury",
         "amount" : "10000"
       }
     ],
@@ -448,7 +448,7 @@ curl -X POST http://localhost:1317/txs -d @request_body.json
           "to_address": "<Recipient address>",
           "amount": [
             {
-              "denom" : "ucommercio",
+              "denom" : "ufury",
               "amount" : "10"
             }
           ]

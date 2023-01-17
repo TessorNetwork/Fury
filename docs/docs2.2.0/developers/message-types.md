@@ -15,9 +15,9 @@ Inside this page you can find all the types and values for the different message
 * Send a document receipt: [MsgSendDocumentReceipt](../x/documents/#sending-a-document-reading-receipt)
 
 ## `commerciomint`
-* Open a ETP: [MsgMintCCC](../x/commerciomint/#mint-commercio-cash-credit-ccc)
-* Close a ETP: [MsgBurnCCC](../x/commerciomint/#burn-commercio-cash-credit-ccc)
-* Set ETP conversion rate: [MsgSetCCCConversionRate](../x/commerciomint/#set-ccc-conversion-rate)
+* Open a ETP: [MsgMintFUSD](../x/commerciomint/#mint-commercio-cash-credit-ccc)
+* Close a ETP: [MsgBurnFUSD](../x/commerciomint/#burn-commercio-cash-credit-ccc)
+* Set ETP conversion rate: [MsgSetFUSDConversionRate](../x/commerciomint/#set-ccc-conversion-rate)
 
 ## `commerciokyc`
 * Sending an invite: [MsgInviteUser](../x/commerciokyc/#sending-an-invite)

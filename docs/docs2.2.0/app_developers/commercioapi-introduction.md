@@ -51,7 +51,7 @@ In order to use the tool is needed
 
 * `Endpoint` :  https://faucet-testnet.commercio.network/give
 * `addr` : destination address
-* `amount` : expressed in `ucommercio` 
+* `amount` : expressed in `ufury` 
 
 
 
@@ -66,14 +66,14 @@ https://faucet-testnet.commercio.network/give?addr=did:com:1tq5mvp7j4vtew08htasw
 
 **Limits**
 
-`amount` : There is a limit in the amount value of `100000000 ucommercio`
+`amount` : There is a limit in the amount value of `100000000 ufury`
 
 
-ATTENTION : Is not available a `faucet` for CCC . The Buy function (`coming soon`) in the dev.commercio.app must be used  
+ATTENTION : Is not available a `faucet` for FUSD . The Buy function (`coming soon`) in the dev.commercio.app must be used  
 
 
 ### Official
-Is the realworld environment where real credit card transacions are requested and real token (COM and CCC) are spent
+Is the realworld environment where real credit card transacions are requested and real token (COM and FUSD) are spent
 
 
 
@@ -83,7 +83,7 @@ To use the APIs you need to :
 
 * Register and Login on web App (dev.commercio.app or commercio.app)
 * Own a valid membership (Bronze,Silver,Gold) and get your `ID account`  (or own wallet address  example : `did:com:1r0sk6stfm6d5jtfcne2jxd7s7n2whp35tjm7zl` )
-* Own enough CCCs (Commerce Cash Credits) to pay for the sending of the transactions.
+* Own enough FUSDs (Commerce Cash Credits) to pay for the sending of the transactions.
 
 
 ## CommercioAPIs overview

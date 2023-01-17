@@ -50,11 +50,11 @@ The follow command must be performed
 furyd tx slashing \
   unjail \
   --from <your pub addr creator val> \
-  --fees=10000ucommercio  \
+  --fees=10000ufury  \
   --chain-id="$CHAINID" \
   -y
 ```
-**Note**: You can use `uccc` tokens instead `ucommercio` for the `fees` value
+**Note**: You can use `ufusd` tokens instead `ufury` for the `fees` value
 
 If you are using the **Ledger device** you must first connect it to your computer, start the cosmos application and add `--ledger` flag to the command.
 
@@ -69,14 +69,14 @@ To perform `unbond transaction` use the follow command
 furyd tx staking \
   unbond \
   <validator-operator-addr> \
-  50000000000ucommercio \
+  50000000000ufury \
   --from <your pub addr delegator> \
-  --fees=10000ucommercio  \
+  --fees=10000ufury  \
   --chain-id="$CHAINID" \
   -y
 ```
 
-**Note**: You can use `uccc` tokens instead `ucommercio` for the `fees` value
+**Note**: You can use `ufusd` tokens instead `ufury` for the `fees` value
 
 
 value of `<validator-operator-addr>` can be obtain from explorer:
@@ -101,14 +101,14 @@ furyd tx staking \
   redelegate \
   <source-validator-operator-addr> \
   <destination-validator-operator-addr> \
-  50000000000ucommercio \
+  50000000000ufury \
   --from <your pub addr delegator> \
-  --fees=10000ucommercio \
+  --fees=10000ufury \
   --chain-id="$CHAINID" \
   -y
 ```
 
-**Note**: You can use `uccc` tokens instead `ucommercio` for the `fees` value
+**Note**: You can use `ufusd` tokens instead `ufury` for the `fees` value
 
 
 value of `<source-validator-operator-addr>` and `<destination-validator-operator-addr>` can be obtains from explorer:
@@ -331,7 +331,7 @@ furyd tx staking edit-validator \
   --details="description of your node (leave blank if you don't have it)" \
   --chain-id="commercio-3" \
   --from=<CREATOR ADDRESS> \
-  --fees=10000ucommercio \
+  --fees=10000ufury \
   -y
 ```
 

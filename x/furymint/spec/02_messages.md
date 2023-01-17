@@ -4,13 +4,13 @@ order: 2
 
 # Messages
 
-## Mint Commercio Cash Credit (CCC)
+## Mint Commercio Cash Credit (FUSD)
 
 
 ### Protobuf message
 
 ```protobuf
-message MsgMintCCC {
+message MsgMintFUSD {
   string depositor = 1;
   repeated cosmos.base.v1beta1.Coin deposit_amount = 2;
   string ID = 3;
@@ -18,11 +18,11 @@ message MsgMintCCC {
 ```
 
 ### Transaction message
-To mint CCC you need to create and sign the following message:
+To mint FUSD you need to create and sign the following message:
   
 ```json
 {
-  "type": "commercio/MsgMintCCC",
+  "type": "commercio/MsgMintFUSD",
   "value": {
     "depositor": "<user address>",
     "deposited_amount": [
@@ -49,17 +49,17 @@ If you want to [list past transactions](../../../docs/developers/listing-transac
 you need to use the following `message.action` value: 
 
 ```
-mintCCC
+mintFUSD
 ```  
 
 
-## Burn Commercio Cash Credit (CCC)
+## Burn Commercio Cash Credit (FUSD)
 
 
 ### Protobuf message
 
 ```protobuf
-message MsgBurnCCC {
+message MsgBurnFUSD {
   string signer = 1;
   cosmos.base.v1beta1.Coin amount = 2;
   string ID = 3;
@@ -68,11 +68,11 @@ message MsgBurnCCC {
 
 ### Transaction message
 
-To burn previously minteted CCC you need to create and sign the following message:
+To burn previously minteted FUSD you need to create and sign the following message:
 
 ```json
 {
-  "type": "commercio/MsgBurnCCC",
+  "type": "commercio/MsgBurnFUSD",
   "value": {
     "signer": "<user address>",
     "amount": {
@@ -96,7 +96,7 @@ If you want to [list past transactions](../../../docs/developers/listing-transac
 you need to use the following `message.action` value: 
 
 ```
-burnCCC
+burnFUSD
 ```
 
 

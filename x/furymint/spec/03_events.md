@@ -8,7 +8,7 @@ The commerciomint module emits the following events:
 
 ## Handlers
 
-### MsgMintCCC
+### MsgMintFUSD
 
 | Type           | Attribute Key    | Attribute Value      |
 | --------       | -------------    | ------------------   |
@@ -17,18 +17,18 @@ The commerciomint module emits the following events:
 | new_position   | minted_coins     | {creditsCoins}       |
 | new_position   | position_id      | {position_id}        |
 | new_position   | timestamp        | {position_createdAt} |
-| transfer (ucommercio) | recipient     | {moduleAddress}   |
-| transfer (ucommercio) | sender        | {depositorAddress} |
-| transfer (ucommercio) | amount        | {ucomAmount}      |
-| transfer (uccc) | recipient     | {depositorAddress}   |
-| transfer (uccc) | sender        | {moduleAddress} |
-| transfer (uccc) | amount        | {creditsCoins}      |
-| message        | action           | mintCCC              |
+| transfer (ufury) | recipient     | {moduleAddress}   |
+| transfer (ufury) | sender        | {depositorAddress} |
+| transfer (ufury) | amount        | {ucomAmount}      |
+| transfer (ufusd) | recipient     | {depositorAddress}   |
+| transfer (ufusd) | sender        | {moduleAddress} |
+| transfer (ufusd) | amount        | {creditsCoins}      |
+| message        | action           | mintFUSD              |
 | message        | sender           | {senderAddress}      |
 | message        | sender           | {depositorAddress}      |
 | message        | sender           | {moduleAddress}      |
 
-### MsgBurnCCC (WIP)
+### MsgBurnFUSD (WIP)
 
 | Type       | Attribute Key    | Attribute Value   |
 | --------   | -------------    |----------------   |
@@ -36,7 +36,7 @@ The commerciomint module emits the following events:
 | burned_ccc | sender           | {userAddress}     |
 | burned_ccc | amount           | {burnAmount}      |
 | burned_ccc | position_deleted | {bool}            |
-| message    | action           | burnCCC           |
+| message    | action           | burnFUSD           |
 | message    | sender           | {senderAddress}   |
 
 ### MsgSetParams

@@ -7,7 +7,7 @@ you've been invited by an already verified members to join the network.
 
 ## Buying a membership
 Memberships can be bought **exclusively on chain**. 
-To do so you are required to possess and spend an amount of Commercio Cash Credits (*CCC*) greater or 
+To do so you are required to possess and spend an amount of Commercio Cash Credits (*FUSD*) greater or 
 equal to the price of the membership you wish to buy.  
 
 ### Requirements
@@ -16,10 +16,10 @@ In order to buy a membership, the following requirements must be met:
 1. You must have been invited by a user already having a Bronze membership or superior.  
    Please refer to the [invitation procedure page](#invitation-process) 
    to know more about invitations. 
-2. You must possess a sufficient amount of CCCs to buy a membership.  
-   Please refer to the [proper page](../commerciomint/README.md) to know more about how to get CCCs out of your Commercio Tokens.
+2. You must possess a sufficient amount of FUSDs to buy a membership.  
+   Please refer to the [proper page](../commerciomint/README.md) to know more about how to get FUSDs out of your Commercio Tokens.
    
-The system will **prevent** sending an invite to an account with a balance greater than zero across CCCs and/or Commercio token.
+The system will **prevent** sending an invite to an account with a balance greater than zero across FUSDs and/or Commercio token.
 
 ### Buying process
 
@@ -355,7 +355,7 @@ http://localhost:1317/accreditations-funds
 {
   "height": "0",
   "result": {
-    "denom": "ucommercio",
+    "denom": "ufury",
     "amount": "9999899990000"
   }
 }

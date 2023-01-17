@@ -165,7 +165,7 @@
 # Version 3.0.0-alpha.2
 
 * Update commerciokyc module ABR for green membership
-* Convert ABR reward to uccc
+* Convert ABR reward to ufusd
 * Remove Vbr reward reate and and automatic-withdraw
 * Add Vbr earn rate
 * Update did to new W3C standards

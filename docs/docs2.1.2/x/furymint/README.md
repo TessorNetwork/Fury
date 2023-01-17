@@ -1,14 +1,14 @@
 # CommercioMint
 
 The `commerciomint` module is the one that allows you to create Collateralized Debt Positions (*CDPs*) using your 
-Commercio.network tokens (*ucommercio*) in order to get Commercio Cash Credits (*uccc*) in return.
+Commercio.network tokens (*ufury*) in order to get Commercio Cash Credits (*ufusd*) in return.
 
 A *Collateralized Debt Position* (*CDP*) is a core component of the Commercio Network blockchain whose purpose is to
-create Commercio Cash Credits (`uccc`) in exchange for Commercio Tokens (`ucommercio`) which it then holds in
+create Commercio Cash Credits (`ufusd`) in exchange for Commercio Tokens (`ufury`) which it then holds in
 escrow until the borrowed Commercio Cash Credits are returned.
 
-In simple words, opening a CDP allows you to exchange any amount of `ucommercio` to get half the amount of `uccc`. 
-For example, if you open a CDP lending `100 ucommercio` will result in you receiving `50 uccc`.    
+In simple words, opening a CDP allows you to exchange any amount of `ufury` to get half the amount of `ufusd`. 
+For example, if you open a CDP lending `100 ufury` will result in you receiving `50 ufusd`.    
 
 ## Transactions
 
@@ -134,12 +134,12 @@ http://localhost:1317/commerciomint/cdps/did:com:15erw8aqttln5semks0vnqjy9yzrygz
     "deposited_amount": [
       {
         "amount": "10000000",
-        "denom": "ucommercio"
+        "denom": "ufury"
       }
     ],
     "liquidity_amount": {
       "amount": "500000",
-      "denom": "uccc"
+      "denom": "ufusd"
     },
     "owner": "did:com:15erw8aqttln5semks0vnqjy9yzrygzmjwh7vke/1570177686",
     "timestamp": "1570177686"
@@ -186,11 +186,11 @@ http://localhost:1317/commerciomint/cdps/did:com:15erw8aqttln5semks0vnqjy9yzrygz
       "deposited_amount": [
         {
           "amount": "10000000",
-          "denom": "ucommercio"
+          "denom": "ufury"
         }
       ],
       "liquidity_amount": {
-        "denom": "uccc",
+        "denom": "ufusd",
         "amount": "500000"
       },
       "owner": "did:com:15erw8aqttln5semks0vnqjy9yzrygzmjwh7vke/1570177686",

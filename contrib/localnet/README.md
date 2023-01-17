@@ -232,11 +232,11 @@ Transfer a minumun amount of token to the new wallet from the first one to creat
 ./build/furyd tx bank send \
   did:com:1fm4ktq7t2282kmgcsptgm3j7f4k58r4zswseqw \
   did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl \
-  20000000ucommercio \
+  20000000ufury \
   --keyring-backend test \
   --home ./build/node0/commercionetwork/ \
   --chain-id $(jq -r '.chain_id' ./build/base_config/genesis.json) \
-  --fees 10000ucommercio \
+  --fees 10000ufury \
   -y
 ```
 
@@ -259,7 +259,7 @@ VALIDATOR_PUBKEY=$(./build/furyd \
 WALLET_CREATOR="did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl"
 
 ./build/furyd tx staking create-validator \
-  --amount=1000000ucommercio \
+  --amount=1000000ufury \
   --pubkey=$VALIDATOR_PUBKEY \
   --moniker="$NODENAME" \
   --chain-id="$CHAINID" \
@@ -273,7 +273,7 @@ WALLET_CREATOR="did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl"
   --from=$WALLET_CREATOR \
   --keyring-backend test \
   --home ./build/node4/commercionetwork/ \
-  --fees=10000ucommercio \
+  --fees=10000ufury \
   -y
 ```
 

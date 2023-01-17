@@ -20,7 +20,7 @@ If you wish to know more about the overall pairwise Did creation sequence, pleas
     "claimant": "address that sent funds to the centralized entity before",
     "amount": [
       {
-        "denom": "ucommercio",
+        "denom": "ufury",
         "amount": "amount to transfer to the pairwise did, integer"
       }
     ],

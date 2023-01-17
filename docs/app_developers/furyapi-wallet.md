@@ -141,7 +141,7 @@ Example
   "coins": [
     {
       "amount": "482380000", 
-      "denom": "uccc"
+      "denom": "ufusd"
     }
   ], 
   "public_key": {
@@ -199,7 +199,7 @@ Example
   "amount": [
     {
       "amount": "482380000",
-      "denom": "uccc"
+      "denom": "ufusd"
     }
   ]
 }
@@ -240,7 +240,7 @@ curl -X 'POST' \
   "amount": [
     {
       "amount": "1000000",
-      "denom": "uccc"
+      "denom": "ufusd"
     }
   ],
   "back_url": "http://example.com/callback",
@@ -270,7 +270,7 @@ Is an important data that could be used later with the API Wallet transfers GET 
   "amount": [
     {
       "amount": "1000000",
-      "denom": "uccc"
+      "denom": "ufusd"
     }
   ],
   "created_at": "2021-06-22T10:20:28Z",
@@ -325,7 +325,7 @@ curl -X 'GET' \
   "amount": [
     {
       "amount": "1000000",
-      "denom": "uccc"
+      "denom": "ufusd"
     }
   ],
   "chain_id": "commercio-testnet10k2",
@@ -393,7 +393,7 @@ curl -X 'GET' \
     "amount": [
       {
         "amount": "1000000",
-        "denom": "uccc"
+        "denom": "ufusd"
       }
     ],
     "chain_id": "commercio-testnet10k2",
@@ -411,7 +411,7 @@ curl -X 'GET' \
     "amount": [
       {
         "amount": "5000000",
-        "denom": "uccc"
+        "denom": "ufusd"
       }
     ],
     "chain_id": "commercio-testnet10k2",
@@ -427,7 +427,7 @@ curl -X 'GET' \
     "amount": [
       {
         "amount": "120000000",
-        "denom": "uccc"
+        "denom": "ufusd"
       }
     ],
     "created_at": "2021-06-22T10:48:32Z",

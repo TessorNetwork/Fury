@@ -43,7 +43,7 @@ On top of that `cn` comes with the following custom modules:
 * [`x/did`](modules/did/README.md): Self sovereign  identities creation.
 * [`x/government`](modules/government/README.md): On-chain government. 
 * [`x/commerciokyc`](modules/commerciokyc/README.md): Invite new members and get ABR rewards. 
-* [`x/commerciomint`](modules/commerciomint/README.md): Mint CCCs. 
+* [`x/commerciomint`](modules/commerciomint/README.md): Mint FUSDs. 
 * [`x/vbr`](modules/vbr/README.md): Run Validator nodes and get VBR rewards 
 
 
@@ -99,7 +99,7 @@ The Commercio Token (COM) in not inflationary since it has a 60 million limited 
 * The price is VARIABLE and is determined according supply and demand by the market 
 
 
-## The Commercio Cash Credit (CCC)
+## The Commercio Cash Credit (FUSD)
 
 Commercio.network  is an Enterprise-grade third generation blockchain that removes some complexity problems of second generation blockchain like BitCoin or Ethereum:
 
@@ -108,10 +108,10 @@ Commercio.network  is an Enterprise-grade third generation blockchain that remov
 Through this Token all active participants can benefit from the growth of the network.
 
 
-The Commercio Cash Credit (CCC)  ha an unlimited supply and can be minted only by freezing the COM Token
+The Commercio Cash Credit (FUSD)  ha an unlimited supply and can be minted only by freezing the COM Token
 
 * The main purpose of the Token is to be a unit of value that can be used to perform transactions on chain. It is a FEE TOKEN (utility Token)
-* The price is FIXED and is 1 EURO/CCC + VAT
+* The price is FIXED and is 1 EURO/FUSD + VAT
   
 **NB**: transaction fees could be paid with COM, but the cost is fixed to 0.01 COM.
 

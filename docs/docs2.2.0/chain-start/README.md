@@ -95,13 +95,13 @@ Once you have create a local key, you can execute the following commands:
 
 ```shell
 # Add some funds to the account
-fyd add-genesis-account $(fycli keys show jack --address) 10000000000000ucommercio
+fyd add-genesis-account $(fycli keys show jack --address) 10000000000000ufury
 
 # Set the account to be the government
 fyd set-genesis-government-address $(fycli keys show jack --address)
 
 # Set the initial TBR pool amount
-fyd set-genesis-tbr-pool-amount 10000000000ucommercio
+fyd set-genesis-tbr-pool-amount 10000000000ufury
 
 # Optional - Set the account to be a membership minter
 fyd add-genesis-membership-minter $(fycli keys show jack --address)
@@ -125,7 +125,7 @@ Once you've setup the genesis file, you can create the genesis transaction and c
 To do so, please run
 
 ```shell
-fyd gentx --name jack --amount 100000000ucommercio
+fyd gentx --name jack --amount 100000000ufury
 fyd collect-gentxs
 ``` 
 

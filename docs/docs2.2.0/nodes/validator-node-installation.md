@@ -79,8 +79,8 @@ This transaction is expected to be done with an hsm as Ledger. If you are using 
 fycli tx send \
 <your pub addr delegator> \
 <your pub addr creator val> \
-1110000ucommercio \
---fees=10000ucommercio  \
+1110000ufury \
+--fees=10000ufury  \
 --chain-id="$CHAINID" \
 -y
 ```
@@ -92,7 +92,7 @@ fycli query account <your pub addr creator val> --chain-id $CHAINID
 
 The output should look like this:
 ```
-- denom: ucommercio
+- denom: ufury
   amount: "1000000"
 ```
 
@@ -127,7 +127,7 @@ Warning: a did address can create one and only one validator and a validator can
 
 ```bash
 fycli tx staking create-validator \
-  --amount=1100000ucommercio \
+  --amount=1100000ufury \
   --pubkey=$VALIDATOR_PUBKEY \
   --moniker="$NODENAME" \
   --chain-id="$CHAINID" \
@@ -139,7 +139,7 @@ fycli tx staking create-validator \
   --commission-max-change-rate="0.01" \
   --min-self-delegation="1" \
   --from=<your pub addr creator val> \
-  --fees=10000ucommercio \
+  --fees=10000ufury \
   -y
 ##Twice input password required
 ```
@@ -232,10 +232,10 @@ This transaction is expected to be done with an hsm as a **Ledger** device . If 
 ```bash
 fycli tx staking delegate \
   $OPERATOR_ADDRESS \
-  50000000000ucommercio \
+  50000000000ufury \
   --from <your pub addr delegator> \
   --chain-id="$CHAINID" \
-  --fees=10000ucommercio \
+  --fees=10000ufury \
   -y
 ```
 
@@ -286,11 +286,11 @@ and use the transaction this way
 ```bash
 fycli tx staking delegate \
   <validator-addr> \
-  50000000000ucommercio \
+  50000000000ufury \
   --from <your pub addr delegator> \
   --node tcp://<ip of your fulle node>:26657 \
   --chain-id="$CHAINID" \
-  --fees=10000ucommercio \
+  --fees=10000ufury \
   --ledger \
   -y
 ```

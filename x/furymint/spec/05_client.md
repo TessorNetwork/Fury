@@ -6,9 +6,9 @@ order: 5
 
 ## Transactions
 
-### Mint CCC
+### Mint FUSD
 
-Mints a given amount of CCC
+Mints a given amount of FUSD
 #### CLI
 
 
@@ -22,9 +22,9 @@ furyd tx commerciomint mint \
 
 | Parameter | Description |
 | :------- | :---------- | 
-| `amount`               | Amount of required uCCC  |
+| `amount`               | Amount of required uFUSD  |
 
-### Burn CCC
+### Burn FUSD
 
 Burns a given amount of tokens, associated with ETP id.
 #### CLI
@@ -94,7 +94,7 @@ grpcurl -plaintext \
       "owner": "did:com:1rsyglnhpg7q6hvz3422wm63tehtkx5xa2uwp3j",
       "collateral": "400000000",
       "credits": {
-        "denom": "uccc",
+        "denom": "ufusd",
         "amount": "400000000"
       },
       "createdAt": "2022-07-04T10:19:15.704764997Z",
@@ -135,7 +135,7 @@ http://localhost:1317/commercionetwork/commerciomint/etps
       "owner": "did:com:1zg4jreq2g57s4efrl7wnh2swtrz3jt9nfaumcm",
       "collateral": "7",
       "credits": {
-        "denom": "uccc",
+        "denom": "ufusd",
         "amount": "10"
       },
       "created_at": "2021-07-22T13:18:44.598560074Z",
@@ -146,7 +146,7 @@ http://localhost:1317/commercionetwork/commerciomint/etps
       "owner": "did:com:18h03de6awcjk4u9gaz8s5l0xxl8ulxjctzsytd",
       "collateral": "274500",
       "credits": {
-        "denom": "uccc",
+        "denom": "ufusd",
         "amount": "450000"
       },
       "created_at": "2022-02-15T09:02:46.475744007Z",
@@ -192,7 +192,7 @@ grpcurl -plaintext \
       "owner": "did:com:1rsyglnhpg7q6hvz3422wm63tehtkx5xa2uwp3j",
       "collateral": "400000000",
       "credits": {
-        "denom": "uccc",
+        "denom": "ufusd",
         "amount": "400000000"
       },
       "createdAt": "2022-07-04T10:19:15.704764997Z",
@@ -237,7 +237,7 @@ http://localhost:1317/commercionetwork/commerciomint/did:com:18h03de6awcjk4u9gaz
       "owner": "did:com:18h03de6awcjk4u9gaz8s5l0xxl8ulxjctzsytd",
       "collateral": "274500",
       "credits": {
-        "denom": "uccc",
+        "denom": "ufusd",
         "amount": "450000"
       },
       "created_at": "2022-02-15T09:02:46.475744007Z",
@@ -283,7 +283,7 @@ grpcurl -plaintext \
     "owner": "did:com:1rsyglnhpg7q6hvz3422wm63tehtkx5xa2uwp3j",
     "collateral": "400000000",
     "credits": {
-      "denom": "uccc",
+      "denom": "ufusd",
       "amount": "400000000"
     },
     "createdAt": "2022-07-04T10:19:15.704764997Z",
@@ -322,7 +322,7 @@ http://localhost:1317/commercionetwork/commerciomint/805a82db-a9e7-441a-a26b-d9d
     "owner": "did:com:18h03de6awcjk4u9gaz8s5l0xxl8ulxjctzsytd",
     "collateral": "274500",
     "credits": {
-      "denom": "uccc",
+      "denom": "ufusd",
       "amount": "450000"
     },
     "created_at": "2022-02-15T09:02:46.475744007Z",

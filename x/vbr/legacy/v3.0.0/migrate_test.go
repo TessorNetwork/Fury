@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	v220vbr "github.com/commercionetwork/commercionetwork/x/vbr/legacy/v2.2.0"
-	"github.com/commercionetwork/commercionetwork/x/vbr/types"
+	v220vbr "github.com/tessornetwork/fury/x/vbr/legacy/v2.2.0"
+	"github.com/tessornetwork/fury/x/vbr/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

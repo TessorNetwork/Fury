@@ -23,7 +23,7 @@ In case a validator ended up jail for downtime, it is necessary that the wallet 
 The follow command must be performed 
 
 ```bash
-cncli tx slashing \
+fycli tx slashing \
   unjail \
   --from <your pub addr creator val> \
   --fees=10000ucommercio  \
@@ -41,7 +41,7 @@ The undelegated period is **21 days**, so is necessary to wait this period to ge
 To perform `unbond transaction` use the follow command
 
 ```bash
-cncli tx staking \
+fycli tx staking \
   unbond \
   <validator-operator-addr> \
   50000000000ucommercio \
@@ -69,7 +69,7 @@ It is possible to perform a procedure of moving tokens in stake from one validat
 To perform `redelegate transaction` use the follow command
 
 ```bash
-cncli tx staking \
+fycli tx staking \
   redelegate \
   <source-validator-operator-addr> \
   <destination-validator-operator-addr> \

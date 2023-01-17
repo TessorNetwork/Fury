@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	v220docs "github.com/commercionetwork/commercionetwork/x/documents/legacy/v2.2.0"
-	"github.com/commercionetwork/commercionetwork/x/documents/types"
+	v220docs "github.com/tessornetwork/fury/x/documents/legacy/v2.2.0"
+	"github.com/tessornetwork/fury/x/documents/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 )

@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/commercionetwork/commercionetwork/x/common/types"
+	"github.com/tessornetwork/fury/x/common/types"
 	"github.com/stretchr/testify/require"
 )
 

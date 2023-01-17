@@ -22,7 +22,7 @@ did:com:<unique part>
 In order to do so, you can use the CLI and execute the following command: 
 
 ```bash
-cncli keys add <key-name>
+fycli keys add <key-name>
 ``` 
 
 You will be required to set a password in order to safely store the key on your computer.  
@@ -199,7 +199,7 @@ from external centralized entity to one of his
 private pairwise Did, making them able to send documents (which indeed require the user to spend some tokens as fees). 
 
 A user who wants to execute a Did Power Up must have previously sent tokens to the public address of the centralized entity **Tk**.
-Retriving Did of **Tk** using public endpoint [/government/tumbler](../government/#retrieving-the-tumbler-address) or by command `cncli query government tumbler-address`
+Retriving Did of **Tk** using public endpoint [/government/tumbler](../government/#retrieving-the-tumbler-address) or by command `fycli query government tumbler-address`
   
 This action is the second and final step that must be done when [creating a pairwise Did](creating-pairwise-did.md).  
 
@@ -250,7 +250,7 @@ To create the `proof` field value, the following steps must be followed:
    }
    ```
 
-2. Retrive the public key of external centralized entity **Tk** [resolving its DDO](../id/#reading-a-user-did-document). Retriving Did of **Tk** using public endpoint [/government/tumbler](../government/#retrieving-the-tumbler-address) or by command `cncli query government tumbler-address`
+2. Retrive the public key of external centralized entity **Tk** [resolving its DDO](../id/#reading-a-user-did-document). Retriving Did of **Tk** using public endpoint [/government/tumbler](../government/#retrieving-the-tumbler-address) or by command `fycli query government tumbler-address`
 3. calculate SHA-256 `HASH` of the concatenation of `sender_did`, `pairwise_did` and `timestamp` fields, taken from `signature_json`
 4. do a PKCS1v15 signature of `HASH` with the RSA private key associated to RSA public key inserted in the `sender_did` DDO - this process yields the `SIGN(HASH)` value
 5. convert `SIGN(HASH)` in **base64** `BASE64(SIGN(HASH))`, this is the value to be placed in the `signature` field 
@@ -336,7 +336,7 @@ When creating the `proof ` field value, the following steps must be followed.
    }
    ```
 
-2. Retrive the public key of external centralized entity **Tk** [resolving its DDO](../id/#reading-a-user-did-document). Retriving Did of **Tk** using public endpoint [/government/tumbler](../government/#retrieving-the-tumbler-address) or by command `cncli query government tumbler-address`
+2. Retrive the public key of external centralized entity **Tk** [resolving its DDO](../id/#reading-a-user-did-document). Retriving Did of **Tk** using public endpoint [/government/tumbler](../government/#retrieving-the-tumbler-address) or by command `fycli query government tumbler-address`
 3. Calculate SHA-256 `HASH` of `sender_did`, `pairwise_did` and `timestamp` concatenation
 4. Sign in format PKCS1v15 the `HASH` with the RSA private key associated to RSA public key inserted in the DDO. Now we have `SIGN(HASH)`
 5. Convert `SIGN(HASH)` in Base64 notation `BASE64(SIGN(HASH))` and use it to add `signature` field 
@@ -443,7 +443,7 @@ http://localhost:1317/identities/did:com:15erw8aqttln5semks0vnqjy9yzrygzmjwh7vke
 #### CLI
 
 ```bash
-cncli query id power-up-request [Request-id] [flags]
+fycli query id power-up-request [Request-id] [flags]
 ```
 
 

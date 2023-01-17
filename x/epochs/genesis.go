@@ -4,8 +4,8 @@ import (
 	"time"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/commercionetwork/commercionetwork/x/epochs/keeper"
-	"github.com/commercionetwork/commercionetwork/x/epochs/types"
+	"github.com/tessornetwork/fury/x/epochs/keeper"
+	"github.com/tessornetwork/fury/x/epochs/types"
 )
 
 // InitGenesis initializes the capability module's state from a provided genesis

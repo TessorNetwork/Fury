@@ -305,7 +305,7 @@ sendDocumentReceipt
 #### CLI
 
 ```bash
-cncli query docs sent-documents [address]
+fycli query docs sent-documents [address]
 ```
 
 
@@ -334,7 +334,7 @@ http://localhost:1317/docs/did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf/sent
 #### CLI
 
 ```bash
-cncli query docs received-documents [address]
+fycli query docs received-documents [address]
 ```
 
 #### REST
@@ -365,7 +365,7 @@ http://localhost:1317/docs/did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf/recei
 #### CLI
 
 ```bash
-cncli query docs sent-receipts [address]
+fycli query docs sent-receipts [address]
 ```
 
 #### REST
@@ -393,7 +393,7 @@ http://localhost:1317/receipts/did:com:12p24st9asf394jv04e8sxrl9c384jjqwejv0gf/s
 #### CLI
 
 ```bash
-cncli query docs received-receipts [address]
+fycli query docs received-receipts [address]
 ```
    
 

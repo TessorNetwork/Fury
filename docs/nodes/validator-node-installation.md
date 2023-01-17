@@ -18,7 +18,7 @@ If you have any problems with the procedure try to read the section **[Common er
 
 
 ## 1. Add wallet key
-Inside the testnet you can use the **Ledger**, but you can also use the wallet software with the `commercionetworkd`.     
+Inside the testnet you can use the **Ledger**, but you can also use the wallet software with the `furyd`.     
 However, if you wish to use **Ledger**, please add the `--ledger` flat to any command.
 
 :::warning  
@@ -29,15 +29,15 @@ They are your mnemonic and if you loose them you lose all your tokens and the wh
 
 Create the first wallet with the following command
 ```bash
-commercionetworkd keys add $NODENAME
+furyd keys add $NODENAME
 # Enter a password that you can remember
 ```
 The output of the command will provide the 24 words that are the mnemonic.    
       
 
-If you are using the **Ledger** device you must first connect it to your computer, start the commercionetworkd application and run the command 
+If you are using the **Ledger** device you must first connect it to your computer, start the furyd application and run the command 
 ```bash
-commercionetworkd keys add $NODENAME --ledger
+furyd keys add $NODENAME --ledger
 # Enter a password that you can remember
 ```
 In this case the 24 words are not provided because they have already been configured in the **Ledger** initialization
@@ -70,7 +70,7 @@ This transaction is expected to be done with an hsm as Ledger. If you are using 
 `$CHAINID` is the chain id of the chain. Use `commercio-3` if you work on the mainnet, or the `commerico-testnet11k` if you work on the testnet
 
 ```bash
-commercionetworkd tx bank send \
+furyd tx bank send \
 <DELEGATOR ADDRESS> \
 <CREATOR ADDRESS> \
 1110000ucommercio \
@@ -84,7 +84,7 @@ or you can use the [Commercio Wallet App](https://github.com/commercionetwork/Co
 
 Once you've been confirmed the successful transaction, please check using the following command:
 ```bash
-commercionetworkd query bank balances <CREATOR ADDRESS>
+furyd query bank balances <CREATOR ADDRESS>
 ```
 
 The output should look like this **(WIP)**:
@@ -107,7 +107,7 @@ The overall command to create a validator is the following:
 
 ### Testnet
 ```bash
-export VALIDATOR_PUBKEY=$(commercionetworkd tendermint show-validator)
+export VALIDATOR_PUBKEY=$(furyd tendermint show-validator)
 ```
 
 ### Mainnet
@@ -123,7 +123,7 @@ Warning: a did address can create one and only one validator and a validator can
 
 
 ```bash
-commercionetworkd tx staking create-validator \
+furyd tx staking create-validator \
   --amount=1100000ucommercio \
   --pubkey=$VALIDATOR_PUBKEY \
   --moniker="$NODENAME" \
@@ -166,7 +166,7 @@ timestamp: ""
 Please confirm that your validator is active by running the following command:
 
 ```bash
-commercionetworkd query staking validators | fgrep -A 7 "moniker: $NODENAME" | fgrep operator_addres
+furyd query staking validators | fgrep -A 7 "moniker: $NODENAME" | fgrep operator_addres
 ```
 
 
@@ -202,15 +202,15 @@ export OPERATOR_ADDRESS="did:com:valoper1zcjx15rruffkrfq0rryu809fzkgwg684qmetxxs
 Once received the second wallet must be loaded on the ledger or keyring through the command
 
 ```bash
-commercionetworkd keys add <name of second wallet> --recover
+furyd keys add <name of second wallet> --recover
 ```
 where `<name of second wallet>` is an arbitrary name.   
 When requested, the 24 keywords must be entered
 
 
-If you are using the **Ledger** device you must first connect it to your computer, start the commercionetworkd application and run the command 
+If you are using the **Ledger** device you must first connect it to your computer, start the furyd application and run the command 
 ```bash
-commercionetworkd keys add <name of second wallet> --ledger
+furyd keys add <name of second wallet> --ledger
 # Enter a password that you can remember
 ```
 In this case the 24 words are not provided because they have already been configured in the **Ledger** initialization
@@ -227,7 +227,7 @@ This transaction is expected to be done with an hsm as a **Ledger** device . If 
 
 
 ```bash
-commercionetworkd tx staking delegate \
+furyd tx staking delegate \
   $OPERATOR_ADDRESS \
   50000000000ucommercio \
   --from <DELEGATOR ADDRESS> \
@@ -277,13 +277,13 @@ laddr = "tcp://0.0.0.0:26657"
 
 and restart your node
 ```
-systemctl restart commercionetworkd
+systemctl restart furyd
 ```
 
 and use the transaction this way
 
 ```bash
-commercionetworkd tx staking delegate \
+furyd tx staking delegate \
   <validator-addr> \
   50000000000ucommercio \
   --from <DELEGATOR ADDRESS> \
@@ -302,7 +302,7 @@ commercionetworkd tx staking delegate \
 If I try to search for my address with the command 
 
 ```bash
-commercionetworkd query account did:com:1sl4xupdgsgptr2nr7wdtygjp5cw2dr8ncmdsyp --chain-id $CHAINID
+furyd query account did:com:1sl4xupdgsgptr2nr7wdtygjp5cw2dr8ncmdsyp --chain-id $CHAINID
 ```
 
 returns the message
@@ -316,7 +316,7 @@ On https://mainnet.commercio.network or https://testnet.commercio.network you ca
 
 Use the command 
 ```
-journal -u commercionetworkd -f | egrep " commercionetworkd+.*Committed state"
+journal -u furyd -f | egrep " furyd+.*Committed state"
 ```
 to check the height that reach your node
 
@@ -343,12 +343,12 @@ panic: Error initializing DB: resource temporarily unavailable
 
 #### Solution
 
-Maybe `commercionetworkd` and/or `commercionetworkd` services have been left active.
+Maybe `furyd` and/or `furyd` services have been left active.
 Use the following commands 
 
 ```bash
-systemctl stop commercionetworkd
-pkill -9 commercionetworkd
+systemctl stop furyd
+pkill -9 furyd
 ```
 
 and repeat the procedure

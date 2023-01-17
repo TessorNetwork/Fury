@@ -1,8 +1,8 @@
 # Version 4.2.0
 
 * Upgraded cosmos sdk to version 0.45.11 
-* Fix multibase control (https://github.com/commercionetwork/commercionetwork/pull/386)
-* Remove Travis and add GitHub actions (https://github.com/commercionetwork/commercionetwork/pull/387)
+* Fix multibase control (https://github.com/tessornetwork/fury/pull/386)
+* Remove Travis and add GitHub actions (https://github.com/tessornetwork/fury/pull/387)
 * Update Docs
 # Version 4.1.0
 
@@ -15,7 +15,7 @@
 * Update  did spec
 * replace available soon REST with useful info
 * make gRPC Example nesting similar to REST docs
-* Fix issue https://github.com/commercionetwork/commercionetwork/issues/366, https://github.com/commercionetwork/commercionetwork/issues/378,  https://github.com/commercionetwork/commercionetwork/issues/371, https://github.com/commercionetwork/commercionetwork/issues/374
+* Fix issue https://github.com/tessornetwork/fury/issues/366, https://github.com/tessornetwork/fury/issues/378,  https://github.com/tessornetwork/fury/issues/371, https://github.com/tessornetwork/fury/issues/374
 * Add keybase identity
 * Update validator instructions
 * Add upgrade instructions
@@ -223,18 +223,18 @@ New alpha release 3.0.0
 - Upgrade to cosmos sdk 0.38.3
 - Added do_sign to shareDoc
 - Added cdp auto liquidate
-- Added cncli command module id:
+- Added fycli command module id:
    - getSetIdentityCommand
    - getCmdQueryPowerUpRequest
-- Added cncli command module commerciomint :
+- Added fycli command module commerciomint :
   - setCollateralRateCmd
   - getCdpCollateralRate
-- Added cncli command module creditrisk:
+- Added fycli command module creditrisk:
   - getPoolFundsCmd
-- Added cncli command module government:
+- Added fycli command module government:
    - getCmdSetTumblerAddress
    - getCmdGetTumblerAddr
-- Added cncli command module pricefeed:
+- Added fycli command module pricefeed:
   - getCmdBlacklistedDenoms
   - GetCmdBlacklistDenom
 - Added rest query for Vbr membership:
@@ -251,7 +251,7 @@ New alpha release 3.0.0
 - Modify Membership invariant
 
 ## Additions
-- Added cncli command module membership:
+- Added fycli command module membership:
    - getCmdDepositIntoPool
    - getCmdGovAssignMembership
    - getCmdInviteUser
@@ -259,14 +259,14 @@ New alpha release 3.0.0
    - getCmdGetTrustedServiceProviders
    - getCmdGetInvitesForUser
    - getCmdGetInvites
-- Added cncli command module vbr:
+- Added fycli command module vbr:
    - getRetrieveBlockRewardsPoolFunds
    - government:
    - getCmdGetGovernmentAddr
-- Added cncli command module commerciomint :
+- Added fycli command module commerciomint :
   - openCDPCmd
   - closeCDPCmd
-- Added cncli command module government:
+- Added fycli command module government:
    - getCmdGetGovernmentAddr
 - Added rest  query for Vbr module
 
@@ -282,7 +282,7 @@ New alpha release 3.0.0
 - Fix test execution for memberships
 ## Additions
 
-- Added cdp query and tx command to cncli
+- Added cdp query and tx command to fycli
 - Removed the NFT module completely
 
 
@@ -302,7 +302,7 @@ New alpha release 3.0.0
 ## Bug fixes
 - Fixed a bug while checking the validity of the authentication key while handling `MsgSetIdentity` messages
 - Fixed how the UUID are validated (#63) 
-- Removed double `docs` entry inside the `cncli query` command (#60)
+- Removed double `docs` entry inside the `fycli query` command (#60)
 - Fixed a bug in mint module's query
 
 ## Changes
@@ -339,7 +339,7 @@ New alpha release 3.0.0
 In order to migrate from v1.2.x to v1.3.0 you can use the following command:
 
 ```shell
-cnd migrate v1.3.0 [genesis-file-path] --chain-id=<chain_id>
+fyd migrate v1.3.0 [genesis-file-path] --chain-id=<chain_id>
 ```
 
 # Version 1.2.1
@@ -373,7 +373,7 @@ cnd migrate v1.3.0 [genesis-file-path] --chain-id=<chain_id>
 In order to migrate from v1.1.0 to v1.2.0 you can use the following command:
 
 ```shell
-cnd migrate v1.2.0 [genesis-file-path] --chain-id=<chain_id>
+fyd migrate v1.2.0 [genesis-file-path] --chain-id=<chain_id>
 ```
 
 # Version 1.1.0

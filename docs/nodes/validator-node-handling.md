@@ -47,7 +47,7 @@ In case a validator ended up jail for downtime, it is necessary that the wallet 
 The follow command must be performed 
 
 ```bash
-commercionetworkd tx slashing \
+furyd tx slashing \
   unjail \
   --from <your pub addr creator val> \
   --fees=10000ucommercio  \
@@ -66,7 +66,7 @@ The undelegated period is **21 days**, so is necessary to wait this period to ge
 To perform `unbond transaction` use the follow command
 
 ```bash
-commercionetworkd tx staking \
+furyd tx staking \
   unbond \
   <validator-operator-addr> \
   50000000000ucommercio \
@@ -97,7 +97,7 @@ It is possible to perform a procedure of moving tokens in stake from one validat
 To perform `redelegate transaction` use the follow command
 
 ```bash
-commercionetworkd tx staking \
+furyd tx staking \
   redelegate \
   <source-validator-operator-addr> \
   <destination-validator-operator-addr> \
@@ -147,11 +147,11 @@ Your node structure should be something like below
     └── current
     └── genesis
     └── bin
-    │   └── commercionetworkd
+    │   └── furyd
     └── upgrades
     └── <name>
         └── bin
-            └── commercionetworkd
+            └── furyd
 
 ```
 If you don't use `kms` the private key of your validator is saved in `priv_validator_key.json` file.     
@@ -159,18 +159,18 @@ If you don't use `kms` the private key of your validator is saved in `priv_valid
 ### Move validator to another server with `priv_validator_key.json` file
 
 1. Install a full node in the new server
-2. Stop the full node `commercionetworkd` service in the new server 
+2. Stop the full node `furyd` service in the new server 
    ```bash
-   systemctl stop commercionetworkd
+   systemctl stop furyd
    ```
 3. Copy `data` folder to the new server
    ```bash
    rsync -av --delete ~/.commercionetwork/data/ <USER_NEW_SERVER>@<IP_NEW_SERVER>:.commercionetwork/data/
    ```
-4. Stop and disable the `commercionetworkd` service in the current server of validator node
+4. Stop and disable the `furyd` service in the current server of validator node
    ```bash
-   systemctl stop commercionetworkd
-   systemctl disable commercionetworkd
+   systemctl stop furyd
+   systemctl disable furyd
    ```
 1. Sync again your new node `data` folder
    ```bash
@@ -187,15 +187,15 @@ If you don't use `kms` the private key of your validator is saved in `priv_valid
    ```
 1. Restart the node in your new server
    ```bash
-   systemctl start commercionetworkd
+   systemctl start furyd
    ```
 1. Verify if your validator signs again
 ### Move validator to another server with `kms`
 
 1. Install a full node in the new server
-2. Stop the full node `commercionetworkd` service in the new server 
+2. Stop the full node `furyd` service in the new server 
    ```bash
-   systemctl stop commercionetworkd
+   systemctl stop furyd
    ```
 3. Copy `data` folder to the new server
    ```bash
@@ -217,7 +217,7 @@ If you don't use `kms` the private key of your validator is saved in `priv_valid
    ```
 1. Restart the node in your new server
    ```bash
-   systemctl start commercionetworkd
+   systemctl start furyd
    ```
 1. Verify if your validator signs again
 ### Resume validator after break down with `priv_validator_key.json` file
@@ -227,12 +227,12 @@ To resume a validator after break down or some other terrible issue that destroy
 1. Install a full node in the new server
 2. After the node is synced with the chain stop it
    ```bash
-   systemctl stop commercionetworkd
+   systemctl stop furyd
    ```
 3. Copy your saved `priv_validator_key.json` file in the new server
 4. Restart the node in your new server
    ```bash
-   systemctl start commercionetworkd
+   systemctl start furyd
    ```
 1. Verify if your validator signs again
 
@@ -240,7 +240,7 @@ To resume a validator after break down or some other terrible issue that destroy
 1. Install a full node in the new server
 2. After the node is synced with the chain stop it
    ```bash
-   systemctl stop commercionetworkd
+   systemctl stop furyd
    ```
 1. Setup your `priv_val_addr` in `config.toml` using the setup of your server. 
 1. Enter in your `kms` server and stop the `tmkms` service
@@ -258,7 +258,7 @@ To resume a validator after break down or some other terrible issue that destroy
    ```
 1. Restart the node in your new server
    ```bash
-   systemctl start commercionetworkd
+   systemctl start furyd
    ```
 1. Verify if your validator signs again
 ## x% Loss of blocks
@@ -324,7 +324,7 @@ In order to add the identity to your validator you need to edit the validator pr
 
 ```bash
 IDENTITY="[id]" #ID that you obtained in the previous step. Something like 21C53B7B20C1145D
-commercionetworkd tx staking edit-validator \
+furyd tx staking edit-validator \
   --moniker="$NODENAME" \
   --identity="$IDENTITY" \
   --website="your website (leave blank if you don't have it)" \

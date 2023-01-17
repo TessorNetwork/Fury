@@ -10,7 +10,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/commercionetwork/commercionetwork/x/government/types"
+	"github.com/tessornetwork/fury/x/government/types"
 )
 
 // NewQuerier is the module level router for state queries

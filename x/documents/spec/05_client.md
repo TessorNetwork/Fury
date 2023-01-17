@@ -11,7 +11,7 @@ order: 5
 #### CLI
 
 ```bash
-commercionetworkd tx docs share \
+furyd tx docs share \
   [recipient] \
   [document-uuid] \
   [document-metadata-uri] \
@@ -51,7 +51,7 @@ commercionetworkd tx docs share \
 #### CLI
 
 ```bash
-commercionetworkd tx docs send-receipt [recipient] [tx-hash] [document-uuid] [proof]
+furyd tx docs send-receipt [recipient] [tx-hash] [document-uuid] [proof]
 ```
 
 **Parameters:**
@@ -72,14 +72,14 @@ This command generates a random UUID for the receipt.
 #### CLI
 
 ```bash
-commercionetworkd query docs sent-documents [address]
+furyd query docs sent-documents [address]
 ```
 
 #### gRPC
 Endpoint:
 
 ```
-commercionetwork.commercionetwork.documents.Query/SentDocuments
+tessornetwork.fury.documents.Query/SentDocuments
 ```
 
 ##### Example
@@ -88,7 +88,7 @@ commercionetwork.commercionetwork.documents.Query/SentDocuments
 grpcurl -plaintext \
     -d '{"address":"did:com:1py237er2h2jdgdpzggeqmat556u65fv6ql22ya"}' \
     localhost:9090 \
-    commercionetwork.commercionetwork.documents.Query/SentDocuments
+    tessornetwork.fury.documents.Query/SentDocuments
 ```
 
 ##### Response
@@ -167,21 +167,21 @@ http://localhost:1317/commercionetwork/documents/document/did:com:12p24st9asf394
 #### CLI
 
 ```bash
-commercionetworkd query docs received-documents [address]
+furyd query docs received-documents [address]
 ```
 
 #### gRPC
 Endpoint:
 
 ```
-commercionetwork.commercionetwork.documents.Query/ReceivedDocument
+tessornetwork.fury.documents.Query/ReceivedDocument
 ```
 
 ```
 grpcurl -plaintext \
     -d '{"address":"did:com:1py237er2h2jdgdpzggeqmat556u65fv6ql22ya"}' \
     localhost:9090 \
-    commercionetwork.commercionetwork.documents.Query/ReceivedDocument
+    tessornetwork.fury.documents.Query/ReceivedDocument
 ```
 
 ##### Response
@@ -243,21 +243,21 @@ http://localhost:1317/commercionetwork/documents/document/did:com:12p24st9asf394
 #### CLI
 
 ```bash
-commercionetworkd query docs sent-receipts [address]
+furyd query docs sent-receipts [address]
 ```
 
 #### gRPC
 Endpoint:
 
 ```
-commercionetwork.commercionetwork.documents.Query/SentDocumentsReceipts
+tessornetwork.fury.documents.Query/SentDocumentsReceipts
 ```
 
 ```
 grpcurl -plaintext \
     -d '{"address":"did:com:1a0v2kdjkm95gq5qq7ygvczdyuymt6hg3c2su0c"}' \
     localhost:9090 \
-    commercionetwork.commercionetwork.documents.Query/SentDocumentsReceipts
+    tessornetwork.fury.documents.Query/SentDocumentsReceipts
 ```
 
 ##### Response
@@ -324,21 +324,21 @@ http://localhost:1317/commercionetwork/documents/receipts/did:com:12p24st9asf394
 #### CLI
 
 ```bash
-commercionetworkd query docs received-receipts [address]
+furyd query docs received-receipts [address]
 ```
 
 #### gRPC
 Endpoint:
 
 ```
-commercionetwork.commercionetwork.documents.Query/ReceivedDocumentsReceipts
+tessornetwork.fury.documents.Query/ReceivedDocumentsReceipts
 ```
 
 ```
 grpcurl -plaintext \
     -d '{"address":"did:com:1ujh8ldcy2k737vwz8k6cw86uhfvwfe5peay8gg"}' \
     localhost:9090 \
-    commercionetwork.commercionetwork.documents.Query/ReceivedDocumentsReceipts
+    tessornetwork.fury.documents.Query/ReceivedDocumentsReceipts
 ```
 
 ##### Response
@@ -407,21 +407,21 @@ http://localhost:1317/commercionetwork/documents/receipts/did:com:12p24st9asf394
 #### CLI
 
 ```bash
-commercionetworkd query docs documents-receipts [documentUUID]
+furyd query docs documents-receipts [documentUUID]
 ```
 
 #### gRPC
 Endpoint:
 
 ```
-commercionetwork.commercionetwork.documents.Query/DocumentsReceipts
+tessornetwork.fury.documents.Query/DocumentsReceipts
 ```
 
 ```
 grpcurl -plaintext \
     -d '{"UUID":"4939a995-e979-41a3-9b03-bef6f1fc7044"}' \
     localhost:9090 \
-    commercionetwork.commercionetwork.documents.Query/DocumentsReceipts
+    tessornetwork.fury.documents.Query/DocumentsReceipts
 ```
 
 ##### Response
@@ -468,7 +468,7 @@ http://localhost:1317/commercionetwork/documents/document/d83422c6-6e79-4a99-976
 #### CLI
 
 ```bash
-commercionetworkd query docs show-document [documentUUID]
+furyd query docs show-document [documentUUID]
 ```
 
 
@@ -476,7 +476,7 @@ commercionetworkd query docs show-document [documentUUID]
 Endpoint:
 
 ```
-commercionetwork.commercionetwork.documents.Query/Document
+tessornetwork.fury.documents.Query/Document
 ```
 
 ##### Example
@@ -485,7 +485,7 @@ commercionetwork.commercionetwork.documents.Query/Document
 grpcurl -plaintext \
     -d '{"UUID":"3469ca3e-8fe6-4d1f-9713-11418bb9a8f4"}' \
     localhost:9090 \
-    commercionetwork.commercionetwork.documents.Query/Document
+    tessornetwork.fury.documents.Query/Document
 ```
 
 ##### Response

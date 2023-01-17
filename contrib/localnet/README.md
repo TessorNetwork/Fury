@@ -59,10 +59,10 @@ make clean
 If there are no problems, the nodes listen on the follow ports
 
 ```
-commercionetworknode0   0.0.0.0:26656-26657->26656-26657/tcp, 0.0.0.0:9090->9090/tcp, 0.0.0.0:1317->1317/tcp              
-commercionetworknode1   0.0.0.0:26659->26656/tcp, 0.0.0.0:26660->26657/tcp, 0.0.0.0:9091->9090/tcp
-commercionetworknode2   0.0.0.0:26661->26656/tcp, 0.0.0.0:26662->26657/tcp, 0.0.0.0:9092->9090/tcp   
-commercionetworknode3   0.0.0.0:26663->26656/tcp, 0.0.0.0:26664->26657/tcp, 0.0.0.0:9093->9090/tcp
+furynode0   0.0.0.0:26656-26657->26656-26657/tcp, 0.0.0.0:9090->9090/tcp, 0.0.0.0:1317->1317/tcp              
+furynode1   0.0.0.0:26659->26656/tcp, 0.0.0.0:26660->26657/tcp, 0.0.0.0:9091->9090/tcp
+furynode2   0.0.0.0:26661->26656/tcp, 0.0.0.0:26662->26657/tcp, 0.0.0.0:9092->9090/tcp   
+furynode3   0.0.0.0:26663->26656/tcp, 0.0.0.0:26664->26657/tcp, 0.0.0.0:9093->9090/tcp
 ```
 
 Lcd and Rpc + websocket + Grpc
@@ -113,12 +113,12 @@ Every node configs are under
 Logs
 
 ```
-/build/node<N>/commercionetwork/commercionetwork.log
+/build/node<N>/tessornetwork/fury.log
 ```
 
 ## Add Node
 
-If you want add a new node you can start a new container of `commercionetworknode` with new configuration
+If you want add a new node you can start a new container of `furynode` with new configuration
 
 ### Compile binary
 
@@ -133,7 +133,7 @@ make build
 
 
 ```bash
-./build/commercionetworkd init node4 --home ./build/node4/commercionetwork
+./build/furyd init node4 --home ./build/node4/commercionetwork
 ```
 
 ### Copy default genesis in config file
@@ -163,7 +163,7 @@ docker run \
    --name node4 \
    --network commercionetwork_localnet \
    -d \
-   commercionetwork/commercionetworknode
+   tessornetwork/furynode
 ```
 
 
@@ -180,7 +180,7 @@ docker logs node4 -f
 You can discover the account with a lot of tokens in the first node using
 
 ```bash
-./build/commercionetworkd keys list \
+./build/furyd keys list \
   --keyring-backend test \
   --home ./build/node0/commercionetwork/
 ```
@@ -200,7 +200,7 @@ The output should be something like below
 Create a new wallet with
 
 ```
-./build/commercionetworkd keys add wc_node4 \
+./build/furyd keys add wc_node4 \
   --keyring-backend test \
   --home ./build/node4/commercionetwork/
 ```
@@ -229,7 +229,7 @@ Transfer a minumun amount of token to the new wallet from the first one to creat
 # did:com:1fm4ktq7t2282kmgcsptgm3j7f4k58r4zswseqw is the wallet in the first node with a lot of tokens
 # did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl is the wallet that you created before
 
-./build/commercionetworkd tx bank send \
+./build/furyd tx bank send \
   did:com:1fm4ktq7t2282kmgcsptgm3j7f4k58r4zswseqw \
   did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl \
   20000000ucommercio \
@@ -243,7 +243,7 @@ Transfer a minumun amount of token to the new wallet from the first one to creat
 Check the balances of your wallet
 
 ```bash
-./build/commercionetworkd \
+./build/furyd \
   query bank balances \
   did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl
 ```
@@ -253,12 +253,12 @@ Create validator
 ```bash
 NODENAME=node4
 CHAINID=$(jq -r '.chain_id' ./build/base_config/genesis.json)
-VALIDATOR_PUBKEY=$(./build/commercionetworkd \
+VALIDATOR_PUBKEY=$(./build/furyd \
   tendermint show-validator \
   --home ./build/node4/commercionetwork/)
 WALLET_CREATOR="did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl"
 
-./build/commercionetworkd tx staking create-validator \
+./build/furyd tx staking create-validator \
   --amount=1000000ucommercio \
   --pubkey=$VALIDATOR_PUBKEY \
   --moniker="$NODENAME" \
@@ -280,5 +280,5 @@ WALLET_CREATOR="did:com:1xnju336hjcjkgv7mk96z2sckh6y6axeglznrpl"
 Check if your validator is present
 
 ```bash
-./build/commercionetworkd query staking validators
+./build/furyd query staking validators
 ```

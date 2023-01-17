@@ -1,0 +1,15 @@
+syntax = "proto3";
+package tessornetwork.fury.documents;
+
+// Options section
+option go_package = "github.com/tessornetwork/fury/x/documents/types";
+
+// Import section
+import "fury/documents/document.proto";
+import "fury/documents/documentReceipt.proto";
+
+// GenesisState defines the documents module's genesis state.
+message GenesisState {
+	repeated Document documents = 1;
+	repeated  DocumentReceipt receipts = 2;
+}

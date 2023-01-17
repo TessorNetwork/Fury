@@ -1,4 +1,4 @@
-module github.com/commercionetwork/commercionetwork
+module github.com/tessornetwork/fury
 
 go 1.18
 

@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/cast"
 	"github.com/spf13/cobra"
 
-	"github.com/commercionetwork/commercionetwork/x/did/types"
+	"github.com/tessornetwork/fury/x/did/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/client/tx"
@@ -16,7 +16,7 @@ import (
 func CmdSetIdentity() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "set-identity [did_document_proposal_path]",
-		Short: "Sets a JSON-LD DID document for the requesting address, reading it from the path specified as first parameter. The file must conform to the rules of Decentralized Identitfiers (DIDs) v1.0 plus additional rules defined by commercionetwork. Please refer to https://www.w3.org/TR/2021/PR-did-core-20210803/ and https://docs.commercio.network/x/did/",
+		Short: "Sets a JSON-LD DID document for the requesting address, reading it from the path specified as first parameter. The file must conform to the rules of Decentralized Identitfiers (DIDs) v1.0 plus additional rules defined by tessornetwork. Please refer to https://www.w3.org/TR/2021/PR-did-core-20210803/ and https://docs.tessor.network/x/did/",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 

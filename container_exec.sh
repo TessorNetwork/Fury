@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# commercio.network blockchain container startup script
+# tessor.network blockchain container startup script
 #
-# This script spin up a commercio.network blockchain if needed,
+# This script spin up a tessor.network blockchain if needed,
 # i.e. it checks if a chain already exists before creating a new one.
 #
 # Environment variables needed:
@@ -23,17 +23,17 @@ exit 0
 export CHAIN_DIR="/app/chain"
 #export GENESIS_DIR="/app/genesis"
 
-CND_FLAGS="--home=$CHAIN_DIR $CND_EXTRA_FLAGS"
-CND_START_FLAGS="$CND_START_FLAGS"
+FYD_FLAGS="--home=$CHAIN_DIR $FYD_EXTRA_FLAGS"
+FYD_START_FLAGS="$FYD_START_FLAGS"
 if [ -z "$(ls -A $CHAIN_DIR)" ]; then
 	# chain directory empty, let's build a new chain
-	./commercionetworkd unsafe-reset-all $CND_FLAGS
-	./commercionetworkd init $NODENAME $CND_FLAGS
+	./furyd unsafe-reset-all $FYD_FLAGS
+	./furyd init $NODENAME $FYD_FLAGS
 	cp $GENESIS_DIR/genesis.json $CHAIN_DIR/config/genesis.json
 	sed -e "s|persistent_peers = \".*\"|persistent_peers = \"$(cat $GENESIS_DIR/.data | grep -oP 'Persistent peers\s+\K\S+')\"|g" $CHAIN_DIR/config/config.toml > $CHAIN_DIR/config/config.toml.tmp
 	mv $CHAIN_DIR/config/config.toml.tmp  $CHAIN_DIR/config/config.toml
 fi
 
-./commercionetworkd start $CND_FLAGS $CND_START_FLAGS &
-sleep 3 # let cnd start first before running cncli rest server
-./commercionetworkd rest-server --chain-id=$CHAINID --laddr $CNCLI_LISTEN_ADDR 
+./furyd start $FYD_FLAGS $FYD_START_FLAGS &
+sleep 3 # let fyd start first before running fycli rest server
+./furyd rest-server --chain-id=$CHAINID --laddr $FYCLI_LISTEN_ADDR 

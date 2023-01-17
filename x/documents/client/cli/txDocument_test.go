@@ -11,10 +11,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 
-	"github.com/commercionetwork/commercionetwork/testutil/network"
-	"github.com/commercionetwork/commercionetwork/x/documents/client/cli"
-	"github.com/commercionetwork/commercionetwork/x/documents/types"
-	govTypes "github.com/commercionetwork/commercionetwork/x/government/types"
+	"github.com/tessornetwork/fury/testutil/network"
+	"github.com/tessornetwork/fury/x/documents/client/cli"
+	"github.com/tessornetwork/fury/x/documents/types"
+	govTypes "github.com/tessornetwork/fury/x/government/types"
 )
 
 const codeInsufficientFees = 13

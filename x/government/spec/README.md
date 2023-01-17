@@ -22,7 +22,7 @@ The address identified as the `government` can be set **only during the genesis*
 This operation can be performed using the following command: 
 
 ```bash
-commercionetworkd set-genesis-government-address <ADDRESS-TO-USE>
+furyd set-genesis-government-address <ADDRESS-TO-USE>
 ```
 
 :::danger
@@ -34,16 +34,16 @@ Running it several times after the first value has been set will result in an er
 
 The government address can be get:
 
- - via **CLI**, `commercionetworkd query government gov-address`
+ - via **CLI**, `furyd query government gov-address`
  - via **REST**, by making a GET request to the `/commercionetwork/government/governmentAddress` endpoint 
- - via **gRPC**, by making a Query to the `commercionetwork.commercionetwork.government.Query` method
+ - via **gRPC**, by making a Query to the `tessornetwork.fury.government.Query` method
 
 #### gRPC
 
 Endpoint:
 
 ```
-commercionetwork.commercionetwork.government.Query/GovernmentAddr
+tessornetwork.fury.government.Query/GovernmentAddr
 ```
 
 ##### Example
@@ -51,7 +51,7 @@ commercionetwork.commercionetwork.government.Query/GovernmentAddr
 ```bash
 grpcurl -plaintext \
     localhost:9090 \
-    commercionetwork.commercionetwork.government.Query/GovernmentAddr
+    tessornetwork.fury.government.Query/GovernmentAddr
 ```
 
 ##### Response

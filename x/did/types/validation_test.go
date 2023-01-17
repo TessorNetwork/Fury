@@ -8,13 +8,13 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-// package initialization for correct validation of commercionetwork addresses
+// package initialization for correct validation of fury addresses
 func init() {
 	configTestPrefixes()
 }
 
 func configTestPrefixes() {
-	AccountAddressPrefix := "did:com:"
+	AccountAddressPrefix := "did:fury:"
 	AccountPubKeyPrefix := AccountAddressPrefix + "pub"
 	config := sdk.GetConfig()
 	config.SetBech32PrefixForAccount(AccountAddressPrefix, AccountPubKeyPrefix)

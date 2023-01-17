@@ -163,7 +163,7 @@ setEtpsFreezePeriod
 #### CLI
 
 ```sh
-cncli query commerciomint get-etps [user-addr]
+fycli query commerciomint get-etps [user-addr]
 ```
 
 #### REST
@@ -213,7 +213,7 @@ http://localhost:1317/commerciomint/etps/did:com:15erw8aqttln5semks0vnqjy9yzrygz
 #### CLI
 
 ```bash
-cncli query commerciomint conversion-rate
+fycli query commerciomint conversion-rate
 ```
 
 #### REST
@@ -246,7 +246,7 @@ http://localhost:1317/commerciomint/conversion_rate
 #### CLI
 
 ```bash
-cncli query commerciomint freeze-period
+fycli query commerciomint freeze-period
 ```
 
 #### REST

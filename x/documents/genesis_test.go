@@ -3,8 +3,8 @@ package documents
 import (
 	"testing"
 
-	"github.com/commercionetwork/commercionetwork/x/documents/keeper"
-	"github.com/commercionetwork/commercionetwork/x/documents/types"
+	"github.com/tessornetwork/fury/x/documents/keeper"
+	"github.com/tessornetwork/fury/x/documents/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
 	"github.com/cosmos/cosmos-sdk/store"

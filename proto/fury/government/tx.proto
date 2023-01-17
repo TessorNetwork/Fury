@@ -1,0 +1,15 @@
+syntax = "proto3";
+package tessornetwork.fury.government;
+
+// Options section
+option go_package = "github.com/tessornetwork/fury/x/government/types";
+
+service Msg {
+  rpc SetGovAddress(MsgSetGovAddress) returns (MsgSetGovAddressResponse);
+}
+
+message MsgSetGovAddress {
+}
+
+message MsgSetGovAddressResponse {
+}

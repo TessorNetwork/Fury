@@ -12,25 +12,25 @@ import (
 	ibctransfertypes "github.com/cosmos/ibc-go/v3/modules/apps/transfer/types"
 	ibc "github.com/cosmos/ibc-go/v3/modules/core/types"
 
-	v220government "github.com/commercionetwork/commercionetwork/x/government/legacy/v2.2.0"
-	v300government "github.com/commercionetwork/commercionetwork/x/government/legacy/v3.0.0"
+	v220government "github.com/tessornetwork/fury/x/government/legacy/v2.2.0"
+	v300government "github.com/tessornetwork/fury/x/government/legacy/v3.0.0"
 
-	v220docs "github.com/commercionetwork/commercionetwork/x/documents/legacy/v2.2.0"
-	v300docs "github.com/commercionetwork/commercionetwork/x/documents/legacy/v3.0.0"
+	v220docs "github.com/tessornetwork/fury/x/documents/legacy/v2.2.0"
+	v300docs "github.com/tessornetwork/fury/x/documents/legacy/v3.0.0"
 
-	v220did "github.com/commercionetwork/commercionetwork/x/did/legacy/v2.2.0"
-	v300did "github.com/commercionetwork/commercionetwork/x/did/legacy/v3.0.0"
+	v220did "github.com/tessornetwork/fury/x/did/legacy/v2.2.0"
+	v300did "github.com/tessornetwork/fury/x/did/legacy/v3.0.0"
 
-	v220commerciomint "github.com/commercionetwork/commercionetwork/x/commerciomint/legacy/v2.2.0"
-	v300commerciomint "github.com/commercionetwork/commercionetwork/x/commerciomint/legacy/v3.0.0"
+	v220furymint "github.com/tessornetwork/fury/x/furymint/legacy/v2.2.0"
+	v300furymint "github.com/tessornetwork/fury/x/furymint/legacy/v3.0.0"
 
-	v220commerciokyc "github.com/commercionetwork/commercionetwork/x/commerciokyc/legacy/v2.2.0"
-	v300commerciokyc "github.com/commercionetwork/commercionetwork/x/commerciokyc/legacy/v3.0.0"
+	v220furykyc "github.com/tessornetwork/fury/x/furykyc/legacy/v2.2.0"
+	v300furykyc "github.com/tessornetwork/fury/x/furykyc/legacy/v3.0.0"
 
-	v220vbr "github.com/commercionetwork/commercionetwork/x/vbr/legacy/v2.2.0"
-	v300vbr "github.com/commercionetwork/commercionetwork/x/vbr/legacy/v3.0.0"
+	v220vbr "github.com/tessornetwork/fury/x/vbr/legacy/v2.2.0"
+	v300vbr "github.com/tessornetwork/fury/x/vbr/legacy/v3.0.0"
 
-	v300epochs "github.com/commercionetwork/commercionetwork/x/epochs/types"
+	v300epochs "github.com/tessornetwork/fury/x/epochs/types"
 
 	"github.com/CosmWasm/wasmd/x/wasm"
 	wasmTypes "github.com/CosmWasm/wasmd/x/wasm/types"
@@ -62,17 +62,17 @@ func Migrate(appState types.AppMap, clientCtx client.Context) types.AppMap {
 	}
 	//appState[v300docs.ModuleName] = appState[v220docs.ModuleName]
 
-	if appState[v220commerciomint.ModuleName] != nil {
-		var commerciomintGenState v220commerciomint.GenesisState
-		v039Codec.MustUnmarshalJSON(appState[v220commerciomint.ModuleName], &commerciomintGenState)
-		appState[v300commerciomint.ModuleName] = v040Codec.MustMarshalJSON(v300commerciomint.Migrate(commerciomintGenState))
+	if appState[v220furymint.ModuleName] != nil {
+		var furymintGenState v220furymint.GenesisState
+		v039Codec.MustUnmarshalJSON(appState[v220furymint.ModuleName], &furymintGenState)
+		appState[v300furymint.ModuleName] = v040Codec.MustMarshalJSON(v300furymint.Migrate(furymintGenState))
 
 	}
 
-	if appState[v220commerciokyc.ModuleName] != nil {
-		var commerciokycGenState v220commerciokyc.GenesisState
-		v039Codec.MustUnmarshalJSON(appState[v220commerciokyc.ModuleName], &commerciokycGenState)
-		appState[v300commerciokyc.ModuleName] = v040Codec.MustMarshalJSON(v300commerciokyc.Migrate(commerciokycGenState))
+	if appState[v220furykyc.ModuleName] != nil {
+		var furykycGenState v220furykyc.GenesisState
+		v039Codec.MustUnmarshalJSON(appState[v220furykyc.ModuleName], &furykycGenState)
+		appState[v300furykyc.ModuleName] = v040Codec.MustMarshalJSON(v300furykyc.Migrate(furykycGenState))
 
 	}
 
@@ -103,7 +103,7 @@ func Migrate(appState types.AppMap, clientCtx client.Context) types.AppMap {
 	if appState[govtypes.ModuleName] != nil {
 		var govGenState govtypes.GenesisState
 		v040Codec.MustUnmarshalJSON(appState[govtypes.ModuleName], &govGenState)
-		coins := sdk.NewCoins(sdk.NewCoin("ucommercio", sdk.NewInt(50000000000)))
+		coins := sdk.NewCoins(sdk.NewCoin("ufury", sdk.NewInt(50000000000)))
 		govGenState.DepositParams.MinDeposit = coins
 		appState[govtypes.ModuleName] = v040Codec.MustMarshalJSON(&govGenState)
 	}

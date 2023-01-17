@@ -222,13 +222,13 @@ setMembership
 Get membership invites for user:
 
 ```bash
-cncli query accreditations get-invites-for-user [address]
+fycli query accreditations get-invites-for-user [address]
 ```
 
 Get all the membership invites:
 
 ```bash
-cncli query accreditations get-invites
+fycli query accreditations get-invites
 ```
 
 #### REST
@@ -297,7 +297,7 @@ http://localhost:1317/invites
 #### CLI
 
 ```bash
-cncli query accreditations trusted-service-providers
+fycli query accreditations trusted-service-providers
 ```
 
 #### REST
@@ -331,7 +331,7 @@ http://localhost:1317/tsps
 #### CLI
 
 ```bash
-cncli query accreditations pool-funds
+fycli query accreditations pool-funds
 ```
 
 #### REST
@@ -366,7 +366,7 @@ http://localhost:1317/accreditations-funds
 #### CLI
 
 ```bash
-cncli query accreditations user-membership
+fycli query accreditations user-membership
 ```
 
 #### REST

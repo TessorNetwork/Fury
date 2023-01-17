@@ -12,7 +12,7 @@ Increments the block rewards pool's liquidity by the given amount denom
 
 
 ```bash
-commercionetworkd tx vbr deposit \
+furyd tx vbr deposit \
   [amount denom]
 ```
 
@@ -28,7 +28,7 @@ commercionetworkd tx vbr deposit \
 #### CLI
 
 ```bash
-commercionetworkd tx vbr set-params \
+furyd tx vbr set-params \
   [epoch_identifier] \
   [earn_rate]
 ```
@@ -49,14 +49,14 @@ commercionetworkd tx vbr set-params \
 #### CLI
 
 ```bash
-commercionetworkd query vbr pool-funds
+furyd query vbr pool-funds
 ```
 
 #### gRPC
 Endpoint:
 
 ```
-commercionetwork.commercionetwork.vbr.Query/GetBlockRewardsPoolFunds
+tessornetwork.fury.vbr.Query/GetBlockRewardsPoolFunds
 ```
 
 ##### Example
@@ -64,7 +64,7 @@ commercionetwork.commercionetwork.vbr.Query/GetBlockRewardsPoolFunds
 ```bash
 grpcurl -plaintext \
     localhost:9090 \
-    commercionetwork.commercionetwork.vbr.Query/GetBlockRewardsPoolFunds
+    tessornetwork.fury.vbr.Query/GetBlockRewardsPoolFunds
 ```
 
 ##### Response
@@ -112,14 +112,14 @@ http://localhost:1317/commercionetwork/vbr/funds
 #### CLI
 
 ```bash
-commercionetworkd query vbr get-params
+furyd query vbr get-params
 ```
 
 #### gRPC
 Endpoint:
 
 ```
-commercionetwork.commercionetwork.vbr.Query/GetParams
+tessornetwork.fury.vbr.Query/GetParams
 ```
 
 ##### Example
@@ -127,7 +127,7 @@ commercionetwork.commercionetwork.vbr.Query/GetParams
 ```bash
 grpcurl -plaintext \
     localhost:9090 \
-    commercionetwork.commercionetwork.vbr.Query/GetParams
+    tessornetwork.fury.vbr.Query/GetParams
 ```
 
 ##### Response

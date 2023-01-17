@@ -1,8 +1,8 @@
 package v400
 
 import (
-	v300 "github.com/commercionetwork/commercionetwork/x/government/legacy/v3.0.0"
-	"github.com/commercionetwork/commercionetwork/x/government/types"
+	v300 "github.com/tessornetwork/fury/x/government/legacy/v3.0.0"
+	"github.com/tessornetwork/fury/x/government/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"

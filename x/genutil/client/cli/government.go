@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	govTypes "github.com/commercionetwork/commercionetwork/x/government/types"
+	govTypes "github.com/tessornetwork/fury/x/government/types"
 
-	commerciokycTypes "github.com/commercionetwork/commercionetwork/x/commerciokyc/types"
+	furykycTypes "github.com/tessornetwork/fury/x/furykyc/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/x/genutil"
 	"github.com/tendermint/tendermint/libs/cli"
@@ -87,20 +87,20 @@ func SetGovernmentAddress(clientCtx client.Context, appState json.RawMessage, ad
 
 	// set a black membership to the government address
 	// add a membership to the genesis state
-	var genStateMemberships commerciokycTypes.GenesisState
-	json.Unmarshal(genState[commerciokycTypes.ModuleName], &genStateMemberships)
+	var genStateMemberships furykycTypes.GenesisState
+	json.Unmarshal(genState[furykycTypes.ModuleName], &genStateMemberships)
 
 	initSecondsPerYear := time.Hour * 24 * 365
 	initExpirationDate := time.Now().Add(initSecondsPerYear) // It's safe becouse command is executed in one machine
 
-	membership := commerciokycTypes.NewMembership(commerciokycTypes.MembershipTypeBlack, address, address, initExpirationDate)
+	membership := furykycTypes.NewMembership(furykycTypes.MembershipTypeBlack, address, address, initExpirationDate)
 	genStateMemberships.Memberships = append(genStateMemberships.Memberships, &membership)
 
 	genesisStateBzMemberships, err := tmjson.Marshal(genStateMemberships)
 	if err != nil {
 		return nil, errors.Wrap(err, "failed to marshal genesis doc")
 	}
-	genState[commerciokycTypes.ModuleName] = genesisStateBzMemberships
+	genState[furykycTypes.ModuleName] = genesisStateBzMemberships
 
 	return genState, nil
 }

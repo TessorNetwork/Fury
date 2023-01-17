@@ -141,50 +141,50 @@ import (
 	ibckeeper "github.com/cosmos/ibc-go/v3/modules/core/keeper"
 
 	// ------------------------------------------
-	// Commercio.Network
-	appparams "github.com/commercionetwork/commercionetwork/app/params"
-	docs "github.com/commercionetwork/commercionetwork/docs_3_0"
-	"github.com/commercionetwork/commercionetwork/x/ante"
+	// Tessor.Network
+	appparams "github.com/tessornetwork/fury/app/params"
+	docs "github.com/tessornetwork/fury/docs_3_0"
+	"github.com/tessornetwork/fury/x/ante"
 
 	// ------------------------------------------
-	// Commercio.Network Modules
+	// Tessor.Network Modules
 	//  Kyc
-	commerciokycmodule "github.com/commercionetwork/commercionetwork/x/commerciokyc"
-	commerciokycKeeper "github.com/commercionetwork/commercionetwork/x/commerciokyc/keeper"
-	commerciokycTypes "github.com/commercionetwork/commercionetwork/x/commerciokyc/types"
+	furykycmodule "github.com/tessornetwork/fury/x/furykyc"
+	furykycKeeper "github.com/tessornetwork/fury/x/furykyc/keeper"
+	furykycTypes "github.com/tessornetwork/fury/x/furykyc/types"
 
 	//  Mint
-	commerciomintmodule "github.com/commercionetwork/commercionetwork/x/commerciomint"
-	commerciomintKeeper "github.com/commercionetwork/commercionetwork/x/commerciomint/keeper"
-	commerciomintTypes "github.com/commercionetwork/commercionetwork/x/commerciomint/types"
+	furymintmodule "github.com/tessornetwork/fury/x/furymint"
+	furymintKeeper "github.com/tessornetwork/fury/x/furymint/keeper"
+	furymintTypes "github.com/tessornetwork/fury/x/furymint/types"
 
 	//  Did
-	"github.com/commercionetwork/commercionetwork/x/did"
-	didkeeper "github.com/commercionetwork/commercionetwork/x/did/keeper"
-	didTypes "github.com/commercionetwork/commercionetwork/x/did/types"
+	"github.com/tessornetwork/fury/x/did"
+	didkeeper "github.com/tessornetwork/fury/x/did/keeper"
+	didTypes "github.com/tessornetwork/fury/x/did/types"
 
 	//  Documents
-	"github.com/commercionetwork/commercionetwork/x/documents"
-	documentskeeper "github.com/commercionetwork/commercionetwork/x/documents/keeper"
-	documentstypes "github.com/commercionetwork/commercionetwork/x/documents/types"
+	"github.com/tessornetwork/fury/x/documents"
+	documentskeeper "github.com/tessornetwork/fury/x/documents/keeper"
+	documentstypes "github.com/tessornetwork/fury/x/documents/types"
 
 	//  Epochs
-	"github.com/commercionetwork/commercionetwork/x/epochs"
-	epochskeeper "github.com/commercionetwork/commercionetwork/x/epochs/keeper"
-	epochstypes "github.com/commercionetwork/commercionetwork/x/epochs/types"
+	"github.com/tessornetwork/fury/x/epochs"
+	epochskeeper "github.com/tessornetwork/fury/x/epochs/keeper"
+	epochstypes "github.com/tessornetwork/fury/x/epochs/types"
 
 	//  Government
-	governmentmodule "github.com/commercionetwork/commercionetwork/x/government"
-	governmentmodulekeeper "github.com/commercionetwork/commercionetwork/x/government/keeper"
-	governmentmoduletypes "github.com/commercionetwork/commercionetwork/x/government/types"
+	governmentmodule "github.com/tessornetwork/fury/x/government"
+	governmentmodulekeeper "github.com/tessornetwork/fury/x/government/keeper"
+	governmentmoduletypes "github.com/tessornetwork/fury/x/government/types"
 
 	//  Vbr
-	vbrmodule "github.com/commercionetwork/commercionetwork/x/vbr"
-	vbrmodulekeeper "github.com/commercionetwork/commercionetwork/x/vbr/keeper"
-	vbrmoduletypes "github.com/commercionetwork/commercionetwork/x/vbr/types"
+	vbrmodule "github.com/tessornetwork/fury/x/vbr"
+	vbrmodulekeeper "github.com/tessornetwork/fury/x/vbr/keeper"
+	vbrmoduletypes "github.com/tessornetwork/fury/x/vbr/types"
 )
 
-const Name = "commercionetwork"
+const Name = "fury"
 
 var (
 	// If EnabledSpecificProposals is "", and this is not "true", then disable all x/wasm proposals.
@@ -194,8 +194,8 @@ var (
 	// of "EnableAllProposals" (takes precedence over ProposalsEnabled)
 	// https://github.com/CosmWasm/wasmd/blob/02a54d33ff2c064f3539ae12d75d027d9c665f05/x/wasm/internal/types/proposal.go#L28-L34
 	EnableSpecificProposals = ""
-	DefaultBondDenom        = "ucommercio"
-	StableCreditsDenom      = "uccc"
+	DefaultBondDenom        = "ufury"
+	StableCreditsDenom      = "ufusd"
 )
 
 // GetEnabledProposals parses the ProposalsEnabled / EnableSpecificProposals values to
@@ -259,8 +259,8 @@ var (
 		governmentmodule.AppModuleBasic{},
 		did.AppModuleBasic{},
 		documents.AppModuleBasic{},
-		commerciokycmodule.AppModuleBasic{},
-		commerciomintmodule.AppModuleBasic{},
+		furykycmodule.AppModuleBasic{},
+		furymintmodule.AppModuleBasic{},
 		wasm.AppModuleBasic{},
 		epochs.AppModuleBasic{},
 	)
@@ -274,8 +274,8 @@ var (
 		govtypes.ModuleName:              {authtypes.Burner},
 		vbrmoduletypes.ModuleName:        {authtypes.Minter},
 		governmentmoduletypes.ModuleName: nil,
-		commerciokycTypes.ModuleName:     {authtypes.Minter, authtypes.Burner},
-		commerciomintTypes.ModuleName:    {authtypes.Minter, authtypes.Burner},
+		furykycTypes.ModuleName:     {authtypes.Minter, authtypes.Burner},
+		furymintTypes.ModuleName:    {authtypes.Minter, authtypes.Burner},
 		documentstypes.ModuleName:        nil,
 		didTypes.ModuleName:              nil,
 		ibctransfertypes.ModuleName:      {authtypes.Minter, authtypes.Burner},
@@ -338,8 +338,8 @@ type App struct {
 	ScopedWasmKeeper     capabilitykeeper.ScopedKeeper
 
 	GovernmentKeeper    governmentmodulekeeper.Keeper
-	CommercioMintKeeper commerciomintKeeper.Keeper
-	CommercioKycKeeper  commerciokycKeeper.Keeper
+	FuryMintKeeper furymintKeeper.Keeper
+	FuryKycKeeper  furykycKeeper.Keeper
 
 	VbrKeeper vbrmodulekeeper.Keeper
 
@@ -359,7 +359,7 @@ func NewKVStoreKeys(names ...string) map[string]*sdk.KVStoreKey {
 	return keys
 }
 
-// New returns a reference to an initialized Commercionetwork.
+// New returns a reference to an initialized Furynetwork.
 // NewSimApp returns a reference to an initialized SimApp.
 func New(
 	logger log.Logger, db dbm.DB, traceStore io.Writer, loadLatest bool, skipUpgradeHeights map[int64]bool,
@@ -397,8 +397,8 @@ func New(
 		wasm.StoreKey,
 		vbrmoduletypes.StoreKey,
 		didTypes.StoreKey,
-		commerciokycTypes.StoreKey,
-		commerciomintTypes.StoreKey,
+		furykycTypes.StoreKey,
+		furymintTypes.StoreKey,
 		governmentmoduletypes.StoreKey,
 		documentstypes.StoreKey,
 		epochstypes.StoreKey,
@@ -548,29 +548,29 @@ func New(
 	)
 	vbrModule := vbrmodule.NewAppModule(appCodec, app.VbrKeeper)
 
-	// CommercioMint keeper must be set before CommercioKyc
-	app.CommercioMintKeeper = *commerciomintKeeper.NewKeeper(
+	// FuryMint keeper must be set before FuryKyc
+	app.FuryMintKeeper = *furymintKeeper.NewKeeper(
 		appCodec,
-		keys[commerciomintTypes.StoreKey],
-		keys[commerciomintTypes.MemStoreKey],
+		keys[furymintTypes.StoreKey],
+		keys[furymintTypes.MemStoreKey],
 		app.BankKeeper,
 		app.AccountKeeper,
 		app.GovernmentKeeper,
-		app.GetSubspace(commerciomintTypes.ModuleName),
+		app.GetSubspace(furymintTypes.ModuleName),
 	)
-	commercioMintModule := commerciomintmodule.NewAppModule(appCodec, app.CommercioMintKeeper)
+	furyMintModule := furymintmodule.NewAppModule(appCodec, app.FuryMintKeeper)
 
-	// Create commerciokyc keeper
-	app.CommercioKycKeeper = *commerciokycKeeper.NewKeeper(
+	// Create furykyc keeper
+	app.FuryKycKeeper = *furykycKeeper.NewKeeper(
 		appCodec,
-		keys[commerciokycTypes.StoreKey],
-		keys[commerciokycTypes.MemStoreKey],
+		keys[furykycTypes.StoreKey],
+		keys[furykycTypes.MemStoreKey],
 		app.BankKeeper,
 		app.GovernmentKeeper,
 		app.AccountKeeper,
-		app.CommercioMintKeeper,
+		app.FuryMintKeeper,
 	)
-	commerciokycModule := commerciokycmodule.NewAppModule(appCodec, app.CommercioKycKeeper)
+	furykycModule := furykycmodule.NewAppModule(appCodec, app.FuryKycKeeper)
 
 	// Create did keeper
 	app.DidKeeper = *didkeeper.NewKeeper(
@@ -675,8 +675,8 @@ func New(
 		// custoum modules
 		governmentModule,
 		vbrModule,
-		commerciokycModule,
-		commercioMintModule,
+		furykycModule,
+		furyMintModule,
 		didModule,
 		documentsModule,
 		epochs.NewAppModule(appCodec, app.EpochsKeeper),
@@ -707,8 +707,8 @@ func New(
 		feegrant.ModuleName,
 		paramstypes.ModuleName,
 		vestingtypes.ModuleName,
-		commerciokycTypes.ModuleName,
-		commerciomintTypes.ModuleName,
+		furykycTypes.ModuleName,
+		furymintTypes.ModuleName,
 		documentstypes.ModuleName,
 		didTypes.ModuleName,
 		governmentmoduletypes.ModuleName,
@@ -737,8 +737,8 @@ func New(
 		feegrant.ModuleName,
 		paramstypes.ModuleName,
 		vestingtypes.ModuleName,
-		commerciokycTypes.ModuleName,
-		commerciomintTypes.ModuleName,
+		furykycTypes.ModuleName,
+		furymintTypes.ModuleName,
 		documentstypes.ModuleName,
 		didTypes.ModuleName,
 		governmentmoduletypes.ModuleName,
@@ -772,8 +772,8 @@ func New(
 		vestingtypes.ModuleName,
 		feegrant.ModuleName,
 		governmentmoduletypes.ModuleName,
-		commerciokycTypes.ModuleName,
-		commerciomintTypes.ModuleName,
+		furykycTypes.ModuleName,
+		furymintTypes.ModuleName,
 		vbrmoduletypes.ModuleName,
 		didTypes.ModuleName,
 		documentstypes.ModuleName,
@@ -801,7 +801,7 @@ func New(
 			app.AccountKeeper,
 			app.BankKeeper,
 			app.GovernmentKeeper,
-			app.CommercioMintKeeper,
+			app.FuryMintKeeper,
 			comosante.DefaultSigVerificationGasConsumer,
 			encodingConfig.TxConfig.SignModeHandler(),
 			DefaultBondDenom,
@@ -956,7 +956,7 @@ func (app *App) LegacyAmino() *codec.LegacyAmino {
 	return app.cdc
 }
 
-// AppCodec returns Commercio's app codec.
+// AppCodec returns Fury's app codec.
 //
 // NOTE: This is solely to be used for testing purposes as it may be desirable
 // for modules to register their own custom testing types.
@@ -964,7 +964,7 @@ func (app *App) AppCodec() codec.Codec {
 	return app.appCodec
 }
 
-// InterfaceRegistry returns Commercio's InterfaceRegistry
+// InterfaceRegistry returns Fury's InterfaceRegistry
 func (app *App) InterfaceRegistry() types.InterfaceRegistry {
 	return app.interfaceRegistry
 }
@@ -1057,8 +1057,8 @@ func initParamsKeeper(appCodec codec.BinaryCodec, legacyAmino *codec.LegacyAmino
 	paramsKeeper.Subspace(vbrmoduletypes.ModuleName)
 	paramsKeeper.Subspace(didTypes.ModuleName)
 	paramsKeeper.Subspace(documentstypes.ModuleName)
-	paramsKeeper.Subspace(commerciomintTypes.ModuleName)
-	paramsKeeper.Subspace(commerciokycTypes.ModuleName)
+	paramsKeeper.Subspace(furymintTypes.ModuleName)
+	paramsKeeper.Subspace(furykycTypes.ModuleName)
 
 	return paramsKeeper
 }

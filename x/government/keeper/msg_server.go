@@ -3,7 +3,7 @@ package keeper
 import (
 	"context"
 
-	"github.com/commercionetwork/commercionetwork/x/government/types"
+	"github.com/tessornetwork/fury/x/government/types"
 )
 
 var _ types.MsgServer = msgServer{}

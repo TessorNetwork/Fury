@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	commerciomintKeeper "github.com/commercionetwork/commercionetwork/x/commerciomint/keeper"
-	government "github.com/commercionetwork/commercionetwork/x/government/keeper"
+	furymintKeeper "github.com/tessornetwork/fury/x/furymint/keeper"
+	government "github.com/tessornetwork/fury/x/government/keeper"
 
 	sdkErr "github.com/cosmos/cosmos-sdk/types/errors"
 
@@ -30,7 +30,7 @@ func NewAnteHandler(
 	ak keeper.AccountKeeper,
 	bankKeeper bankKeeper.Keeper,
 	govKeeper government.Keeper,
-	mintKeeper commerciomintKeeper.Keeper,
+	mintKeeper furymintKeeper.Keeper,
 	sigGasConsumer cosmosante.SignatureVerificationGasConsumer,
 	signModeHandler authsigning.SignModeHandler,
 	stakeDenom string,
@@ -57,15 +57,15 @@ func NewAnteHandler(
 // contains also a minimum fee amount corresponding to 0.01 euro per
 // MsgShareDocument included into the transaction itself.
 // The amount can be specified using stableCreditsDenom or stakeDenom.
-// If stakeDenom used the cost of transaction is always 10000ucommercio
+// If stakeDenom used the cost of transaction is always 10000ufury
 type MinFeeDecorator struct {
 	govk               government.Keeper
-	mintk              commerciomintKeeper.Keeper
+	mintk              furymintKeeper.Keeper
 	stakeDenom         string
 	stableCreditsDenom string
 }
 
-func NewMinFeeDecorator(govKeeper government.Keeper, mintk commerciomintKeeper.Keeper, stakeDenom string, stableCreditsDenom string) MinFeeDecorator {
+func NewMinFeeDecorator(govKeeper government.Keeper, mintk furymintKeeper.Keeper, stakeDenom string, stableCreditsDenom string) MinFeeDecorator {
 	return MinFeeDecorator{
 		govk:               govKeeper,
 		mintk:              mintk,
@@ -117,14 +117,14 @@ func checkMinimumFees(
 	stdTx sdk.Tx,
 	ctx sdk.Context,
 	govk government.Keeper,
-	mintk commerciomintKeeper.Keeper,
+	mintk furymintKeeper.Keeper,
 	stakeDenom string,
 	stableCreditsDenom string,
 	requiredFees sdk.Dec,
 ) error {
 	fiatAmount := sdk.ZeroDec()
 	// Find required quantity of stable coin = number of msg * 10000
-	// Every message need 0.01 ccc
+	// Every message need 0.01 fusd
 	stableRequiredQty := requiredFees.MulInt64(1000000)
 	// Extract amount of stable coin from fees
 	feeTx, ok := stdTx.(sdk.FeeTx)

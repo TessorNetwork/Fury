@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"github.com/CosmWasm/wasmd/x/wasm"
-	"github.com/commercionetwork/commercionetwork/app/params"
+	"github.com/tessornetwork/fury/app/params"
 
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"

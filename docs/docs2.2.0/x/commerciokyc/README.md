@@ -309,7 +309,7 @@ removeMembership
 Get all the all invites:
 
 ```bash
-cncli query commerciokyc invites
+fycli query commerciokyc invites
 ```
 
 #### REST
@@ -348,7 +348,7 @@ http://localhost:1317/commerciokyc/invites
 #### CLI
 
 ```bash
-cncli query commerciokyc trusted-service-providers
+fycli query commerciokyc trusted-service-providers
 ```
 
 #### REST
@@ -382,7 +382,7 @@ http://localhost:1317/commerciokyc/tsps
 #### CLI
 
 ```bash
-cncli query commerciokyc pool-funds
+fycli query commerciokyc pool-funds
 ```
 
 #### REST
@@ -419,7 +419,7 @@ http://localhost:1317/commerciokyc/accreditations-funds
 #### CLI
 
 ```bash
-cncli query commerciokyc membership [user]
+fycli query commerciokyc membership [user]
 ```
 
 #### REST
@@ -463,7 +463,7 @@ http://localhost:1317/commerciokyc/membership/did:com:1l9rr5ck7ed30ny3ex4uj75ezr
 #### CLI
 
 ```bash
-cncli query commerciokyc memberships
+fycli query commerciokyc memberships
 ```
 
 #### REST
@@ -502,7 +502,7 @@ http://localhost:1317/commerciokyc/memberships
 #### CLI
 
 ```bash
-cncli query commerciokyc sold [tsp-address]
+fycli query commerciokyc sold [tsp-address]
 ```
 
 #### REST

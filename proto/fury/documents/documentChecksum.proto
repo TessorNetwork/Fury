@@ -1,0 +1,13 @@
+syntax = "proto3";
+package tessornetwork.fury.documents;
+
+// Options section
+option go_package = "github.com/tessornetwork/fury/x/documents/types";
+
+// Import section
+import "gogoproto/gogo.proto";
+
+message DocumentChecksum {
+  string value = 1;
+  string algorithm = 2;
+}

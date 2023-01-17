@@ -15,7 +15,7 @@ import (
 	tmjson "github.com/tendermint/tendermint/libs/json"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	vbrTypes "github.com/commercionetwork/commercionetwork/x/vbr/types"
+	vbrTypes "github.com/tessornetwork/fury/x/vbr/types"
 )
 
 // SetGenesisVbrPoolAmount returns set-genesis-vbr-pool-amount cobra Command.

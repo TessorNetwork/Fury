@@ -1,7 +1,7 @@
 package app
 
 import (
-	"github.com/commercionetwork/commercionetwork/app/params"
+	"github.com/tessornetwork/fury/app/params"
 	"github.com/cosmos/cosmos-sdk/std"
 )
 

@@ -6,8 +6,8 @@
 `cn` is the name of the [Commercio.network](https://commercio.network) blockchain application. It is shipped with two different entrypoints:  
 
 
-* `cnd`: The Commercio.network Daemon, runs a full-node of the `cn` application
-* `cndcli`: The Commercio.network command-line interface, which enables interaction with a Commercio.network full-node.
+* `fyd`: The Commercio.network Daemon, runs a full-node of the `cn` application
+* `fydcli`: The Commercio.network command-line interface, which enables interaction with a Commercio.network full-node.
 
 `cn` is built on top of the [Cosmos SDK](https://github.com/cosmos/cosmos-sdk) using the following modules:
 

@@ -1,7 +1,7 @@
 {
   "name": "docs",
   "version": "3.0.0",
-  "description": "Commercio.network documentation",
+  "description": "Tessor.network documentation",
   "main": "index.js",
   "scripts": {
     "predocs:serve": "./docs/pre.sh",

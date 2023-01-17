@@ -54,7 +54,7 @@ To create the `proof` field value, the following steps must be followed:
    }
    ```
 
-2. retrive the public key of external centralized entity **Tk**, by querying the `cncli` REST API
+2. retrive the public key of external centralized entity **Tk**, by querying the `fycli` REST API
 3. calculate SHA-256 `HASH` of the concatenation of `sender_did`, `pairwise_did` and `timestamp` fields, taken from `signature_json`
 4. do a PKCS1v15 signature of `HASH` with the RSA private key associated to RSA public key inserted in the `sender_did` DDO - this process yields the `SIGN(HASH)` value
 5. convert `SIGN(HASH)` in **base64** `BASE64(SIGN(HASH))`, this is the value to be placed in the `signature` field 

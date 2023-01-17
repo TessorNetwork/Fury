@@ -5,18 +5,18 @@ import (
 	"testing"
 	"time"
 
-	v220did "github.com/commercionetwork/commercionetwork/x/did/legacy/v2.2.0"
-	"github.com/commercionetwork/commercionetwork/x/did/types"
+	v220did "github.com/tessornetwork/fury/x/did/legacy/v2.2.0"
+	"github.com/tessornetwork/fury/x/did/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
-// package initialization for correct validation of commercionetwork addresses
+// package initialization for correct validation of fury addresses
 func init() {
 	configTestPrefixes()
 }
 
 func configTestPrefixes() {
-	AccountAddressPrefix := "did:com:"
+	AccountAddressPrefix := "did:fury:"
 	AccountPubKeyPrefix := AccountAddressPrefix + "pub"
 	config := sdk.GetConfig()
 	config.SetBech32PrefixForAccount(AccountAddressPrefix, AccountPubKeyPrefix)
@@ -30,8 +30,8 @@ const (
 	validBase64RsaVerificationKey2018 = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDMr3V+Auyc+zvt2qX+jpwk3wM+m2DbfLjimByzQDIfrzSHMTQ8erL0kg69YsXHYXVX9mIZKRzk6VNwOBOQJSsIDf2jGbuEgI8EB4c3q1XykakCTvO3Ku3PJgZ9PO4qRw7QVvTkCbc91rT93/pD3/Ar8wqd4pNXtgbfbwJGviZ6kQIDAQAB"
 	validBase64RsaSignature2018       = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvaM5rNKqd5sl1flSqRHgkKdGJzVcktZs0O1IO5A7TauzAtn0vRMr4moWYTn5nUCCiDFbTPoMyPp6tsaZScADG9I7g4vK+/FcImcrdDdv9rjh1aGwkGK3AXUNEG+hkP+QsIBl5ORNSKn+EcdFmnUczhNulA74zQ3xnz9cUtsPC464AWW0Yrlw40rJ/NmDYfepjYjikMVvJbKGzbN3Xwv7ZzF4bPTi7giZlJuKbNUNTccPY/nPr5EkwZ5/cOZnAJGtmTtj0e0mrFTX8sMPyQx0O2uYM97z0SRkf8oeNQm+tyYbwGWY2TlCEXbvhP34xMaBTzWNF5+Z+FZi+UfPfVfKHQIDAQAB"
 
-	validDidSubject      = "did:com:14zk9u8894eg7fhgw0dsesnqzmlrx85ga9rvnjc"
-	validDidOtherSubject = "did:com:18h03de6awcjk4u9gaz8s5l0xxl8ulxjctzsytd"
+	validDidSubject      = "did:fury:14zk9u8894eg7fhgw0dsesnqzmlrx85ga9rvnjc"
+	validDidOtherSubject = "did:fury:18h03de6awcjk4u9gaz8s5l0xxl8ulxjctzsytd"
 
 	validDateCreated = "2019-03-23T06:35:22Z"
 )

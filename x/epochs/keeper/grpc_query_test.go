@@ -4,7 +4,7 @@ import (
 	gocontext "context"
 	"time"
 
-	"github.com/commercionetwork/commercionetwork/x/epochs/types"
+	"github.com/tessornetwork/fury/x/epochs/types"
 )
 
 func (suite *KeeperTestSuite) TestQueryEpochInfos() {

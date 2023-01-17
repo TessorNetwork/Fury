@@ -77,7 +77,7 @@ query did show-identity [did]
 Endpoint:
 
 ```
-commercionetwork.commercionetwork.did.Query/Identity
+tessornetwork.fury.did.Query/Identity
 ```
 
 ##### Example
@@ -87,7 +87,7 @@ commercionetwork.commercionetwork.did.Query/Identity
 grpcurl -plaintext \
     -d '{"ID":"did:com:133nf49v83dts7pq30csnnl7ul5unsvzz55qt20"}' \
     localhost:9090 \
-    commercionetwork.commercionetwork.did.Query/Identity
+    tessornetwork.fury.did.Query/Identity
 ```
 
 ##### Response
@@ -218,7 +218,7 @@ query did show-history [did]
 Endpoint:
 
 ```
-commercionetwork.commercionetwork.did.Query/IdentityHistory
+tessornetwork.fury.did.Query/IdentityHistory
 ```
 
 ##### Example
@@ -227,7 +227,7 @@ commercionetwork.commercionetwork.did.Query/IdentityHistory
 grpcurl -plaintext \
     -d '{"ID":"did:com:133nf49v83dts7pq30csnnl7ul5unsvzz55qt20"}' \
     localhost:9090 \
-    commercionetwork.commercionetwork.did.Query/IdentityHistory
+    tessornetwork.fury.did.Query/IdentityHistory
 ```
 
 ##### Response

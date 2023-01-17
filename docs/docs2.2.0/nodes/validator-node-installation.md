@@ -5,10 +5,10 @@ start in earning by  validating  the chain transactions.
 Before you start, we recommend that you run the command 
 
 ```bash
-cncli config chain-id $CHAINID
+fycli config chain-id $CHAINID
 ```
 
-In this way you can omit the flag `--chain-id="$CHAINID"` in every command of the **cncli**
+In this way you can omit the flag `--chain-id="$CHAINID"` in every command of the **fycli**
 
 
 ## Requirements
@@ -26,7 +26,7 @@ If you have any problems with the procedure try to read the section **[Common er
 
 
 ## 1. Add wallet key
-Inside the testnet you can use the **Ledger**, but you can also use the wallet software with the `cncli`.     
+Inside the testnet you can use the **Ledger**, but you can also use the wallet software with the `fycli`.     
 However, if you wish to use **Ledger**, please add the `--ledger` flat to any command.
 
 :::warning  
@@ -37,7 +37,7 @@ They are your mnemonic and if you loose them you lose all your tokens and the wh
 
 Create the first wallet with the following command
 ```bash
-cncli keys add $NODENAME
+fycli keys add $NODENAME
 # Enter a password that you can remember
 ```
 The output of the command will provide the 24 words that are the mnemonic.    
@@ -45,7 +45,7 @@ The output of the command will provide the 24 words that are the mnemonic.
 
 If you are using the **Ledger** device you must first connect it to your computer, start the cosmos application and run the command 
 ```bash
-cncli keys add $NODENAME --ledger
+fycli keys add $NODENAME --ledger
 # Enter a password that you can remember
 ```
 In this case the 24 words are not provided because they have already been configured in the **Ledger** initialization
@@ -76,7 +76,7 @@ This transaction is expected to be done with an hsm as Ledger. If you are using 
 :::
 
 ```bash
-cncli tx send \
+fycli tx send \
 <your pub addr delegator> \
 <your pub addr creator val> \
 1110000ucommercio \
@@ -87,7 +87,7 @@ cncli tx send \
 
 Once you've been confirmed the successful transaction, please check using the following command:
 ```bash
-cncli query account <your pub addr creator val> --chain-id $CHAINID
+fycli query account <your pub addr creator val> --chain-id $CHAINID
 ```
 
 The output should look like this:
@@ -110,7 +110,7 @@ The overall command to create a validator is the following:
 
 ### Testnet
 ```bash
-export VALIDATOR_PUBKEY=$(cnd tendermint show-validator)
+export VALIDATOR_PUBKEY=$(fyd tendermint show-validator)
 ```
 
 ### Mainnet
@@ -126,7 +126,7 @@ Warning: a did address can create one and only one validator and a validator can
 
 
 ```bash
-cncli tx staking create-validator \
+fycli tx staking create-validator \
   --amount=1100000ucommercio \
   --pubkey=$VALIDATOR_PUBKEY \
   --moniker="$NODENAME" \
@@ -168,7 +168,7 @@ timestamp: ""
 Please confirm that your validator is active by running the following command:
 
 ```bash
-cncli query staking validators --chain-id $CHAINID | fgrep -B 1 $VALIDATOR_PUBKEY
+fycli query staking validators --chain-id $CHAINID | fgrep -B 1 $VALIDATOR_PUBKEY
 ```
      
 
@@ -205,7 +205,7 @@ export OPERATOR_ADDRESS="did:com:valoper1zcjx15rruffkrfq0rryu809fzkgwg684qmetxxs
 Once received the second wallet must be loaded on the ledger or keyring through the command
 
 ```bash
-cncli keys add <name of second wallet> --recover
+fycli keys add <name of second wallet> --recover
 ```
 where `<name of second wallet>` is an arbitrary name.   
 When requested, the 24 keywords must be entered
@@ -213,7 +213,7 @@ When requested, the 24 keywords must be entered
 
 If you are using the **Ledger** device you must first connect it to your computer, start the cosmos application and run the command 
 ```bash
-cncli keys add <name of second wallet> --ledger
+fycli keys add <name of second wallet> --ledger
 # Enter a password that you can remember
 ```
 In this case the 24 words are not provided because they have already been configured in the **Ledger** initialization
@@ -230,7 +230,7 @@ This transaction is expected to be done with an hsm as a **Ledger** device . If 
 
 
 ```bash
-cncli tx staking delegate \
+fycli tx staking delegate \
   $OPERATOR_ADDRESS \
   50000000000ucommercio \
   --from <your pub addr delegator> \
@@ -266,7 +266,7 @@ Congratulations, you are now a Commercio.network validator 🎉
 ## Note 
 
 If you want to make transactions with the **Nano Ledger** from another machine a full node must be created locally or a full node must be configured to accept remote connections.   
-Edit the `.cnd/config/config.toml` file by changing from 
+Edit the `.fyd/config/config.toml` file by changing from 
 
 ```
 laddr = "tcp://127.0.0.1:26657"
@@ -278,13 +278,13 @@ laddr = "tcp://0.0.0.0:26657"
 
 and restart your node
 ```
-systemctl restart cnd
+systemctl restart fyd
 ```
 
 and use the transaction this way
 
 ```bash
-cncli tx staking delegate \
+fycli tx staking delegate \
   <validator-addr> \
   50000000000ucommercio \
   --from <your pub addr delegator> \
@@ -303,7 +303,7 @@ cncli tx staking delegate \
 If I try to search for my address with the command 
 
 ```bash
-cncli query account did:com:1sl4xupdgsgptr2nr7wdtygjp5cw2dr8ncmdsyp --chain-id $CHAINID
+fycli query account did:com:1sl4xupdgsgptr2nr7wdtygjp5cw2dr8ncmdsyp --chain-id $CHAINID
 ```
 
 returns the message
@@ -317,7 +317,7 @@ On https://testnet.commercio.network you can view the height of the chain at the
 
 Use the command 
 ```
-journal -u cnd -f | egrep " cnd+.*Committed state"
+journal -u fyd -f | egrep " fyd+.*Committed state"
 ```
 to check the height that reach your node
 
@@ -344,14 +344,14 @@ panic: Error initializing DB: resource temporarily unavailable
 
 #### Solution
 
-Maybe `cnd` and/or `cncli` services have been left active.
+Maybe `fyd` and/or `fycli` services have been left active.
 Use the following commands 
 
 ```bash
-systemctl stop cnd
-systemctl stop cncli
-pkill -9 cnd
-pkill -9 cncli
+systemctl stop fyd
+systemctl stop fycli
+pkill -9 fyd
+pkill -9 fycli
 ```
 
 and repeat the procedure

@@ -9,13 +9,13 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/genutil"
 	"github.com/cosmos/cosmos-sdk/x/supply"
 
-	"github.com/commercionetwork/commercionetwork/x/commerciomint"
-	commerciomintTypes "github.com/commercionetwork/commercionetwork/x/commerciomint/types"
+	"github.com/tessornetwork/fury/x/furymint"
+	furymintTypes "github.com/tessornetwork/fury/x/furymint/types"
 
 	authTypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 )
 
-func commercioMintMigrate(appState genutil.AppMap, govAddress sdk.AccAddress) genutil.AppMap {
+func furyMintMigrate(appState genutil.AppMap, govAddress sdk.AccAddress) genutil.AppMap {
 	// Instead of initializing our own codec, use the cosmos x/auth one
 	// Because we must trigger x/supply/internal/types init() function,
 	// call NewEmptyModuleAccount.
@@ -25,7 +25,7 @@ func commercioMintMigrate(appState genutil.AppMap, govAddress sdk.AccAddress) ge
 	_ = supply.NewEmptyModuleAccount("fu")
 	accountsCdc := authTypes.ModuleCdc
 
-	// 1. remove uccc from every account, and move commerciomint ucommercio's to government address
+	// 1. remove ufusd from every account, and move furymint ufury's to government address
 	if appState[auth.ModuleName] != nil {
 		var old auth.GenesisState
 		accountsCdc.MustUnmarshalJSON(appState[auth.ModuleName], &old)
@@ -35,11 +35,11 @@ func commercioMintMigrate(appState genutil.AppMap, govAddress sdk.AccAddress) ge
 		var mintUcomm sdk.Coins
 		for _, account := range old.Accounts {
 			coins := account.GetCoins()
-			comAmount := coins.AmountOf("ucommercio")
+			comAmount := coins.AmountOf("ufury")
 
 			account.SetCoins(
 				sdk.NewCoins(
-					sdk.NewCoin("ucommercio", comAmount),
+					sdk.NewCoin("ufury", comAmount),
 				),
 			)
 
@@ -51,10 +51,10 @@ func commercioMintMigrate(appState genutil.AppMap, govAddress sdk.AccAddress) ge
 					continue
 				}
 				if mintUcomm == nil {
-					if macc.GetName() == "commerciomint" {
+					if macc.GetName() == "furymint" {
 						mintUcomm = macc.GetCoins()
 
-						// reset commerciomint coins
+						// reset furymint coins
 						err := account.SetCoins(sdk.NewCoins())
 						if err != nil {
 							panic(err)
@@ -87,27 +87,27 @@ func commercioMintMigrate(appState genutil.AppMap, govAddress sdk.AccAddress) ge
 		)
 	}
 
-	// 2. commerciomint state must change completely according to its new state schema
+	// 2. furymint state must change completely according to its new state schema
 	mintCdc := codec.New()
 	codec.RegisterCrypto(mintCdc)
-	commerciomintTypes.RegisterCodec(mintCdc)
+	furymintTypes.RegisterCodec(mintCdc)
 
-	if appState[commerciomintTypes.ModuleName] != nil {
-		delete(appState, commerciomintTypes.ModuleName)
+	if appState[furymintTypes.ModuleName] != nil {
+		delete(appState, furymintTypes.ModuleName)
 
-		appState[commerciomintTypes.ModuleName] = mintCdc.MustMarshalJSON(
-			commerciomint.DefaultGenesisState(),
+		appState[furymintTypes.ModuleName] = mintCdc.MustMarshalJSON(
+			furymint.DefaultGenesisState(),
 		)
 	}
 
-	// 3. staking module must only contain ucommercio
+	// 3. staking module must only contain ufury
 	if appState[supply.ModuleName] != nil {
 		var old supply.GenesisState
 		supply.ModuleCdc.MustUnmarshalJSON(appState[supply.ModuleName], &old)
 
-		commAmount := old.Supply.AmountOf("ucommercio")
+		commAmount := old.Supply.AmountOf("ufury")
 
-		old.Supply = sdk.NewCoins(sdk.NewCoin("ucommercio", commAmount))
+		old.Supply = sdk.NewCoins(sdk.NewCoin("ufury", commAmount))
 
 		delete(appState, supply.ModuleName)
 		appState[supply.ModuleName] = supply.ModuleCdc.MustMarshalJSON(

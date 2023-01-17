@@ -1,0 +1,44 @@
+syntax = "proto3";
+package tessornetwork.fury.furymint;
+
+// Options section
+option go_package = "github.com/tessornetwork/fury/x/furymint/types";
+
+// Import section
+import "gogoproto/gogo.proto";
+import "fury/furymint/params.proto";
+import "cosmos/base/v1beta1/coin.proto";
+
+
+// Msg defines the Msg service.
+service Msg {
+  rpc MintFUSD(MsgMintFUSD) returns (MsgMintFUSDResponse);
+  rpc BurnFUSD(MsgBurnFUSD) returns (MsgBurnFUSDResponse);
+  rpc SetParams(MsgSetParams) returns (MsgSetParamsResponse);
+}
+
+message MsgMintFUSD {
+  string depositor = 1;
+  repeated cosmos.base.v1beta1.Coin deposit_amount = 2;
+  string ID = 3;
+}
+
+message MsgMintFUSDResponse { string ID = 1; }
+
+message MsgBurnFUSD {
+  string signer = 1;
+  cosmos.base.v1beta1.Coin amount = 2;
+  string ID = 3;
+}
+
+message MsgBurnFUSDResponse {
+  string ID = 1;
+  cosmos.base.v1beta1.Coin residual = 2;
+}
+
+message MsgSetParams {
+  string signer = 1;
+  Params params = 2;
+}
+
+message MsgSetParamsResponse {}

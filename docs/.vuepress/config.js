@@ -1,6 +1,6 @@
 module.exports = {
-    title: "Commercio.network Documentation",
-    description: "Documentation for the Commercio.network blockchain.",
+    title: "Tessor.network Documentation",
+    description: "Documentation for the Tessor.network blockchain.",
     ga: "UA-51029217-2",
     head: [
         ['link', {rel: 'icon', href: '/icon.png'}],
@@ -16,12 +16,12 @@ module.exports = {
         [
           "sitemap",
           {
-            hostname: "https://docs.commercio.network"
+            hostname: "https://docs.tessor.network"
           }
         ]
     ],
     themeConfig: {
-        repo: "commercionetwork/commercionetwork",
+        repo: "tessornetwork/fury",
         logo: '/icon.png',
         editLinks: true,
         docsDir: "docs",
@@ -38,10 +38,10 @@ module.exports = {
                     { text: 'ver 2.1.2', link: '/docs2.1.2/' }
                 ]
             },
-            {text: "Commercio.network", link: "https://commercio.network"},
+            {text: "Tessor.network", link: "https://tessor.network"},
             {text: "Discord", link: "https://discord.gg/N7DxaDj5sW"},
-            {text: "Telegram", link: "https://t.me/CommercioNetwork"},
-            {text: "Twitter", link: "https://twitter.com/commercionet?s=21&t=8FTpg5f7kurZ1d7LOb9YXw"},
+            {text: "Telegram", link: "https://t.me/TessorNetwork"},
+            {text: "Twitter", link: "https://twitter.com/furynet?s=21&t=8FTpg5f7kurZ1d7LOb9YXw"},
         ],
 
         sidebarDepth: 3,
@@ -55,7 +55,7 @@ module.exports = {
                 title: "Running Nodes",
                 collapsable: false,
                 children: [
-                    ["nodes/", "Commercio.network overview"],
+                    ["nodes/", "Tessor.network overview"],
                     ["nodes/hardware-requirements", "Hardware requirements"],
                     ["nodes/full-node-installation", "Installing a full node"],
                     ["nodes/validator-node-installation", "Becoming a validator"],
@@ -67,10 +67,10 @@ module.exports = {
                 title: "API Developers",
                 collapsable: false,
                 children: [
-                    ["app_developers/commercioapi-introduction", "Introduction to CommercioAPI"],
-                    ["app_developers/commercioapi-authentication", "Authentication process"],
-                    ["app_developers/commercioapi-wallet", "Wallet"],
-                    ["app_developers/commercioapi-sharedoc", "ShareDoc"],
+                    ["app_developers/furyapi-introduction", "Introduction to FuryAPI"],
+                    ["app_developers/furyapi-authentication", "Authentication process"],
+                    ["app_developers/furyapi-wallet", "Wallet"],
+                    ["app_developers/furyapi-sharedoc", "ShareDoc"],
 
                 ]
             },
@@ -115,29 +115,29 @@ module.exports = {
                         ]
                     },
                     {
-                        title: "CommercioMint",
-                        path: "/modules/commerciomint/",
+                        title: "FuryMint",
+                        path: "/modules/furymint/",
                         collapsable: true,
                         children: [
-                            ["modules/commerciomint/", "Concepts"],
-                            ["modules/commerciomint/01_state.md", "State"],
-                            ["modules/commerciomint/02_messages.md", "Messages"],
-                            ["modules/commerciomint/03_events.md", "Events"],
-                            ["modules/commerciomint/04_params.md", "Params"],
-                            ["modules/commerciomint/05_client.md", "Client"],
+                            ["modules/furymint/", "Concepts"],
+                            ["modules/furymint/01_state.md", "State"],
+                            ["modules/furymint/02_messages.md", "Messages"],
+                            ["modules/furymint/03_events.md", "Events"],
+                            ["modules/furymint/04_params.md", "Params"],
+                            ["modules/furymint/05_client.md", "Client"],
 
                         ]
                     },
                     {
-                        title: "CommercioKYC",
-                        path: "/modules/commerciokyc/",
+                        title: "FuryKYC",
+                        path: "/modules/furykyc/",
                         collapsable: true,
                         children: [
-                            ["modules/commerciokyc/", "Concepts"],
-                            ["modules/commerciokyc/01_state.md", "State"],
-                            ["modules/commerciokyc/02_messages.md", "Messages"],
-                            ["modules/commerciokyc/03_events.md", "Events"],
-                            ["modules/commerciokyc/04_client.md", "Client"],
+                            ["modules/furykyc/", "Concepts"],
+                            ["modules/furykyc/01_state.md", "State"],
+                            ["modules/furykyc/02_messages.md", "Messages"],
+                            ["modules/furykyc/03_events.md", "Events"],
+                            ["modules/furykyc/04_client.md", "Client"],
 
                         ]
                     },
@@ -202,8 +202,8 @@ module.exports = {
                             "docs2.2.0/x/government/",
                             "docs2.2.0/x/id/",
                             "docs2.2.0/x/documents/",
-                            "docs2.2.0/x/commerciomint/",
-                            "docs2.2.0/x/commerciokyc/",
+                            "docs2.2.0/x/furymint/",
+                            "docs2.2.0/x/furykyc/",
                             "docs2.2.0/x/vbr/",
                         ]
                     }
@@ -254,7 +254,7 @@ module.exports = {
                             "docs2.1.2/x/id/",
                             "docs2.1.2/x/docs/",
                             "docs2.1.2/x/pricefeed/",
-                            "docs2.1.2/x/commerciomint/",
+                            "docs2.1.2/x/furymint/",
                             "docs2.1.2/x/memberships/",
                             "docs2.1.2/x/vbr/",
                             "docs2.1.2/x/creditrisk/"

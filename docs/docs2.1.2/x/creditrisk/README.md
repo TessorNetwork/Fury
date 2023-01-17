@@ -10,7 +10,7 @@ are the results of the CDP autoliquidation feature, which are concentrated on th
 #### CLI
 
 ```bash
-cncli query creditrisk pool
+fycli query creditrisk pool
 ```
 
 #### REST

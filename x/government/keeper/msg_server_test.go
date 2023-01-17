@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/commercionetwork/commercionetwork/x/government/types"
+	"github.com/tessornetwork/fury/x/government/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

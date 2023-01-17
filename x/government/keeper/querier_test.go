@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/commercionetwork/commercionetwork/x/government/types"
+	"github.com/tessornetwork/fury/x/government/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/simapp"
 	"github.com/stretchr/testify/require"

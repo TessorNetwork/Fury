@@ -1,9 +1,80 @@
 version: 1
+
 accounts:
   - name: alice
-    coins: ["1000token", "100000000stake"]
+    coins: ["20000000000ufusd", "200000000000ufury"]
+    #address: "did:fury:18h03de6awcjk4u9gaz8s5l0xxl8ulxjctzsytd"
+    mnemonic: "gaze apart pen defense tomorrow index again pool earth force napkin noble elevator payment hawk trip cute gown fade wear swallow alert lemon people"
   - name: bob
-    coins: ["500token"]
+    coins: ["10000000000ufusd", "100000000000ufury"]
+    #address: "did:fury:1829s409tjju2luhudq5dfeus6je3vfdnjv9tpn"
+    mnemonic: "special chest leaf section reunion inflict busy blouse inflict kid alcohol hazard embody mosquito green turkey street very lab forest gain disease hollow bomb"
+  - name: gov
+    coins: ["10000000000ufusd", "100000000000ufury"]
+    #address: "did:fury:1zg4jreq2g57s4efrl7wnh2swtrz3jt9nfaumcm"
+    mnemonic: "bonus raccoon material jump tired under cup senior wash peace cook mansion nice rely outside atom surface maid dune poet hold forum electric accuse"
 validator:
   name: alice
-  staked: "100000000stake"
+  staked: "100000000ufury"
+client:
+  vuex:
+    path: "vue/src/store"
+  openapi:
+    path: "docs_3_0/static/openapi.yml"
+faucet:
+  name: bob
+  coins: ["5ufusd", "100000ufury"]
+genesis:
+  app_state:
+    gov:
+      deposit_params:
+        min_deposit:
+        -
+          denom: "ufury"
+          amount: "10000000"
+      voting_params:
+        voting_period: "120s"
+    crisis:
+      constant_fee:
+        denom: "ufury"
+    government:
+      governmentAddress: "did:fury:1zg4jreq2g57s4efrl7wnh2swtrz3jt9nfaumcm"
+    vbr:
+      poolAmount:
+        -
+          denom: "ufury"
+          amount: "10000000.000000000000000000"
+      params: 
+        distr_epoch_identifier: "minute"
+        earn_rate: "0.500000000000000000"
+    staking:
+      params:
+        bond_denom: "ufury"
+    furykyc:
+      trusted_service_providers: ["did:fury:1zg4jreq2g57s4efrl7wnh2swtrz3jt9nfaumcm"]
+      memberships:
+        -
+          expiry_at: "2022-03-21T00:00:00Z"
+          membership_type: "black"
+          owner: "did:fury:1zg4jreq2g57s4efrl7wnh2swtrz3jt9nfaumcm"
+          tsp_address: "did:fury:1zg4jreq2g57s4efrl7wnh2swtrz3jt9nfaumcm"
+      liquidity_pool_amount:
+        -
+          amount: "1000000000000"
+          denom: "ufury"
+    furymint:
+      Positions:
+        -
+          ID: "090ca0c2-cf00-4119-8307-b51413a00cf4"
+          collateral: "7"
+          created_at: "2021-07-22T13:18:44.598560074Z"
+          credits: 
+            amount: "10"
+            denom: "ufusd"
+          exchange_rate: "0.610000000000000000"
+          owner: "did:fury:1zg4jreq2g57s4efrl7wnh2swtrz3jt9nfaumcm"
+      params:
+        conversion_rate: "0.610000000000000000"
+        freeze_period: "1814400s"
+
+

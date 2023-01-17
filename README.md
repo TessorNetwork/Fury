@@ -1,4 +1,4 @@
-# Commercio.network - The Documents Blockchain
+# Tessor.network - The Fantasy Sports Blockchain
 
 ![GitHub release](https://img.shields.io/github/release/tessornetwork/fury.svg)
 [![CircleCI](https://circleci.com/gh/tessornetwork/fury/tree/master.svg?style=shield)](https://circleci.com/gh/tessornetwork/fury/tree/master)
@@ -7,21 +7,19 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/tessornetwork/fury.svg)
 ![GitHub](https://img.shields.io/github/license/tessornetwork/fury.svg)
 
-Commercio.network, as known as *The Documents Blockchain* is the easiest way for companies to manage their 
-business documents using the blockchain technology. 
-  
-> Our ultimate goal is not just to share documents, but to create a network of trusted organizations.
+Tessor.network, as known as *The Fantasy Sports Blockchain* is the easiest way for players to manage their 
+Fantasy Sports Teams using blockchain technology. 
 
 ## References
-* [Official website](https://commercio.network/)
-* [Documentation](https://docs.commercio.network/)
-* [Telegram group](https://t.me/commercionetwork)
+* [Official website](https://tessor.network/)
+* [Documentation](https://docs.tessor.network/)
+* [Telegram group](https://t.me/tessornetwork)
 
 ## Version
 
-Current Software Version is `v4.2.0`
+Current Software Version is `v0.1.0-FanfuryTestnet.1`
 
-Current Chain Version is `commercio-3`
+Current Chain Version is `Furytestnet-1000`
 ## Quick Start
 
 To compile our software (Debian/Ubuntu SO)

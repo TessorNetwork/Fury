@@ -48,7 +48,7 @@ genesis:
     staking:
       params:
         bond_denom: "ufury"
-    furykyc:
+    commerciokyc:
       trusted_service_providers: ["did:fury:1zg4jreq2g57s4efrl7wnh2swtrz3jt9nfaumcm"]
       memberships:
         -
@@ -60,7 +60,7 @@ genesis:
         -
           amount: "1000000000000"
           denom: "ufury"
-    furymint:
+    commerciomint:
       Positions:
         -
           ID: "090ca0c2-cf00-4119-8307-b51413a00cf4"

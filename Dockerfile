@@ -19,7 +19,7 @@ RUN go mod download
 COPY . .
 
 # Build the Go app
-#RUN make build-linux
+#RUN make build-darwin
 RUN make install
 
 
@@ -33,7 +33,7 @@ RUN mkdir -p ${CHAIN_DIR}
 RUN mkdir -p ${GENESIS_DIR}
 
 # Copy the Pre-built binary file from the previous stage
-#COPY --from=builder /app/build/Linux-AMD64/furyd .
+#COPY --from=builder /app/build/Darwin-AMD64/furyd .
 COPY container_exec.sh .
 RUN chmod +x container_exec.sh
 

@@ -7,7 +7,7 @@ ID=${ID:-0}
 LOG=${LOG:-fury.log}
 
 ##
-## Assert linux binary
+## Assert darwin binary
 ##
 if ! [ -f "/app/build/furyd" ]; then
 	echo "The binary /app/build/furyd cannot be found. Please add the binary to the shared folder."

@@ -3,7 +3,7 @@ version: '3'
 services:
   furynode0:
     container_name: furynode0
-    image: "tessornetwork/furynode"
+    image: "nimrostafarian/tessornetwork:fury"
     ports:
       - "26656-26657:26656-26657"
       - "1317:1317"
@@ -19,7 +19,7 @@ services:
 
   furynode1:
     container_name: furynode1
-    image: "tessornetwork/furynode"
+    image: "nimrostafarian/tessornetwork:fury"
     ports:
       - "26659-26660:26656-26657"
       - "9091:9090"
@@ -35,7 +35,7 @@ services:
 
   furynode2:
     container_name: furynode2
-    image: "tessornetwork/furynode"
+    image: "nimrostafarian/tessornetwork:fury"
     environment:
       - ID=2
       - LOG=${LOG:-fury.log}
@@ -50,7 +50,7 @@ services:
 
   furynode3:
     container_name: furynode3
-    image: "tessornetwork/furynode"
+    image: "nimrostafarian/tessornetwork:fury"
     environment:
       - ID=3
       - LOG=${LOG:-fury.log}
